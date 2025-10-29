@@ -1,0 +1,6 @@
+_site
+_cache
+.env
+output
+node_modules
+vendor
