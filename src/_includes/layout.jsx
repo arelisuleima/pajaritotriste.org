@@ -38,7 +38,7 @@ export default (
                     src="/pfp.jpg"
                   />
                   <div class="flex flex-col gap-1">
-                    {/* ESTA ES LA LÍNEA CRÍTICA CORREGIDA:
+                    {/* 
                       - site?.title: Pregunta si 'site' existe antes de leer 'title'
                       - || title: Si 'site' no existe, usa el 'title' de la página actual
                     */}
