@@ -1,7 +1,6 @@
 ---
+title: Acerca de Pajarito Triste
 layout: layout.jsx
 ---
 
-## Acerca de mi
-
-Soy pajaritotriste, me gusta SQL
+Hola, soy Pajarito Triste y este es mi blog...
