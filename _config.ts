@@ -12,6 +12,7 @@ import feed from "lume/plugins/feed.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import seo from "lume/plugins/seo.ts";
 import Site from "lume/core/site.ts";
+import pageFind from "lume/plugins/pagefind.ts";
 
 import lang_css from "highlight.js/lib/languages/css";
 import lang_javascript from "highlight.js/lib/languages/javascript";
@@ -56,6 +57,12 @@ site.use(code_highlight({
 
 site.use(date());
 site.use(jsx());
+
+site.use(pageFind({
+  ui: {
+    resetStyles: false,
+  },
+}));
 
 site.ignore("README.md");
 
