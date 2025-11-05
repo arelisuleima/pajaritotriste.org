@@ -17,6 +17,7 @@ export default function Navbar() {
             <a href="/contacto">Contacto</a>
           </li>
         </ul>
+        
       </div>
     </nav>
   );

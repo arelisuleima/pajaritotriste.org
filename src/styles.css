@@ -24,26 +24,79 @@
   --pagefind-ui-tag: #a5d8ff;
 }
 
-body.theme-blog {
-  background-color: #9d87b4;
-  color: #340e57;
+/* === CONTENEDOR PRINCIPAL === */
+.layout-container {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
 }
 
-/*Estilo para TODAS las tarjetas (sidebar y posts) */
-.sidebar-card,
-.post-card {
-  background-color: #d6b2fa;
-  border-radius: 10px; /* 8px */
-  box-shadow: 0 6px 9px 0px rgba(0, 0.2, 0.1, 0.5);
+/* === CONTENIDO PRINCIPAL === */
+.main-content {
+  flex: 1;
+ padding: 12px 24px;
 
-  /* Tailwind: rounded-lg shadow-md */
+}
+
+/* === SIDEBAR (FIJA A LA DERECHA) === */
+.sidebar {
+  width: 18rem; /* 288px */
+  background-color: rgba(61, 30, 82, 0.9); 
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+  
+ 
+}
+
+/* Avatar */
+.sidebar-avatar {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Título y textos */
+.sidebar-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-description {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-handle {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+/* Pie o widgets opcionales */
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Ajustes generales */
+.theme-blog {
+  background-color: #b7a4d4; /* color de fondo del cuerpo */
 }
 
 .navbar {
-  max-width: 950px;
+  
   margin: 10px auto; /* 🔹 centra y separa del borde superior */
-  background-color: rgba(61, 30, 82, 0.9); /* azul translúcido */
-  backdrop-filter: blur(6px); /* 🔹 efecto vidrio */
+  background-color: rgba(61, 30, 82, 0.9); 
+  
   display: flex;
   justify-content: center;
   align-items: center;
