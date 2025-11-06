@@ -33,72 +33,22 @@
 
 /* === CONTENIDO PRINCIPAL === */
 .main-content {
-  flex: 1;
- padding: 12px 24px;
+  flex: 2;
 
-}
-
-/* === SIDEBAR (FIJA A LA DERECHA) === */
-.sidebar {
-  width: 18rem; /* 288px */
-  background-color: rgba(61, 30, 82, 0.9); 
-  color: white;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
-  
- 
-}
-
-/* Avatar */
-.sidebar-avatar {
-  height: 7rem;
-  width: 7rem;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-/* Título y textos */
-.sidebar-title {
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin-bottom: 0.25rem;
-}
-
-.sidebar-description {
-  font-size: 0.9rem;
-  margin-bottom: 0.25rem;
-}
-
-.sidebar-handle {
-  font-size: 0.75rem;
-  opacity: 0.8;
-  margin-bottom: 1rem;
-}
-
-/* Pie o widgets opcionales */
-.sidebar-footer {
-  margin-top: auto;
-  font-size: 0.8rem;
-  opacity: 0.7;
+  padding: 12px 24px;
 }
 
 /* Ajustes generales */
 .theme-blog {
-  background-color: #b7a4d4; /* color de fondo del cuerpo */
+  background-color: #726488; /* color de fondo del cuerpo */
 }
 
 .navbar {
-  
   margin: 10px auto; /* 🔹 centra y separa del borde superior */
-  background-color: rgba(61, 30, 82, 0.9); 
-  
+  background-color: rgba(61, 30, 82, 0.9);
+
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
   border-radius: 60px; /* 🔹 bordes redondeados */
@@ -117,11 +67,20 @@
 
 .navbar-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   color: #e5e7eb;
   font-size: 0.9rem;
 }
 
 .navbar-links a:hover {
   color: #be8be0;
+}
+
+.navbar-logo {
+  width: 150px;
+  height: auto;
+  position: fixed; /* 👈 hace que se quede fija */
+  top: 10px; /* distancia desde arriba */
+  left: 15px; /* distancia desde la izquierda */
+  z-index: 1000; /* para que quede encima de la barra */
 }

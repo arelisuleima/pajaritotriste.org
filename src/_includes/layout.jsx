@@ -14,35 +14,17 @@ export default (data, _helpers) => {
         </head>
 
         <body class="theme-blog flex flex-col min-h-screen">
-          
           {/* === Contenedor principal === */}
+          {/* === Barra de navegación === */}
+          <Navbar />
           <div class="layout-container">
-            
             {/* === CONTENIDO PRINCIPAL === */}
+
             <main class="main-content">
-              {/* === Barra de navegación === */}
-              <Navbar />
+             
+
               {children}
             </main>
-
-            {/* === SIDEBAR FIJA A LA DERECHA === */}
-            <aside class="sidebar">
-              <div id="search"></div>
-              
-              <img
-                class="sidebar-avatar"
-                src="/logo-pajarito-rmv.png"
-                alt="Pajarito Triste"
-              />
-
-              <h2 class="sidebar-title">Pajarito Triste</h2>
-              <p class="sidebar-description">
-                {site?.tiny_desc || data.tiny_desc || "Mi pequeña descripción."}
-              </p>
-              <p class="sidebar-handle">@pajaritotriste</p>
-
-              <div class="sidebar-footer"></div>
-            </aside>
           </div>
         </body>
       </html>

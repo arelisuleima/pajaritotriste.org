@@ -76,6 +76,7 @@ site.use(tailwindcss());
 
 site.add("styles.css");
 site.add("public/pfp.jpg", "pfp.jpg");
+site.add("public/img", "img/");
 
 site.use(base_path());
 site.use(slugify_urls({
