@@ -12,7 +12,7 @@ export default function Navbar() {
             <a href="/">Inicio</a>
           </li>
           <li>
-            <a href="/about">Sobre mí</a>
+            <a href="/about">Acerca de</a>
           </li>
           <li>
             <a href="/proyectos">Proyectos</a>

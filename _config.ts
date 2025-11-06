@@ -77,6 +77,7 @@ site.use(tailwindcss());
 site.add("styles.css");
 site.add("public/pfp.jpg", "pfp.jpg");
 site.add("public/img", "img/");
+site.add("public/Areli_Arias_CV.pdf", "Areli_Arias_CV.pdf")
 
 site.use(base_path());
 site.use(slugify_urls({

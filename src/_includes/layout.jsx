@@ -20,9 +20,7 @@ export default (data, _helpers) => {
           <div class="layout-container">
             {/* === CONTENIDO PRINCIPAL === */}
 
-            <main class="main-content">
-             
-
+            <main class="main-content ">
               {children}
             </main>
           </div>
