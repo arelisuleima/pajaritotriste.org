@@ -9,7 +9,7 @@ type: page
   Notas de desarrollo, ideas y vuelos fallidos
   </h2>
 
-<p class="text-purple-900 leading-relaxed ">
+<p class= "cv-intro">
     Bienvenido/a </span>.
     Soy <strong class="text-blue-400 italic">Pajarito Triste</strong>, y este espacio es mi <strong>bitácora personal</strong> donde registro lo que aprendo, construyo y lo que me apasiona mientras sigo el vuelo del desarrollo.
     Aquí encontrarás una mezcla de <strong>experimentos técnicos</strong>, apuntes sobre mi camino en <strong>tecnología</strong>, guías de <strong>SQL</strong> y reflexiones sobre mis <strong>proyectos personales</strong>.

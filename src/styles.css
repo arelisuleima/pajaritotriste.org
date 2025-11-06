@@ -100,12 +100,13 @@
 
 .cv-title {
   font-size: 2rem;
+ 
   color: #4d006b;
   margin-bottom: 1rem;
 }
 
 .cv-intro {
-  background: #c5adeb;
+  background: #d6b2fa;
   padding: 1rem;
   border-radius: 12px;
   margin-bottom: 2rem;
@@ -123,11 +124,11 @@
   display: inline-block;
   margin-top: 0.8rem;
   padding: 0.6rem 1.2rem;
-  background-color: #52c7f5;
-  color: #2e1a47;
+  background-color: #06b2fb;
+  color: #ebe9ee;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
+  
 }
 
 .cv-button:hover {
