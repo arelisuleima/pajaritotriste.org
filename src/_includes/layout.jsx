@@ -14,13 +14,19 @@ export default (data, _helpers) => {
         </head>
 
         <body class="theme-blog flex flex-col min-h-screen">
-          {/* === Contenedor principal === */}
           {/* === Barra de navegación === */}
           <Navbar />
-          <div class="layout-container">
-            {/* === CONTENIDO PRINCIPAL === */}
 
-            <main class="main-content ">
+          {/* === CONTENEDOR PRINCIPAL === */}
+          <div class="layout-container flex flex-col items-center px-4">
+            
+            {/* === Barra de búsqueda === */}
+            <div id="search" class="w-full max-w-2xl my-6">
+             
+            </div>
+
+            {/* === CONTENIDO PRINCIPAL === */}
+            <main class="main-content w-full max-w-3xl">
               {children}
             </main>
           </div>

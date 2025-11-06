@@ -9,7 +9,7 @@ export default function About() {
         Acerca de
       </h1>
 
-      <section class="cv-intro space-y-4 leading-relaxed">
+      <section class="cv-intro  leading-relaxed">
    
         <p>
           Este espacio es un sitio dedicado a compartir mi recorrido, aprendizajes y experiencias  

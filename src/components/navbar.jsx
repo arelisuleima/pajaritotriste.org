@@ -22,7 +22,8 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-      
+       {/* === Barra de búsqueda (a la derecha) === */}
+     
     </nav>
   );
 }
