@@ -83,7 +83,7 @@
 .navbar-logo {
   width: 150px;
   height: auto;
-  position: fixed; /* 👈 hace que se quede fija */
+  position:static; /* 👈 hace que se quede fija */
   top: 10px; /* distancia desde arriba */
   left: 15px; /* distancia desde la izquierda */
   z-index: 1000; /* para que quede encima de la barra */
