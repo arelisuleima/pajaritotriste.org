@@ -14,22 +14,30 @@ export default (data, _helpers) => {
         </head>
 
         <body class="theme-blog flex flex-col min-h-screen">
-          {/* === Barra de navegación === */}
+
           <Navbar />
 
-          {/* === CONTENEDOR PRINCIPAL === */}
-          <div class="layout-container flex flex-col items-center px-4">
-            
-            {/* === Barra de búsqueda === */}
-            <div id="search" class="w-full max-w-2xl my-6">
+          {/* === CONTENEDOR GENERAL (sidebar + contenido) === */}
+          <div class="flex w-full">
+
+            {/* === SIDEBAR IZQUIERTO === */}
+            <aside class=" side-bar leading-relaxed">
+
+              {/* Barra de búsqueda */}
+              <div id="search" class="w-full mb-6"></div>
+
+              {/* aqui agrego lo de la sidebar*/}
              
-            </div>
+
+            </aside>
 
             {/* === CONTENIDO PRINCIPAL === */}
-            <main class="main-content w-full max-w-3xl">
+            <main class="flex-1 max-w-3xl mx-auto px-4 py-6">
               {children}
             </main>
+
           </div>
+
         </body>
       </html>
     </>

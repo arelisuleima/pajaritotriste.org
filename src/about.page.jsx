@@ -4,13 +4,13 @@ export const type = "page";
 
 export default function About() {
   return (
-    <main class="cv-section prose prose-invert max-w-none">
-      <h1 class="cv-title text-3xl font-bold text-purple-900 ">
-        Acerca de
-      </h1>
+    <main class=" prose prose-invert max-w-none">
+      
 
       <section class="cv-intro  leading-relaxed">
-   
+          <h1 class="cv-title sm:text-5xl text-3xl font-bold text-purple-900 ">
+        Acerca de
+      </h1>
         <p>
           Este espacio es un sitio dedicado a compartir mi recorrido, aprendizajes y experiencias  
           en el mundo del desarrollo de software.
@@ -58,8 +58,8 @@ export default function About() {
 
       {/* === Sección de contacto === */}
       <footer class="mt-10 text-center flex flex-col items-center gap-4">
-        <h3 class="text-lg font-semibold text-purple-950">
-          ✉️ Conecta conmigo
+        <h3 class="text-lg font-semibold text-purple-300">
+          Conecta conmigo
         </h3>
 
         <img
@@ -69,13 +69,13 @@ export default function About() {
           alt="Pajarito frente a la computadora"
         />
 
-        <p class="mt-1 text-blue-400 font-bold">
+        <p class="mt-1 text-blue-300 font-bold">
           <a href="mailto:contacto@pajaritotriste.org">
             contacto@pajaritotriste.org
           </a>
         </p>
 
-        <p class="text-sm text-gray-800 mt-4">
+        <p class="text-sm text-gray-300 mt-4">
           © 2025 Pajarito Triste. 
         </p>
       </footer>

@@ -2,7 +2,7 @@
 export default function Navbar() {
   return (
     <nav class="navbar">
-      <a href="/" class="navbar-logo">
+      <a href="/" class="w-35 ml-5 mt-5">
           <img src="/img/banner-inicio-rmv.png" />
         </a>
       <div class="navbar-container">

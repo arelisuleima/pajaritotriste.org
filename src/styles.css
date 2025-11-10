@@ -29,7 +29,7 @@
   display: flex;
   flex: 5;
   min-height: 100vh;
-  background-color: #f3e0f8;
+  background-color: #ffffff;
    margin: 10px ;
    border-radius: 60px; 
    
@@ -44,50 +44,37 @@
 
 /* Ajustes generales */
 .theme-blog {
-  background-color: #726488; /* color de fondo del cuerpo */
+  background-color: #f7f7f7;
 }
 
 .navbar {
-  margin: 10px auto; /* 🔹 centra y separa del borde superior */
-  background-color: rgba(61, 30, 82, 0.9);
-
+ 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
-  border-radius: 60px; /* 🔹 bordes redondeados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 🔹 sombra flotante */
-  padding: 0px;
+  align-items: left;
+ 
 }
 
 .navbar-container {
-  max-width: 1500px;
-  margin: 0 auto;
+  margin: 3px auto;
   padding: 1rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  
 }
 
 .navbar-links {
   display: flex;
   gap: 2rem;
-  color: #e5e7eb;
+  color: #575757;
   font-size: 0.9rem;
+  
 }
 
 .navbar-links a:hover {
-  color: #be8be0;
+  color: #a47cbe;
 }
 
-.navbar-logo {
-  width: 150px;
-  height: auto;
-  position:static; /* 👈 hace que se quede fija */
-  top: 10px; /* distancia desde arriba */
-  left: 15px; /* distancia desde la izquierda */
-  z-index: 1000; /* para que quede encima de la barra */
-}
+
+
 
 
 /* === CV=== */
@@ -136,3 +123,13 @@
 }
 
 
+.side-bar {
+  background: #a1d9f1;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 25px ;
+  width: 280px;        /* controla el ancho */
+  
+  overflow: hidden;    /* evita que el contenido salga */
+  
+}
