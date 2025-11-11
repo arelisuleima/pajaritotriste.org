@@ -21,10 +21,10 @@ export default (data, _helpers) => {
           <div class="flex w-full">
 
             {/* === SIDEBAR IZQUIERTO === */}
-            <aside class=" side-bar leading-relaxed">
+            <aside class=" side-bar ">
 
               {/* Barra de búsqueda */}
-              <div id="search" class="w-full mb-6"></div>
+              <div id="search" class=" mb-6"></div>
 
               {/* aqui agrego lo de la sidebar*/}
              

@@ -29,7 +29,7 @@
   display: flex;
   flex: 5;
   min-height: 100vh;
-  background-color: #ffffff;
+  
    margin: 10px ;
    border-radius: 60px; 
    
@@ -63,9 +63,10 @@
 
 .navbar-links {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   color: #575757;
   font-size: 0.9rem;
+ 
   
 }
 
@@ -93,7 +94,7 @@
 }
 
 .cv-intro {
-  background: #d6b2fa;
+  background: #dfc7f8;
   padding: 1rem;
   border-radius: 12px;
   margin-bottom: 2rem;
@@ -124,12 +125,12 @@
 
 
 .side-bar {
-  background: #a1d9f1;
+  
   padding: 1rem;
   border-radius: 12px;
   margin: 25px ;
-  width: 280px;        /* controla el ancho */
+  width: 280px; 
+ 
   
-  overflow: hidden;    /* evita que el contenido salga */
   
 }

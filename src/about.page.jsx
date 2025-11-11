@@ -11,13 +11,15 @@ export default function About() {
           <h1 class="cv-title sm:text-5xl text-3xl font-bold text-purple-900 ">
         Acerca de
       </h1>
-        <p>
+        <p class="mb-3" >
           Este espacio es un sitio dedicado a compartir mi recorrido, aprendizajes y experiencias  
           en el mundo del desarrollo de software.
+          
         </p>
 
         <p>
-          <strong>¿Qué encontrarás aquí?</strong>  
+          <b>¿Qué encontrarás aquí?</b>  
+          <br />
           Una recopilación de conocimientos y aprendizajees sobre  
           tecnología.  
           Entre los temas que abordo, se incluyen:
@@ -37,7 +39,7 @@ export default function About() {
             de observaciones y recomendaciones para otros desarrolladores.
           </li>
         </ul>
-
+<br />
         <p>
           <strong>¿Por qué “Pajarito Triste”?</strong>
         </p>
@@ -51,14 +53,15 @@ export default function About() {
         </p>
 
         <p>
+          <br />
           Gracias por visitar este espacio.  
-          Espero que encuentres aquí ideas e inspiración.
+          
         </p>
-      </section>
+      
 
       {/* === Sección de contacto === */}
       <footer class="mt-10 text-center flex flex-col items-center gap-4">
-        <h3 class="text-lg font-semibold text-purple-300">
+        <h3 class="text-lg font-semibold text-purple-950">
           Conecta conmigo
         </h3>
 
@@ -69,16 +72,18 @@ export default function About() {
           alt="Pajarito frente a la computadora"
         />
 
-        <p class="mt-1 text-blue-300 font-bold">
+        <p class="mt-1 text-blue-400 font-bold">
           <a href="mailto:contacto@pajaritotriste.org">
             contacto@pajaritotriste.org
           </a>
         </p>
 
-        <p class="text-sm text-gray-300 mt-4">
+        <p class="text-sm text-gray-200 mt-4">
           © 2025 Pajarito Triste. 
         </p>
       </footer>
+      </section>
     </main>
+    
   );
 }

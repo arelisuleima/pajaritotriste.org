@@ -12,7 +12,7 @@ export default (data, _helpers) => {
   return (
     // 2. Este <section> es lo que se inyectará en el 'children' del layout
     <section>
-      <h1 class="text-4xl font-bold mb-6">Últimas Entradas</h1>
+      <h1 class=" cv-intro text-4xl font-bold mb-6">Últimas Entradas</h1>
 
       {/* 3. Creamos un contenedor para todos los posts */}
       <div class="flex flex-col gap-6">
