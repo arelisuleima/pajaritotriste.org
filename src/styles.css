@@ -29,10 +29,9 @@
   display: flex;
   flex: 5;
   min-height: 100vh;
-  
-   margin: 10px ;
-   border-radius: 60px; 
-   
+
+  margin: 10px;
+  border-radius: 60px;
 }
 
 /* === CONTENIDO PRINCIPAL === */
@@ -48,17 +47,14 @@
 }
 
 .navbar {
- 
   display: flex;
   align-items: left;
- 
 }
 
 .navbar-container {
   margin: 3px auto;
   padding: 1rem;
   display: flex;
-  
 }
 
 .navbar-links {
@@ -66,17 +62,11 @@
   gap: 4rem;
   color: #575757;
   font-size: 0.9rem;
- 
-  
 }
 
 .navbar-links a:hover {
   color: #a47cbe;
 }
-
-
-
-
 
 /* === CV=== */
 .cv-section {
@@ -88,7 +78,7 @@
 
 .cv-title {
   font-size: 2rem;
- 
+
   color: #4d006b;
   margin-bottom: 1rem;
 }
@@ -101,7 +91,6 @@
 }
 
 .cv-download {
-  
   padding: 1rem;
   border-radius: 12px;
   text-align: center;
@@ -116,22 +105,17 @@
   color: #ebe9ee;
   border-radius: 8px;
   text-decoration: none;
-  
 }
 
 .cv-button:hover {
   background-color: #6879c4;
 }
 
-
 .side-bar {
   background-color: #a5d8ff;
   padding: 1rem;
   border-radius: 12px;
-  margin: 25px ;
-  width: 280px; 
+  margin: 25px;
+  width: 280px;
   height: 900px;
- 
-  
-  
 }

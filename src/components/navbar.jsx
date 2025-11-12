@@ -3,10 +3,9 @@ export default function Navbar() {
   return (
     <nav class="navbar">
       <a href="/" class="w-35 ml-5 mt-5">
-          <img src="/img/banner-inicio-rmv.png" />
-        </a>
+        <img src="/img/banner-inicio-rmv.png" />
+      </a>
       <div class="navbar-container">
-        
         <ul class="navbar-links">
           <li>
             <a href="/">Inicio</a>
@@ -22,8 +21,7 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-       {/* === Barra de búsqueda (a la derecha) === */}
-     
+      {/* === Barra de búsqueda (a la derecha) === */}
     </nav>
   );
 }
