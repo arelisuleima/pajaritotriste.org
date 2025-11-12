@@ -78,7 +78,7 @@ export default function About() {
           </a>
         </p>
 
-        <p class="text-sm text-gray-200 mt-4">
+        <p class="text-sm text-white mt-4">
           © 2025 Pajarito Triste. 
         </p>
       </footer>

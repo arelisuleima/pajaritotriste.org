@@ -27,6 +27,8 @@ export default function Cv() {
         >
           📄 Ver CV en PDF
         </a>
+
+         
       </section>
 
     </main>

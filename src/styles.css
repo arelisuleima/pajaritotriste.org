@@ -125,11 +125,12 @@
 
 
 .side-bar {
-  
+  background-color: #a5d8ff;
   padding: 1rem;
   border-radius: 12px;
   margin: 25px ;
   width: 280px; 
+  height: 900px;
  
   
   
