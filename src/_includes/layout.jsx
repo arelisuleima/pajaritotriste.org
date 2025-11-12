@@ -1,4 +1,5 @@
 import Navbar from "../components/navbar.jsx";
+import CuriousBox from "../components/curiousBox.jsx";
 
 export default (data, _helpers) => {
   const { title, children, lang, site } = data;
@@ -26,8 +27,8 @@ export default (data, _helpers) => {
               {/* Barra de búsqueda */}
               <div id="search" class=" mb-6"></div>
 
-              {/* aqui agrego lo de la sidebar*/}
-             
+              {/* Componente de datos curiosos */}
+              <CuriousBox />
 
             </aside>
 
