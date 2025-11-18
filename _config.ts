@@ -20,6 +20,8 @@ import lang_typescript from "highlight.js/lib/languages/typescript";
 import lang_sql from "highlight.js/lib/languages/sql";
 import lang_python from "highlight.js/lib/languages/python";
 
+import search from "lume/plugins/search.ts";
+
 const site: Site = lume({
   src: "./src",
   dest: "./output",
@@ -98,5 +100,6 @@ site.use(slugify_urls({
 site.use(feed());
 site.use(sitemap());
 site.use(seo());
+site.use(search());
 
 export default site;

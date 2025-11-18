@@ -3,6 +3,8 @@ title: "El mundo invisible de los datos"
 type: "post"
 draft: false
 layout: "layout.jsx"
+tags: posts
+
 ---
 
 <section class="cv-intro leading-relaxed">
