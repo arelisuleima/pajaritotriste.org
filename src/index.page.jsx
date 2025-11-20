@@ -3,11 +3,16 @@
 export const title = "Pajarito Triste"; // El título de esta página en específico
 export const layout = "layout.jsx"; // Le dice a Lume que use tu layout
 
-// 'data' contiene todo: search, site, etc.
+/**
+ * El cuerpo de la página principal, aquí se obtienen todos los datos
+ * primero.
+ * 
+ * @param {Lume.Data} data - Los datos del sitio.
+ */
 export default (data, _helpers) => {
-  // 1. Usamos data.search para buscar todas las páginas
-  //    que tengan la etiqueta "posts"
-  const posts = data.search.pages("tags=posts", "date=desc");
+
+  /** @type {import("lume/core/file.ts").Data[]} */
+  const posts = data.search.pages("type=post", "date=desc");
 
   return (
     // 2. Este <section> es lo que se inyectará en el 'children' del layout
@@ -21,18 +26,18 @@ export default (data, _helpers) => {
           <article class="post-card p-6">
             {/* Título del Post */}
             <h2 class="text-2xl font-bold mb-2">
-              <a href={post.data.url} class="post-title-link">
-                {post.data.title}
+              <a href={post.url} class="post-title-link">
+                {post.title}
               </a>
             </h2>
 
             {/* Descripción/Extracto del Post */}
             <p class="text-base mb-4">
-              {post.data.description || "Seguir leyendo..."}
+              {post.description || "Seguir leyendo..."}
             </p>
 
             {/* Enlace de "Leer más" */}
-            <a href={post.data.url} class="read-more-link">
+            <a href={post.url} class="read-more-link">
               Leer más &rarr;
             </a>
           </article>
