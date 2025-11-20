@@ -3,7 +3,9 @@ title: "Post prueba 2"
 type: "post"
 draft: false
 layout: "layout.jsx"
-tags: "posts"
+tags:
+  - posts
+  - pruebas
 date: 2024-11-20
 description: "Un post sobre datos"
 ---
