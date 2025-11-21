@@ -34,7 +34,7 @@ export default (data, _helpers) => {
             </aside>
 
             {/* === CONTENIDO PRINCIPAL === */}
-            <main class="flex-1 max-w-3xl mx-auto px-4 py-6">
+            <main class="flex-1 max-w-3xl mx-auto px-4 py-6 prose">
               {children}
             </main>
           </div>

@@ -10,7 +10,7 @@ export default (data, _helpers) => {
 
   return (
     <section>
-      <h1 class="cv-intro text-4xl font-bold mb-6">Últimas Entradas</h1>
+      
 
       {/* GRID DE TARJETAS */}
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
