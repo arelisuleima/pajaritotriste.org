@@ -22,7 +22,6 @@ Y La clave de este mecanismo reside en los **datos**.
 
 Cada interacción que tenemos con un dispositivo o servicio digital deja una huella ya sea una coordenada, una preferencia, una palabra o incluso un clic. Individualmente, estos son fragmentos simples, pero en conjunto componen un retrato detallado de nuestra realidad y comportamiento.
 
-Cada acción que realizamos deja una huella: un número, una palabra, una coordenada, una preferencia, o incluso un clic. Son piezas pequeñas de información que, cuando se separan, parecen simples, pero que en conjunto forman un retrato complejo de la realidad. 
 Los datos son, en esencia, el lenguaje que las máquinas entienden. Son la materia prima que alimenta aplicaciones, plataformas y servicios. Cuando buscas una canción, el sistema realmente no “sabe” lo que quieres en términos humanos; lo que interpreta son datos: el título escrito, tu historial de búsquedas o tus preferencias anteriores. Todo se traduce en información que puede ser procesada y devuelta en forma de resultados. Lo emocionante es que estos datos no solo hacen que la tecnología funcione si no que también trazan nuestra historia digital. Revelan patrones de comportamiento, anticipan nuestras necesidades y permiten que los servicios se adapten completamente a nosotros. 
 Si nos ponemos a pensar realmente compartimos información sensible de forma inconsciente, como si fuera parte natural de vivir conectados. Aceptamos términos y condiciones sin leerlos, damos acceso a nuestra ubicación, compartimos fotos, gustos, opiniones, y todo eso se convierte en datos que viajan y se almacenan cada segundo. 
 
@@ -43,7 +42,6 @@ Las bases de datos deben garantizar tres atributos esenciales:
 
 Las bases de datos son el corazón operativo que convierte millones de fragmentos dispersos en algo útil y manejable en tiempo real. Por ejemplo, cuando realizas una compra online, el sistema debe garantizar que tu saldo se reste y el inventario del producto se actualice simultáneamente; sin esta gestión rigurosa, se generaría un caos financiero y logístico.
 
-Se podría decir que almacenan todo, desde tus *playlists* hasta los registros médicos o las operaciones financieras críticas, funcionando 24/7 para garantizar que la información esté disponible y que todo fluya en segundos.
 
 ---
 
