@@ -9,52 +9,81 @@ export default (data, _helpers) => {
   const posts = data.search.pages("type=post", "date=desc");
 
   return (
-    <section>
-      <h1 class="cv-intro text-4xl font-bold mb-6">Últimas Entradas</h1>
+    <main>
+      {/* 🐦 SECCIÓN 1: BANNER PRINCIPAL (HERO SECTION) */}
+      <section class=" p-4 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400">
+        <h1 class="text-4xl  text-purple-900 mb-4 leading-tight">
+          Hola
+        </h1>
+        <p class="text-x0 text-purple-900 mb-4">
+          Este espacio nace con la intención de transformar la manera en que
+          aprendemos y comprendemos el mundo de los datos. Aquí encontrarás
+          explicaciones precisas y recursos visuales diseñados para que cada
+          concepto sea claro, práctico y aplicable. La meta es sencilla: que
+          cada visita te acerque un paso más a dominar el lenguaje de los datos.
+        </p>
+        {/* Puedes añadir un botón para una página "Sobre mí" si existe */}
+        <a
+          href="/about"
+          class="inline-block px-6 py-3 bg-[#06b2fb] text-blue-100 font-semibold rounded-lg hover:bg-blue-500 transition duration-300 shadow-md"
+        >
+          Conoce más sobre pajaritotriste
+        </a>
+      </section>
 
-      {/* GRID DE TARJETAS */}
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* --- */}
 
-        {posts.map((post) => (
-          <article class="p-6 rounded-xl shadow-md bg-yellow-200 border border-gray-200 transition hover:shadow-lg">
-            
-            {/* Título */}
-            <h2 class="text-xl font-bold mb-2">
-              <a href={post.url} class="hover:underline">
-                {post.title}
-              </a>
-            </h2>
+      {/* 📰 SECCIÓN 2: ÚLTIMAS ENTRADAS */}
+      <section>
+        <h2 class="text-3xl text-gray-800">
+          Últimas Entradas
+        </h2>
 
-            {/* Descripción del post */}
-            <p class="text-gray-700 mb-4">
-              {post.description || "Seguir leyendo..."}
-            </p>
+        {/* GRID DE TARJETAS */}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((post) => (
+            // Tarjeta de Post con mejoras visuales
+            <article class="p-6 rounded-xl shadow-lg bg-yellow-100 border-2 border-yellow-500 transition transform hover:shadow-xl hover:-translate-y-1 duration-300">
+              {/* Título */}
+              <h3 class="text-2xl font-bold text-gray-900 mb-1">
+                <a href={post.url} class="hover:text-yellow-600 transition">
+                  {post.title}
+                </a>
+              </h3>
 
-            {/* Fecha si existe */}
-            {post.date && (
-              <p class="text-sm text-gray-500 mb-3">
-                📅 {new Date(post.date).toLocaleDateString("es-MX", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+              {/* Descripción del post */}
+              <p class="text-gray-700 mb-4 line-clamp-3">
+                {post.description || "Seguir leyendo..."}
               </p>
-            )}
 
-            {/* Botón leer más */}
-            <a
-              href={post.url}
-              class="text-blue-600 font-semibold hover:underline"
-            >
-              Leer más →
-            </a>
-          </article>
-        ))}
+              {/* Fecha si existe */}
+              {post.date && (
+                <p class="text-sm text-gray-500 mb-3">
+                  📅 {new Date(post.date).toLocaleDateString("es-MX", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+              )}
 
-        {posts.length === 0 && (
-          <p>Aún no hay publicaciones. ¡Vuelve pronto!</p>
-        )}
-      </div>
-    </section>
+              {/* Botón leer más */}
+              <a
+                href={post.url}
+                class="inline-flex items-center text-yellow-600 font-bold hover:text-yellow-700 transition"
+              >
+                Leer más...
+              </a>
+            </article>
+          ))}
+
+          {posts.length === 0 && (
+            <p class="col-span-full text-center text-gray-500 italic p-10 bg-gray-50 rounded-lg">
+              Aún no hay publicaciones. ¡Vuelve pronto!
+            </p>
+          )}
+        </div>
+      </section>
+    </main>
   );
 };

@@ -10,14 +10,10 @@ export default (data, _helpers) => {
 
   return (
     <section>
-      
-
       {/* GRID DE TARJETAS */}
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
         {posts.map((post) => (
           <article class="p-6 rounded-xl shadow-md bg-yellow-200 border border-gray-200 transition hover:shadow-lg">
-            
             {/* Título */}
             <h2 class="text-xl font-bold mb-2">
               <a href={post.url} class="hover:underline">
@@ -51,9 +47,7 @@ export default (data, _helpers) => {
           </article>
         ))}
 
-        {posts.length === 0 && (
-          <p>Aún no hay publicaciones. ¡Vuelve pronto!</p>
-        )}
+        {posts.length === 0 && <p>Aún no hay publicaciones. ¡Vuelve pronto!</p>}
       </div>
     </section>
   );
