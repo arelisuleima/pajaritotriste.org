@@ -4,3 +4,4 @@ _cache
 output
 node_modules
 vendor
+drafts/*.md

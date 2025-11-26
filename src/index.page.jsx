@@ -1,3 +1,5 @@
+import { BlogTags } from "./components/blogTags.jsx";
+
 export const title = "Pajarito Triste";
 export const layout = "layout.jsx";
 
@@ -74,6 +76,10 @@ export default (data, _helpers) => {
               >
                 Leer más...
               </a>
+
+              <div className="container">
+                <BlogTags tags={post.tags} />
+              </div>
             </article>
           ))}
 

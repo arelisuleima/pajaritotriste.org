@@ -6,6 +6,7 @@ layout: "layout.jsx"
 tags:
   - posts
   - pruebas
+  - sql
 date: 2024-11-20
 description: "Introducción a SQL"
 ---
