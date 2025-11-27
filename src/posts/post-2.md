@@ -2,7 +2,7 @@
 title: "SQL Zero to Hero"
 type: "post"
 draft: false
-layout: "layout.jsx"
+layout: "postLayout.jsx"
 tags:
   - posts
   - pruebas
@@ -11,9 +11,7 @@ date: 2024-11-20
 description: "Introducción a SQL"
 ---
 
-<section class="cv-intro ">
 
-# SQL Zero to Hero 🏛️
 
 <img src="/img/zero-to-hero.png" alt="Hércules con el logo de SQL" style="float: right; width: 50%; margin-left: 15px;">
 
@@ -283,4 +281,4 @@ modificarla y controlar quién tiene acceso a ella**.\
 Son las bases que todo héroe de SQL necesita dominar antes de avanzar hacia
 retos más complejos.
 
-</section>
+
