@@ -7,9 +7,7 @@ tags: posts
 description: "La estructura detrás de la tecnología cotidiana"
 ---
 
-
-
-##  La estructura detrás de la tecnología cotidiana
+## La estructura detrás de la tecnología cotidiana
 
 Vivimos en una era definida por la inmediatez y el flujo constante de
 información. Abrimos una aplicación, enviamos un mensaje, realizamos un pago o
@@ -136,5 +134,3 @@ actualizar o eliminar registros.
 Al final, no solo tendrás la capacidad de leer los datos que sostienen el mundo
 digital, sino también de construir y transformar la información que mueve el
 **mundo invisible de los datos**.
-
-

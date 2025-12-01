@@ -4,63 +4,102 @@ export const type = "page";
 
 export default function About() {
   return (
-    <main class=" prose prose-invert max-w-none">
-      <section class="cv-intro  leading-relaxed">
-        <h1 class="cv-title sm:text-5xl text-3xl font-bold text-purple-900 ">
-          Acerca de
+    <main class="max-w-none p-4">
+      <section class="p-6 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400">
+
+        {/* === TÍTULO PRINCIPAL === */}
+        <h1 class="text-3xl sm:text-5xl font-bold text-purple-900 mb-6">
+          Acerca de 
         </h1>
-        <p class="mb-3">
-          Este espacio es un sitio dedicado a compartir mi recorrido,
-          aprendizajes y experiencias en el mundo del desarrollo de software.
+
+        {/* === INTRO COMO README === */}
+        <p class="mb-4 leading-relaxed">
+          <span class="font-semibold">Pajarito Triste</span> es un proyecto
+          creado con la intención de acercar a más personas al mundo de los datos,
+          la tecnología y el desarrollo de software. A través de publicaciones,
+          guías, reflexiones y ejemplos prácticos, busco explicar cómo funcionan
+          los datos en el entorno digital de forma clara, accesible y sin
+          tecnicismos innecesarios.
         </p>
+
+        <p class="mb-4 leading-relaxed">
+          Mi propósito es demostrar que aprender sobre tecnología no tiene que
+          ser complicado. Entender bases de datos, programación o infraestructura
+          puede ser parte de la vida diaria, y este sitio existe para acompañar
+          ese aprendizaje, compartir mi experiencia profesional y documentar mi
+          propio camino como desarrolladora.
+        </p>
+
+    
+
+        {/* === TECNOLOGÍAS UTILIZADAS === */}
+        <h2 class="text-2xl font-bold text-purple-800 mt-10">
+          Tecnologías utilizadas
+        </h2>
+        <p class="mb-2">
+          Este sitio está construido con un stack moderno y minimalista, pensado
+          para ser rápido, mantenible y completamente abierto:
+        </p>
+        <div class="flex flex-wrap gap-3">
+    <img src="https://img.shields.io/badge/Lume-0A84FF?style=for-the-badge&logo=lightning&logoColor=white" alt="Lume" />
+    <img src="https://img.shields.io/badge/Deno-000000?style=for-the-badge&logo=deno&logoColor=white" alt="Deno" />
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+    <img src="https://img.shields.io/badge/TailwindCSS-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+    
+  </div>
+
+        <ul class=" pl-6 space-y-1">
+          <li>
+            <span class="font-semibold">Lume</span> – generador de sitio
+            estático enfocado en simplicidad.
+          </li>
+          <li>
+            <span class="font-semibold">Deno</span> – runtime seguro, moderno y
+            con soporte nativo para TypeScript.
+          </li>
+          <li>
+            <span class="font-semibold">JavaScript</span> – lógica general del
+            sitio y componentes.
+          </li>
+          <li>
+            <span class="font-semibold">Tailwind CSS</span> – framework para el
+            estilo visual, sin necesidad de CSS adicional.
+          </li>
+          
+        </ul>
+        
+
+        {/* === LICENCIA === */}
+        <h2 class="text-2xl font-bold text-purple-800 mt-10">
+          Licencia del proyecto
+        </h2>
 
         <p>
-          <b>¿Qué encontrarás aquí?</b>
-          <br />
-          Una recopilación de conocimientos y aprendizajees sobre tecnología.
-          Entre los temas que abordo, se incluyen:
+          Este sitio se distribuye bajo la{" "}
+          <span class="font-semibold">AGPL-3.0 License</span>. Esto garantiza
+          que:
         </p>
 
-        <ul class="list-disc pl-6 space-y-2">
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+          <li>El código fuente se mantiene abierto.</li>
           <li>
-            🧠 <strong>Apuntes y notas técnicas</strong>{" "}
-            sobre las herramientas y lenguajes que he aprendido y continúo
-            perfeccionando.
+            Cualquier mejora o versión modificada debe compartirse también con la
+            comunidad.
           </li>
           <li>
-            ⚙️{" "}
-            <strong>Guías y consejos prácticos de SQL</strong>, desde los
-            fundamentos hasta consultas avanzadas y soluciones útiles para el
-            día a día.
-          </li>
-          <li>
-            📘{" "}
-            <strong>Documentación y análisis de proyectos personales</strong>,
-            acompañados de observaciones y recomendaciones para otros
-            desarrolladores.
+            Los usuarios tienen derecho a estudiar, modificar y redistribuir el
+            proyecto.
           </li>
         </ul>
-        <br />
-        <p>
-          <strong>¿Por qué “Pajarito Triste”?</strong>
+
+        <p class="mt-6 leading-relaxed">
+          Gracias por visitar este espacio. Espero que encuentres contenido útil,
+          interesante o que te inspire a seguir aprendiendo más sobre tecnología.
         </p>
 
-        <p>
-          El nombre simboliza la perseverancia frente a la frustración y
-          recuerda que{" "}
-          <strong>cada error también forma parte del aprendizaje</strong>. Es un
-          toque de honestidad y melancolía que refleja la naturaleza constante
-          de quien sigue intentando mejorar día a día.
-        </p>
-
-        <p>
-          <br />
-          Gracias por visitar este espacio.
-        </p>
-
-        {/* === Sección de contacto === */}
+        {/* === CONTACTO === */}
         <footer class="mt-10 text-center flex flex-col items-center gap-4">
-          <h3 class="text-lg font-semibold text-purple-950">
+          <h3 class="text-lg font-semibold text-purple-800">
             Conecta conmigo
           </h3>
 
@@ -69,15 +108,17 @@ export default function About() {
             width="150"
             height="100"
             alt="Pajarito frente a la computadora"
+            class="rounded-lg"
           />
 
-          <p class="mt-1 text-blue-400 font-bold">
-            <a href="mailto:contacto@pajaritotriste.org">
-              contacto@pajaritotriste.org
-            </a>
-          </p>
+          <a
+            href="mailto:contacto@pajaritotriste.org"
+            class="mt-1 text-blue-500 font-medium hover:text-blue-400 transition"
+          >
+            contacto@pajaritotriste.org
+          </a>
 
-          <p class="text-sm text-white mt-4">
+          <p class="text-sm text-blue-400 mt-4">
             © 2025 Pajarito Triste.
           </p>
         </footer>
@@ -85,3 +126,4 @@ export default function About() {
     </main>
   );
 }
+

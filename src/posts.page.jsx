@@ -1,35 +1,36 @@
 export const title = "Pajarito Triste";
 export const layout = "layout.jsx";
 
-/**
- * Página principal: muestra los posts más recientes
- * @param {Lume.Data} data
- */
 export default (data, _helpers) => {
   const posts = data.search.pages("type=post", "date=desc");
 
   return (
-    <section>
-      {/* GRID DE TARJETAS */}
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+     <section class="p-6 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400">
+     <h1 class="text-2xl sm:text-4xl font-bold text-purple-900 mb-6">
+          Publicaciones
+        </h1>
+
+      {/* LISTA DE POSTS */}
+      <ul class="space-y-6">
         {posts.map((post) => (
-          <article class="p-6 rounded-xl shadow-md bg-yellow-200 border border-gray-200 transition hover:shadow-lg">
-            {/* Título */}
-            <h2 class="text-xl font-bold mb-2">
-              <a href={post.url} class="hover:underline">
+          <li class="border-b border-purple-500 pb-6">
+            {/* Título del post */}
+            <h2 class="text-2xl font-semibold mb-2">
+              <a href={post.url} class="hover:underline text-blue-700">
                 {post.title}
               </a>
             </h2>
 
-            {/* Descripción del post */}
-            <p class="text-gray-700 mb-4">
+            {/* Descripción */}
+            <p class="text-gray-700 mb-3">
               {post.description || "Seguir leyendo..."}
             </p>
 
-            {/* Fecha si existe */}
+            {/* Fecha */}
             {post.date && (
               <p class="text-sm text-gray-500 mb-3">
-                📅 {new Date(post.date).toLocaleDateString("es-MX", {
+                📅{" "}
+                {new Date(post.date).toLocaleDateString("es-MX", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
@@ -37,18 +38,18 @@ export default (data, _helpers) => {
               </p>
             )}
 
-            {/* Botón leer más */}
+            {/* Leer más */}
             <a
               href={post.url}
               class="text-blue-600 font-semibold hover:underline"
             >
               Leer más →
             </a>
-          </article>
+          </li>
         ))}
 
-        {posts.length === 0 && <p>Aún no hay publicaciones. ¡Vuelve pronto!</p>}
-      </div>
+        {posts.length === 0 && <p>No hay publicaciones todavía.</p>}
+      </ul>
     </section>
   );
 };

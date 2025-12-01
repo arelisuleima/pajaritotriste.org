@@ -11,8 +11,6 @@ date: 2024-11-20
 description: "Introducción a SQL"
 ---
 
-
-
 <img src="/img/zero-to-hero.png" alt="Hércules con el logo de SQL" style="float: right; width: 50%; margin-left: 15px;">
 
 Inspirado en la canción de Hércules, esta sección busca llevarte **de cero a
@@ -280,5 +278,3 @@ Con estos comandos ya puedes **crear una tabla, llenarla con información,
 modificarla y controlar quién tiene acceso a ella**.\
 Son las bases que todo héroe de SQL necesita dominar antes de avanzar hacia
 retos más complejos.
-
-

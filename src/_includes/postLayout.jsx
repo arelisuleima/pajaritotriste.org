@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar.jsx";
 import CuriousBox from "../components/curiousBox.jsx";
 import IconsMedia from "../components/iconsMedia.jsx";
-import { BlogTags } from "../components/blogTags.jsx"; 
+import { BlogTags } from "../components/blogTags.jsx";
 
 export default (data, _helpers) => {
   // Desestructuramos todos los datos necesarios del post
@@ -32,8 +32,7 @@ export default (data, _helpers) => {
           <Navbar />
 
           {/* === CONTENEDOR GENERAL (sidebar + contenido) === */}
-          <div className="flex w-full"> 
-            
+          <div className="flex w-full">
             {/* === SIDEBAR IZQUIERDO (Copiado de layout.jsx) === */}
             <aside className="side-bar">
               {/* Barra de búsqueda */}
@@ -49,36 +48,31 @@ export default (data, _helpers) => {
 
             {/* === CONTENIDO PRINCIPAL DEL POST === */}
             <main className=" cv-intro flex-1 max-w-4xl mx-auto px-4 py-8">
-                
-                <article className="prose lg:prose-xl mx-auto">
-                    
-                    {/* 🏷️ Metadatos y Título del Post */}
-                    <header className="mb-8 border-b pb-4 border-purple-900">
-                      <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
-                        {title}
-                      </h1>
-                      
-                      {date && (
-                        <p className="text-lg text-gray-500">
-                          Publicado el: <strong>{formatDate(date)}</strong>
-                        </p>
-                      )}
-                      
-                      {/* INCLUSIÓN DE TAGS */}
-                      <div className="mt-4">
-                          {/* Renderiza tags solo si el array existe */}
-                          {tags && <BlogTags tags={tags} />}
-                      </div>
+              <article className="prose lg:prose-xl mx-auto">
+                {/* 🏷️ Metadatos y Título del Post */}
+                <header className="mb-8 border-b pb-4 border-purple-900">
+                  <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
+                    {title}
+                  </h1>
 
-                    </header>
+                  {date && (
+                    <p className="text-lg text-gray-500">
+                      Publicado el: <strong>{formatDate(date)}</strong>
+                    </p>
+                  )}
 
-                    {/* 📦 Contenido del Post (viene del Markdown/MDX) */}
-                    {children}
+                  {/* INCLUSIÓN DE TAGS */}
+                  <div className="mt-4">
+                    {/* Renderiza tags solo si el array existe */}
+                    {tags && <BlogTags tags={tags} />}
+                  </div>
+                </header>
 
-                </article>
+                {/* 📦 Contenido del Post (viene del Markdown/MDX) */}
+                {children}
+              </article>
             </main>
           </div>
-
         </body>
       </html>
     </>

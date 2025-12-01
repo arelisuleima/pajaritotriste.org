@@ -16,9 +16,9 @@ export const BlogTags = ({ tags }) => {
       {/* Usar 'tags?.map' es recomendable si vuelves a tener el error */}
       {tags?.map((tag) => (
         // Mantengo tu span original, pero añado 'key' para evitar advertencias de React
-        <span class="inline-block" key={tag}> 
-          <a 
-            href={tagUrl(tag)} 
+        <span class="inline-block" key={tag}>
+          <a
+            href={tagUrl(tag)}
             // 👈 CLASES AGREGADAS AQUÍ para estilo y eliminar subrayado
             class="bg-blue-100 text-blue-900 border border-[#06b2fb] no-underline rounded px-2 py-1 text-xs font-medium hover:bg-[#06b2fb] transition"
           >
