@@ -1,3 +1,5 @@
+{/*PÁGINA DE POSTS: Se visualiza la lista de posts publicados */}
+
 export const title = "Pajarito Triste";
 export const layout = "layout.jsx";
 
@@ -5,10 +7,10 @@ export default (data, _helpers) => {
   const posts = data.search.pages("type=post", "date=desc");
 
   return (
-     <section class="p-6 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400">
-     <h1 class="text-2xl sm:text-4xl font-bold text-purple-900 mb-6">
-          Publicaciones
-        </h1>
+    <section class="p-6 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400">
+      <h1 class="text-2xl sm:text-4xl font-bold text-purple-900 mb-6">
+        Publicaciones
+      </h1>
 
       {/* LISTA DE POSTS */}
       <ul class="space-y-6">
@@ -29,8 +31,7 @@ export default (data, _helpers) => {
             {/* Fecha */}
             {post.date && (
               <p class="text-sm text-gray-500 mb-3">
-                📅{" "}
-                {new Date(post.date).toLocaleDateString("es-MX", {
+                📅 {new Date(post.date).toLocaleDateString("es-MX", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",

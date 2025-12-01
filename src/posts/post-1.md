@@ -3,9 +3,13 @@ title: "El mundo invisible de los datos"
 type: "post"
 draft: false
 layout: "postLayout.jsx"
-tags: posts
+tags:
+  - SQL
+  - Datos
 description: "La estructura detrás de la tecnología cotidiana"
 ---
+
+<img src="/img/chico-phone.png" alt="Chico con celular en la mano" style="float: right; width: 30%; margin-left: 15px;">
 
 ## La estructura detrás de la tecnología cotidiana
 
@@ -25,19 +29,25 @@ huella ya sea una coordenada, una preferencia, una palabra o incluso un clic.
 Individualmente, estos son fragmentos simples, pero en conjunto componen un
 retrato detallado de nuestra realidad y comportamiento.
 
+## Los datos: el lenguaje invisible de la tecnología
+
+<img src="/img/chico-datos.png" alt="Chico con celular en la mano" style="float: left; width: 30%; margin-right: 15px;">
+
 Los datos son, en esencia, el lenguaje que las máquinas entienden. Son la
 materia prima que alimenta aplicaciones, plataformas y servicios. Cuando buscas
 una canción, el sistema realmente no “sabe” lo que quieres en términos humanos;
 lo que interpreta son datos: el título escrito, tu historial de búsquedas o tus
-preferencias anteriores. Todo se traduce en información que puede ser procesada
-y devuelta en forma de resultados. Lo emocionante es que estos datos no solo
-hacen que la tecnología funcione si no que también trazan nuestra historia
-digital. Revelan patrones de comportamiento, anticipan nuestras necesidades y
-permiten que los servicios se adapten completamente a nosotros. Si nos ponemos a
-pensar realmente compartimos información sensible de forma inconsciente, como si
-fuera parte natural de vivir conectados. Aceptamos términos y condiciones sin
-leerlos, damos acceso a nuestra ubicación, compartimos fotos, gustos, opiniones,
-y todo eso se convierte en datos que viajan y se almacenan cada segundo.
+preferencias anteriores.
+
+Todo se traduce en información que puede ser procesada y devuelta en forma de
+resultados. Lo emocionante es que estos datos no solo hacen que la tecnología
+funcione si no que también trazan nuestra historia digital. Revelan patrones de
+comportamiento, anticipan nuestras necesidades y permiten que los servicios se
+adapten completamente a nosotros. Si nos ponemos a pensar realmente compartimos
+información sensible de forma inconsciente, como si fuera parte natural de vivir
+conectados. Aceptamos términos y condiciones sin leerlos, damos acceso a nuestra
+ubicación, compartimos fotos, gustos, opiniones, y todo eso se convierte en
+datos que viajan y se almacenan cada segundo.
 
 En resumidas palabras gracias a nuestros datos, recibimos recomendaciones
 personalizadas,realizamos transacciones seguras y disfrutamos de experiencias
@@ -70,6 +80,8 @@ se generaría un caos financiero y logístico.
 ---
 
 ## El próximo paso: Comprender la estructura con SQL
+
+<img src="/img/sql.png" alt="Icono de SQL" style="float: right; width: 30%; margin-left: 15px;">
 
 Entender cómo funcionan las bases de datos no significa únicamente admirar la
 tecnología detrás de ellas, sino adquirir las herramientas que nos permiten

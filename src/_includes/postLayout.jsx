@@ -27,13 +27,12 @@ export default (data, _helpers) => {
           <link rel="stylesheet" href="/styles.css" />
         </head>
 
-        {/* 🛠️ CORRECCIÓN: Usar className */}
         <body className="theme-blog flex flex-col min-h-screen">
           <Navbar />
 
           {/* === CONTENEDOR GENERAL (sidebar + contenido) === */}
           <div className="flex w-full">
-            {/* === SIDEBAR IZQUIERDO (Copiado de layout.jsx) === */}
+            {/* === SIDEBAR  === */}
             <aside className="side-bar">
               {/* Barra de búsqueda */}
               <div id="search" className="mb-6"></div>
@@ -49,7 +48,7 @@ export default (data, _helpers) => {
             {/* === CONTENIDO PRINCIPAL DEL POST === */}
             <main className=" cv-intro flex-1 max-w-4xl mx-auto px-4 py-8">
               <article className="prose lg:prose-xl mx-auto">
-                {/* 🏷️ Metadatos y Título del Post */}
+                {/*  Metadatos y Título del Post */}
                 <header className="mb-8 border-b pb-4 border-purple-900">
                   <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
                     {title}
@@ -68,7 +67,7 @@ export default (data, _helpers) => {
                   </div>
                 </header>
 
-                {/* 📦 Contenido del Post (viene del Markdown/MDX) */}
+                {/* Contenido del Post (viene del Markdown/MDX) */}
                 {children}
               </article>
             </main>

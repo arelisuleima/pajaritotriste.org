@@ -12,7 +12,7 @@ export default (data, _helpers) => {
 
   return (
     <main>
-      {/* 🐦 SECCIÓN 1: BANNER PRINCIPAL (HERO SECTION) */}
+      {/* SECCIÓN 1: BANNER PRINCIPAL */}
       <section class=" p-4 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400">
         <h1 class="text-4xl  text-purple-900 mb-4 leading-tight">
           Hola
@@ -24,7 +24,7 @@ export default (data, _helpers) => {
           concepto sea claro, práctico y aplicable. La meta es sencilla: que
           cada visita te acerque un paso más a dominar el lenguaje de los datos.
         </p>
-        {/* Puedes añadir un botón para una página "Sobre mí" si existe */}
+
         <a
           href="/about"
           class="inline-block px-6 py-3 bg-[#06b2fb] text-blue-100 font-semibold rounded-lg hover:bg-blue-500 transition duration-300 shadow-md"
@@ -35,7 +35,7 @@ export default (data, _helpers) => {
 
       {/* --- */}
 
-      {/* 📰 SECCIÓN 2: ÚLTIMAS ENTRADAS */}
+      {/* SECCIÓN 2: ÚLTIMAS ENTRADAS */}
       <section>
         <h2 class="text-3xl text-gray-800">
           Últimas Entradas
@@ -44,8 +44,8 @@ export default (data, _helpers) => {
         {/* GRID DE TARJETAS */}
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => (
-            // Tarjeta de Post con mejoras visuales
-            <article class="p-6 rounded-xl shadow-lg bg-yellow-100 border-2 border-yellow-500 transition transform hover:shadow-xl hover:-translate-y-1 duration-300">
+            // Tarjeta de Post
+            <article class="p-6 rounded-xl shadow-lg bg-yellow-100 border border-yellow-500 transition transform hover:shadow-xl hover:-translate-y-1 duration-300">
               {/* Título */}
               <h3 class="text-2xl font-bold text-gray-900 mb-1">
                 <a href={post.url} class="hover:text-yellow-600 transition">
@@ -58,7 +58,7 @@ export default (data, _helpers) => {
                 {post.description || "Seguir leyendo..."}
               </p>
 
-              {/* Fecha si existe */}
+              {/* Fecha */}
               {post.date && (
                 <p class="text-sm text-gray-500 mb-3">
                   📅 {new Date(post.date).toLocaleDateString("es-MX", {

@@ -4,9 +4,8 @@ type: "post"
 draft: false
 layout: "postLayout.jsx"
 tags:
-  - posts
-  - pruebas
-  - sql
+  - SQL
+  - sql-zero-to-hero
 date: 2024-11-20
 description: "Introducción a SQL"
 ---
