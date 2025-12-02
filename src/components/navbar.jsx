@@ -8,20 +8,27 @@ export default function Navbar() {
       <div class="navbar-container">
         <ul class="navbar-links">
           <li>
-            <a href="/">Inicio</a>
+            <a href="/">
+              Inicio
+            </a>
           </li>
           <li>
-            <a href="/about">Acerca de</a>
+            <a href="/about">
+              Acerca de
+            </a>
           </li>
           <li>
-            <a href="/posts">Publicaciones</a>
+            <a href="/posts">
+              Publicaciones
+            </a>
           </li>
           <li>
-            <a href="/cv">Currículum</a>
+            <a href="/cv">
+              Currículum
+            </a>
           </li>
         </ul>
       </div>
-      {/* === Barra de búsqueda (a la derecha) === */}
     </nav>
   );
 }

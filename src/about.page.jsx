@@ -140,16 +140,15 @@ export default function About() {
           </li>
         </ul>
 
-        <p class="mt-6 leading-relaxed">
-          Gracias por visitar este espacio. Espero que encuentres contenido
-          útil, interesante o que te inspire a seguir aprendiendo más.
-        </p>
-
         {/* === CONTACTO === */}
-        <footer class="mt-10 text-center flex flex-col items-center gap-4">
-          <h3 class="text-lg font-semibold text-purple-900">
+        <footer class="mt-1 text-center flex flex-col items-center ">
+          <h3 class=" font-semibold text-purple-900">
             Conecta conmigo
           </h3>
+          <p>
+            Gracias por visitar este espacio. Espero que encuentres contenido
+            útil, interesante o que te inspire a seguir aprendiendo más.
+          </p>
 
           <img
             src="/img/pajarito-compu-rmv.png"

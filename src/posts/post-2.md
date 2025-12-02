@@ -6,8 +6,9 @@ layout: "postLayout.jsx"
 tags:
   - SQL
   - sql-zero-to-hero
-date: 2024-11-20
-description: "Introducción a SQL"
+
+description: "Tipos de declaraciones en SQL"
+image: "/img/zero-to-hero.png"
 ---
 
 <img src="/img/zero-to-hero.png" alt="Hércules con el logo de SQL" style="float: right; width: 50%; margin-left: 15px;">

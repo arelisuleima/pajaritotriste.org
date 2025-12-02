@@ -7,6 +7,7 @@ tags:
   - SQL
   - Datos
 description: "La estructura detrás de la tecnología cotidiana"
+image: "/img/chico-datos.png"
 ---
 
 <img src="/img/chico-phone.png" alt="Chico con celular en la mano" style="float: right; width: 30%; margin-left: 15px;">

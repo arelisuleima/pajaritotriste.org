@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar.jsx";
 import CuriousBox from "../components/curiousBox.jsx";
-import IconsMedia from "../components/iconsMedia.jsx"; // 👈 nuevo import
+import IconsMedia from "../components/iconsMedia.jsx";
 
 export default (data, _helpers) => {
   const { title, children, lang, site } = data;
