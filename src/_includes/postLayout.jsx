@@ -1,6 +1,5 @@
 import Navbar from "../components/navbar.jsx";
-import CuriousBox from "../components/curiousBox.jsx";
-import IconsMedia from "../components/iconsMedia.jsx";
+
 import { BlogTags } from "../components/blogTags.jsx";
 
 export default (data, _helpers) => {
@@ -32,19 +31,6 @@ export default (data, _helpers) => {
 
           {/* === CONTENEDOR GENERAL (sidebar + contenido) === */}
           <div className="flex w-full">
-            {/* === SIDEBAR  === */}
-            <aside className="side-bar">
-              {/* Barra de búsqueda */}
-              <div id="search" className="mb-6"></div>
-
-              {/* Componente de datos curiosos */}
-              <CuriousBox />
-              <IconsMedia />
-              <p className="text-center *:text-sm text-[#06b2fb] mt-4">
-                @pajaritotriste
-              </p>
-            </aside>
-
             {/* === CONTENIDO PRINCIPAL DEL POST === */}
             <main className=" cv-intro flex-1 max-w-4xl mx-auto px-4 py-8">
               <article className="prose lg:prose-xl mx-auto">
