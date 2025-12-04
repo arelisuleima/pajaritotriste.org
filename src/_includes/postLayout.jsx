@@ -1,12 +1,9 @@
 import Navbar from "../components/navbar.jsx";
-
 import { BlogTags } from "../components/blogTags.jsx";
 
 export default (data, _helpers) => {
-  // Desestructuramos todos los datos necesarios del post
-  const { title, children, lang, site, date, tags } = data;
+  const { title, children, lang, site, date, tags, url } = data;
 
-  // Función para formatear la fecha
   const formatDate = (dateString) => {
     if (!dateString) return null;
     return new Date(dateString).toLocaleDateString("es-MX", {
@@ -27,14 +24,13 @@ export default (data, _helpers) => {
         </head>
 
         <body className="theme-blog flex flex-col min-h-screen">
-          <Navbar />
+          <Navbar currentUrl={url} />
 
           {/* === CONTENEDOR GENERAL (sidebar + contenido) === */}
           <div className="flex w-full">
             {/* === CONTENIDO PRINCIPAL DEL POST === */}
-            <main className=" cv-intro flex-1 max-w-4xl mx-auto px-4 py-8">
+            <main className="cv-intro flex-1 max-w-4xl mx-auto px-4 py-8">
               <article className="prose lg:prose-xl mx-auto">
-                {/*  Metadatos y Título del Post */}
                 <header className="mb-8 border-b pb-4 border-purple-900">
                   <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
                     {title}
@@ -46,18 +42,43 @@ export default (data, _helpers) => {
                     </p>
                   )}
 
-                  {/* INCLUSIÓN DE TAGS */}
                   <div className="mt-4">
-                    {/* Renderiza tags solo si el array existe */}
                     {tags && <BlogTags tags={tags} />}
                   </div>
                 </header>
 
-                {/* Contenido del Post (viene del Markdown/MDX) */}
                 {children}
               </article>
             </main>
           </div>
+
+          {/* === FOOTER === */}
+          <footer className="mt-auto py-6 border-t border-purple-900 bg-purple-50 text-center">
+            <p className="text-sm text-gray-700">
+              © {new Date().getFullYear()} Pajarito Triste.
+            </p>
+
+            <p className="mt-2">
+              <a
+                href="/"
+                className="text-purple-700 font-semibold hover:underline"
+              >
+                Ir al inicio
+              </a>
+            </p>
+
+            <p className="mt-2 text-xs text-gray-500">
+              Hecho con{" "}
+              <a
+                href="https://lume.land"
+                target="_blank"
+                className="text-purple-700 hover:underline font-semibold"
+              >
+                Lume
+              </a>
+              , 🩵 por un pajarito triste.
+            </p>
+          </footer>
         </body>
       </html>
     </>

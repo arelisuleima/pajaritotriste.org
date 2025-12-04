@@ -3,7 +3,7 @@ import CuriousBox from "../components/curiousBox.jsx";
 import IconsMedia from "../components/iconsMedia.jsx";
 
 export default (data, _helpers) => {
-  const { title, children, lang, site } = data;
+  const { title, children, lang, site, url } = data;
 
   return (
     <>
@@ -15,11 +15,11 @@ export default (data, _helpers) => {
           <link rel="stylesheet" href="/styles.css" />
         </head>
 
-        <body class="theme-blog flex flex-col min-h-screen">
-          <Navbar />
+        <body className="theme-blog flex flex-col min-h-screen bg-amber-50">
+          <Navbar currentUrl={url} />
 
           {/* === CONTENEDOR GENERAL (sidebar + contenido) === */}
-          <div class="flex w-full">
+          <div class="pt-5 flex w-full">
             {/* === SIDEBAR IZQUIERTO === */}
             <aside class=" side-bar ">
               {/* Barra de búsqueda */}
@@ -38,6 +38,34 @@ export default (data, _helpers) => {
               {children}
             </main>
           </div>
+
+          {/* === FOOTER === */}
+          <footer className="mt-auto py-6 border-t border-purple-900 bg-purple-50 text-center">
+            <p className="text-sm text-gray-700">
+              © {new Date().getFullYear()} Pajarito Triste.
+            </p>
+
+            <p className="mt-2">
+              <a
+                href="/"
+                className="text-purple-700 font-semibold hover:underline"
+              >
+                Ir al inicio
+              </a>
+            </p>
+
+            <p className="mt-2 text-xs text-gray-500">
+              Hecho con{" "}
+              <a
+                href="https://lume.land"
+                target="_blank"
+                className="text-purple-700 hover:underline font-semibold"
+              >
+                Lume
+              </a>
+              , 🩵 por un pajarito triste.
+            </p>
+          </footer>
         </body>
       </html>
     </>

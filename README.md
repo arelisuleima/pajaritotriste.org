@@ -1,6 +1,4 @@
-# pajaritotriste.org
-
-Mi sitio web hecho con lume, tailwind y Deno
+<img src="src/public/img/banner-inicio-rmv.png" alt="Logo de pajarito triste" style= "width: 20%">
 
 ## Instrucciones
 

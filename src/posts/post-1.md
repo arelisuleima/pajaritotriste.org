@@ -147,3 +147,5 @@ actualizar o eliminar registros.
 Al final, no solo tendrás la capacidad de leer los datos que sostienen el mundo
 digital, sino también de construir y transformar la información que mueve el
 **mundo invisible de los datos**.
+
+---
