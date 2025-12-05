@@ -13,6 +13,7 @@ import sitemap from "lume/plugins/sitemap.ts";
 import seo from "lume/plugins/seo.ts";
 import Site from "lume/core/site.ts";
 import pageFind from "lume/plugins/pagefind.ts";
+import readingInfo from "lume/plugins/reading_info.ts";
 
 import lang_css from "highlight.js/lib/languages/css";
 import lang_javascript from "highlight.js/lib/languages/javascript";
@@ -101,5 +102,7 @@ site.use(feed());
 site.use(sitemap());
 site.use(seo());
 site.use(search());
+
+site.use(readingInfo());
 
 export default site;

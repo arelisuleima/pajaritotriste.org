@@ -8,6 +8,7 @@ export default (data, _helpers) => {
 
   return (
     <section class="p-6 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400">
+      <div id="search" class="mb-6 mt-5 w-full"></div>
       <h1 class="text-2xl sm:text-4xl font-bold text-purple-900 mb-6">
         Publicaciones
       </h1>

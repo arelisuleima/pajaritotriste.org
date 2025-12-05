@@ -6,7 +6,7 @@ export default function IconsMedia() {
         href="https://www.instagram.com/pajaritotriste"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-[#06b2fb] hover:text-blue-100 transition-colors"
+        class="text-[#dfc7f8] hover:text-[#06b2fb] transition-colors"
         title="Instagram"
       >
         <svg
@@ -25,7 +25,7 @@ export default function IconsMedia() {
         href="https://github.com/arelisuleima/pajaritotriste.org"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-[#06b2fb] hover:text-blue-100 transition-colors"
+        class="text-[#dfc7f8] hover:text-[#06b2fb] transition-colors"
         title="GitHub"
       >
         <svg
@@ -44,7 +44,7 @@ export default function IconsMedia() {
         href="https://www.linkedin.com/in/areliarias"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-[#06b2fb] hover:text-blue-100 transition-colors"
+        class="text-[#dfc7f8] hover:text-[#06b2fb] transition-colors"
         title="LinkedIn"
       >
         <svg

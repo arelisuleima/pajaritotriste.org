@@ -19,20 +19,25 @@ export default (data, _helpers) => {
           {/* === CONTENEDOR GENERAL (sidebar + contenido) === */}
           <div class="pt-5 flex w-full">
             {/* === SIDEBAR IZQUIERTO === */}
-            <aside class=" side-bar ">
-              <a href="/" class="w-35 ml-5 mt-5 ">
+            <aside class="bg-[#3a0159] p-4 rounded-xl m-6 w-[280px] h-[400px] flex flex-col items-center">
+              <a href="/" class="mt-5 w-full flex justify-center p-2">
                 <img
                   src="/img/banner-inicio-rmv.png"
-                  style="float: center; width: 80%; margin-left: 15px;"
+                  class="w-4/5"
+                  alt="Pajarito Triste"
                 />
               </a>
-              {/* Barra de búsqueda */}
-              <div id="search" class=" mb-6 mt-5"></div>
+              {/*Barra de busqueda */}
+              {/* <div id="search" class="mb-6 mt-5 w-full"></div>*/}
 
               {/* Componente de datos curiosos */}
-              <CuriousBox />
+              <div data-pagefind-ignore>
+                <CuriousBox />
+              </div>
+
               <IconsMedia />
-              <p class="text-center *:text-sm text-[#06b2fb] mt-4">
+
+              <p class="text-center text-sm text-[#dfc7f8] mt-4">
                 @pajaritotriste
               </p>
             </aside>

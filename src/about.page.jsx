@@ -6,7 +6,7 @@ export const type = "page";
 export default function About() {
   return (
     <main class="max-w-none p-4">
-      <section class="p-6 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400">
+      <section class="p-6 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400 mb-8">
         <h1 class="text-3xl sm:text-5xl font-bold text-purple-900 mb-6">
           Acerca de
         </h1>
@@ -15,9 +15,9 @@ export default function About() {
           <span class="font-semibold">Pajarito Triste</span>{" "}
           es un proyecto creado con la intención de acercar a más personas al
           mundo de los datos, la tecnología y el desarrollo de software. A
-          través de publicaciones, guías, reflexiones y ejemplos prácticos,
-          busco explicar cómo funcionan los datos en el entorno digital de forma
-          clara, accesible y sin tecnicismos innecesarios.
+          través de publicaciones, guías, reflexiones y ejemplos prácticos, se
+          busca explicar cómo funcionan los datos en el entorno digital de forma
+          clara y accesible.
         </p>
 
         <p class="mb-4 leading-relaxed">
@@ -139,7 +139,8 @@ export default function About() {
             proyecto.
           </li>
         </ul>
-
+      </section>
+      <section class="bg-amber-100 p-4 text-center rounded-xl mb-10">
         {/* === CONTACTO === */}
         <footer class="mt-1 text-center flex flex-col items-center ">
           <h3 class=" font-semibold text-purple-900">
@@ -164,10 +165,6 @@ export default function About() {
           >
             contacto@pajaritotriste.org
           </a>
-
-          <p class="text-sm text-blue-400 mt-4">
-            © 2025 Pajarito Triste.
-          </p>
         </footer>
       </section>
     </main>
