@@ -7,7 +7,7 @@ export default function CuriousBox() {
     curiousFacts[Math.floor(Math.random() * curiousFacts.length)];
 
   return (
-    <div class="curious-box bg-blue-100 border border-[#06b2fb] rounded-xl p-4 shadow-sm text-sm text-gray-800">
+    <div class="curious-box bg-blue-200 border border-[#06b2fb] rounded-xl p-4 shadow-sm text-sm text-gray-800">
       <h3 class="font-bold text-blue-900 mb-2">
         🗨️ Un pajarito me dijo que...
       </h3>

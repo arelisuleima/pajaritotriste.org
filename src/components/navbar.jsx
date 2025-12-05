@@ -4,16 +4,12 @@ export default function Navbar({ currentUrl }) {
     "px-4 py-2  rounded-xl font-medium transition-colors duration-200";
 
   const inactive =
-    "bg-blue-100 text-[#243964] hover:bg-[#243964] hover:text-white";
+    "bg-amber-100 text-purple-900 hover:bg-purple-900 hover:text-white";
 
-  const active = "bg-[#243964] text-white ";
+  const active = "bg-purple-900 text-white ";
 
   return (
-    <nav class="flex items-center justify-between px-6 py-4">
-      <a href="/" class="w-35 ml-5 mt-5">
-        <img src="/img/banner-inicio-rmv.png" />
-      </a>
-
+    <nav class=" items-center justify-center px-6 py-4">
       <ul class="flex gap-3">
         <li>
           <a

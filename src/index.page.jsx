@@ -30,7 +30,7 @@ export default (data, _helpers) => {
 
         <a
           href="/about"
-          class="inline-block px-6 py-3 bg-[#06b2fb] text-blue-100 font-semibold rounded-lg hover:bg-blue-500 transition duration-300 shadow-md"
+          class="inline-block px-6 py-3 bg-purple-900 text-blue-100 font-semibold rounded-lg hover:bg-[#06b2fb] hover:text-purple-900 transition duration-300 shadow-md"
         >
           Conoce más sobre pajaritotriste
         </a>

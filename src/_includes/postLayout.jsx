@@ -23,51 +23,51 @@ export default (data, _helpers) => {
           <link rel="stylesheet" href="/styles.css" />
         </head>
 
-        <body className="theme-blog flex flex-col min-h-screen">
-          <Navbar currentUrl={url} />
-
-          {/* === CONTENEDOR GENERAL (sidebar + contenido) === */}
-          <div className="flex w-full">
-            {/* === CONTENIDO PRINCIPAL DEL POST === */}
-            <main className="cv-intro flex-1 max-w-4xl mx-auto px-4 py-8">
-              <article className="prose lg:prose-xl mx-auto">
-                <header className="mb-8 border-b pb-4 border-purple-900">
-                  <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
-                    {title}
-                  </h1>
-
-                  {date && (
-                    <p className="text-lg text-gray-500">
-                      Publicado el: <strong>{formatDate(date)}</strong>
-                    </p>
-                  )}
-
-                  <div className="mt-4">
-                    {tags && <BlogTags tags={tags} />}
-                  </div>
-                </header>
-
-                {children}
-              </article>
-            </main>
+        <body className="theme-blog flex flex-col min-h-screen bg-amber-50">
+          {/* === NAVBAR CENTRADA === */}
+          <div className="w-full flex justify-center mt-4">
+            <Navbar currentUrl={url} />
           </div>
 
+          {/* === CONTENIDO PRINCIPAL DEL POST === */}
+          <main className="p-4 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400 flex-1 max-w-4xl mx-auto px-4 py-8">
+            <article className="prose lg:prose-xl mx-auto">
+              <header className="mb-8 border-b pb-4 border-purple-900">
+                <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
+                  {title}
+                </h1>
+
+                {date && (
+                  <p className="text-lg text-gray-500">
+                    Publicado el: <strong>{formatDate(date)}</strong>
+                  </p>
+                )}
+
+                <div className="mt-4">
+                  {tags && <BlogTags tags={tags} />}
+                </div>
+              </header>
+
+              {children}
+            </article>
+          </main>
+
           {/* === FOOTER === */}
-          <footer className="mt-auto py-6 border-t border-purple-900 bg-purple-50 text-center">
+          <footer className="mt-auto text-center flex flex-col items-center border-t border-purple-900 bg-purple-50 ">
+            <p className="mt-2">
+              <a
+                href="/"
+                className="text-gray-400 font-semibold hover:underline"
+              >
+                Volver al inicio ⬆️
+              </a>
+            </p>
+
             <p className="text-sm text-gray-700">
               © {new Date().getFullYear()} Pajarito Triste.
             </p>
 
-            <p className="mt-2">
-              <a
-                href="/"
-                className="text-purple-700 font-semibold hover:underline"
-              >
-                Ir al inicio
-              </a>
-            </p>
-
-            <p className="mt-2 text-xs text-gray-500">
+            <p className="mt-0 text-xs text-gray-500 ">
               Hecho con{" "}
               <a
                 href="https://lume.land"
@@ -76,8 +76,9 @@ export default (data, _helpers) => {
               >
                 Lume
               </a>
-              , 🩵 por un pajarito triste.
+              🩵 por un pajarito triste.
             </p>
+            <img src="/img/logo-pajarito-rmv.png" style=" width: 5%;" />
           </footer>
         </body>
       </html>
