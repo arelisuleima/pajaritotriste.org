@@ -4,9 +4,9 @@ export const type = "page";
 
 export default function Cv() {
   return (
-    <main class="max-w-3xl mx-auto p-6 text-[#3f0058]">
+    <main class="max-w-none p-4">
       {/* === INTRO PERSONAL === */}
-      <section class="bg-[#dfc7f8] p-6 rounded-2xl shadow-xl border border-purple-400 mb-8">
+      <section class="p-5 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400 ">
         <h1 class="text-3xl sm:text-4xl font-bold text-purple-900 mb-6">
           {title}
         </h1>

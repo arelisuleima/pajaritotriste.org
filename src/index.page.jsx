@@ -16,11 +16,11 @@ export default (data, _helpers) => {
   return (
     <main>
       {/* SECCIÓN 1: BANNER PRINCIPAL (sin cambios) */}
-      <section class=" p-4 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400">
-        <h1 class="text-4xl  text-purple-900 mb-4 leading-tight">
+      <section class=" p-5 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400 ">
+        <h1 class="text-4xl md:text-5xl text-purple-900 mb-4 leading-tight">
           Hola
         </h1>
-        <p class="text-x0 text-purple-900 mb-4">
+        <p class="text-xl text-purple-900 mb-4 ">
           Este espacio nace con la intención de transformar la manera en que
           aprendemos y comprendemos el mundo de los datos. Aquí encontrarás
           explicaciones precisas y recursos visuales diseñados para que cada
