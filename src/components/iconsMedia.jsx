@@ -39,7 +39,7 @@ export default function IconsMedia() {
         </svg>
       </a>
 
-      {/* LinkedIn */}
+      {/* LinkedIn 
       <a
         href="https://www.linkedin.com/in/areliarias"
         target="_blank"
@@ -57,6 +57,7 @@ export default function IconsMedia() {
           <path d="M20.45 20.45h-3.55v-5.39c0-1.28-.03-2.93-1.79-2.93-1.8 0-2.07 1.4-2.07 2.84v5.48H9.49V9h3.41v1.56h.05c.48-.91 1.65-1.87 3.4-1.87 3.64 0 4.31 2.39 4.31 5.49v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.11 20.45H3.57V9h3.54v11.45ZM22.22 0H1.78A1.77 1.77 0 0 0 0 1.77v20.46C0 23.2.8 24 1.78 24h20.44A1.77 1.77 0 0 0 24 22.23V1.77A1.77 1.77 0 0 0 22.22 0Z" />
         </svg>
       </a>
+      */}
     </div>
   );
 }

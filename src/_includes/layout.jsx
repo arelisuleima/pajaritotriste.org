@@ -68,7 +68,7 @@ export default (data, _helpers) => {
               prose-headings:font-bold 
                prose-headings:text-purple-900
                prose-p:text-gray-800
-              prose-p:leading-relaxed
+            prose-p:leading-relaxed
               ">
                 {children}
               </main>
