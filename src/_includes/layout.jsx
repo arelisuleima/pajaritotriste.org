@@ -50,14 +50,14 @@ export default (data, _helpers) => {
             </aside>
 
             {/* === CONTENIDO PRINCIPAL === */}
-            <div class="flex-1">
+            <div class="flex-1 ">
               {/* NAVBAR */}
               <div class="w-full flex justify-center mt-2 mb-4">
                 <Navbar currentUrl={url} />
               </div>
 
               {/* CONTENIDO */}
-              <main class="
+              <main class=" 
               w-full max-w-full 
               px-4 sm:px-6 
               mx-auto py-6 

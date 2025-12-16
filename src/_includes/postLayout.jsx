@@ -30,10 +30,10 @@ export default (data, _helpers) => {
           </div>
 
           {/* === CONTENIDO PRINCIPAL === */}
-          <main className="p-4 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400 flex-1 max-w-4xl mx-auto px-4 py-8">
-            <article className="prose lg:prose-xl mx-auto">
+          <main className="p-4  flex-1 max-w-4xl mx-auto px-4 py-8">
+            <article className="prose lg:prose-xl mx-auto text-4xl">
               <header className="mb-8 border-b pb-4 border-purple-900">
-                <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
+                <h1 className="text-5xl font-extrabold text-gray-900 mb-2">
                   {title}
                 </h1>
 
