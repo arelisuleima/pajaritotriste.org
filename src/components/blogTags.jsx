@@ -1,27 +1,31 @@
 import { tagUrl } from "../helpers/url.js";
 
 /**
- * Este componente renderiza una lista de etiquetas que pertenecen a una
- * entrada de blog en específico, debe usarse únicamente dentro de los map(posts)
- * para que el arreglo de tags esté disponible.
- *
- * @param {{tags: string[]}} props - Objeto de props que contiene el array 'tags'
- * @returns {JSX.Component} - Un componente de JSX
+ * Renderiza etiquetas con estilo "Capsule" para el ecosistema Pajarito Triste.
  */
 export const BlogTags = ({ tags }) => {
-  console.log(`Got tags: ${tags}`);
+  if (!tags || tags.length === 0) return null;
+
   return (
-    // He agregado un contenedor para manejar el flujo y espaciado
-    <div class="flex flex-wrap gap-2 mt-2">
-      {/* Usar 'tags?.map' es recomendable si vuelves a tener el error */}
-      {tags?.map((tag) => (
-        // Mantengo tu span original, pero añado 'key' para evitar advertencias de React
+    <div class="flex flex-wrap gap-2">
+      {tags.map((tag) => (
         <span class="inline-block" key={tag}>
           <a
             href={tagUrl(tag)}
-            // 👈 CLASES AGREGADAS AQUÍ para estilo y eliminar subrayado
-            class="bg-blue-100 text-blue-900 border border-[#06b2fb] no-underline rounded px-2 py-1 text-xs font-medium hover:bg-[#06b2fb] transition"
+            class="
+              inline-flex items-center
+              bg-pink-50 text-[#3a0159] 
+              border border-pink-100 
+              no-underline 
+              rounded-full 
+              px-3 py-1 
+              text-[10px] font-bold uppercase tracking-wider
+              hover:bg-[#3a0159] hover:text-white hover:border-[#3a0159]
+              transition-all duration-300
+              shadow-sm
+            "
           >
+            <span class="opacity-50 mr-1">#</span>
             {tag}
           </a>
         </span>

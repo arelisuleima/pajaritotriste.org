@@ -4,169 +4,94 @@ export const title = "Sobre mí 👩🏻‍💻";
 export const type = "page";
 
 export default function About() {
+  const techs = [
+    { name: "Lume", desc: "Generador de sitios estáticos rápido basado en Deno.", color: "bg-[#E0F5E9]", text: "text-[#2D5A43]", icon: "⚡" },
+    { name: "Deno", desc: "Runtime moderno y seguro con soporte nativo para TypeScript.", color: "bg-purple-50", text: "text-purple-700", icon: "🦕" },
+    { name: "Tailwind CSS", desc: "Framework de diseño para interfaces rápidas y modernas.", color: "bg-pink-50", text: "text-pink-700", icon: "🎨" },
+    { name: "JavaScript", desc: "Lógica y composición de componentes dinámica.", color: "bg-yellow-50", text: "text-yellow-700", icon: "📜" },
+  ];
+
   return (
-    <main class="max-w-none p-4">
-      <section class="p-6 bg-[#dfc7f8] rounded-2xl shadow-xl border border-purple-400 mb-8">
-        <h1 class="text-3xl sm:text-5xl font-bold text-purple-900 mb-6">
+    <div class="space-y-10">
+      
+      {/* SECCIÓN INTRODUCCIÓN */}
+      <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-pink-50 shadow-sm">
+        {/* Círculo decorativo de fondo */}
+        <div class="absolute -bottom-12 -right-12 w-38 h-48 bg-green-50 rounded-full z-0"></div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-[#3a0159] mb-8 tracking-tight">
           Acerca de
         </h1>
 
-        <p class="mb-4 leading-relaxed">
-          <span class="font-semibold">Pajarito Triste</span>{" "}
-          es un proyecto creado con la intención de acercar a más personas al
-          mundo de los datos, la tecnología y el desarrollo de software. A
-          través de publicaciones, guías, reflexiones y ejemplos prácticos, se
-          busca explicar cómo funcionan los datos en el entorno digital de forma
-          clara y accesible.
-        </p>
-
-        <p class="mb-4 leading-relaxed">
-          Mi propósito es demostrar que aprender sobre tecnología no tiene que
-          ser complicado. Entender bases de datos, programación o
-          infraestructura puede ser parte de la vida diaria, y este sitio existe
-          para acompañar ese aprendizaje, compartir mi experiencia profesional y
-          documentar mi propio camino como desarrolladora.
-        </p>
-
-        {/* === TECNOLOGÍAS UTILIZADAS === */}
-        <h2 class="text-2xl font-bold text-purple-900 mt-10">
-          Tecnologías utilizadas
-        </h2>
-
-        <p class="mb-2">
-          Este sitio está construido con un stack moderno y minimalista, pensado
-          para ser rápido, mantenible y completamente abierto:
-        </p>
-
-        <section class="mt-6">
-          <div class="overflow-x-auto">
-            <table class="min-w-full border border-blue-500 text-left text-gray-900">
-              <thead class="bg-[#a5d8ff]">
-                <tr>
-                  <th class="px-4 py-2 font-semibold">Tecnología</th>
-                  <th class="px-4 py-2 font-semibold">Descripción</th>
-                  <th class="px-4 py-2 font-semibold">Licencia</th>
-                </tr>
-              </thead>
-
-              <tbody class="bg-blue-100 divide-y divide-blue-300">
-                {/* Lume */}
-                <tr>
-                  <td class="px-4 py-3">
-                    <img
-                      src="https://img.shields.io/badge/Lume-0A84FF?style=flat-square&logo=lightning&logoColor=white"
-                      alt="Lume"
-                      class="h-7"
-                    />
-                  </td>
-                  <td class="px-4 py-3">
-                    Generador de sitio estático rápido y minimalista basado en
-                    Deno.
-                  </td>
-                  <td class="px-4 py-3">MIT</td>
-                </tr>
-
-                {/* Deno */}
-                <tr>
-                  <td class="px-4 py-3">
-                    <img
-                      src="https://img.shields.io/badge/Deno-000000?style=flat-square&logo=deno&logoColor=white"
-                      alt="Deno"
-                      class="h-7"
-                    />
-                  </td>
-                  <td class="px-4 py-3">
-                    Runtime moderno y seguro con soporte nativo para TypeScript.
-                  </td>
-                  <td class="px-4 py-3">MIT</td>
-                </tr>
-
-                {/* JavaScript */}
-                <tr>
-                  <td class="px-4 py-3">
-                    <img
-                      src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"
-                      alt="JavaScript"
-                      class="h-7"
-                    />
-                  </td>
-                  <td class="px-4 py-3">
-                    Lenguaje principal para la lógica y la composición de
-                    componentes.
-                  </td>
-                  <td class="px-4 py-3">ECMA-262 (Estándar abierto)</td>
-                </tr>
-
-                {/* Tailwind CSS */}
-                <tr>
-                  <td class="px-4 py-3">
-                    <img
-                      src="https://img.shields.io/badge/TailwindCSS-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white"
-                      alt="Tailwind CSS"
-                      class="h-7"
-                    />
-                  </td>
-                  <td class="px-4 py-3">
-                    Framework utility-first para dar estilo sin archivos CSS
-                    personalizados.
-                  </td>
-                  <td class="px-4 py-3">MIT</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        {/* === LICENCIA === */}
-        <h2 class="text-2xl font-bold text-purple-900 mt-10">
-          Licencia del proyecto
-        </h2>
-
-        <p>
-          Este sitio se distribuye bajo la{" "}
-          <span class="font-semibold">AGPL-3.0 License</span>. Esto garantiza
-          que:
-        </p>
-
-        <ul class="list-disc pl-6 mt-2 space-y-1">
-          <li>El código fuente se mantiene abierto.</li>
-          <li>
-            Cualquier mejora o versión modificada debe compartirse también con
-            la comunidad.
-          </li>
-          <li>
-            Los usuarios tienen derecho a estudiar, modificar y redistribuir el
-            proyecto.
-          </li>
-        </ul>
-      </section>
-      <section class="bg-amber-100 p-4 text-center rounded-xl mb-10">
-        {/* === CONTACTO === */}
-        <footer class="mt-1 text-center flex flex-col items-center ">
-          <h3 class=" font-semibold text-purple-900">
-            Conecta conmigo
-          </h3>
+        <div class="space-y-6 text-gray-600 leading-relaxed text-lg">
           <p>
-            Gracias por visitar este espacio. Espero que encuentres contenido
-            útil, interesante o que te inspire a seguir aprendiendo más.
+            <span class="font-bold text-[#3a0159]">Pajarito Triste</span> es un rincón digital diseñado para humanizar el mundo de los datos. Mi misión es romper la barrera de que la tecnología es "difícil" y transformarla en algo visual, claro y, sobre todo, aplicable.
           </p>
+          <p>
+            Como <span class="text-purple-500 font-semibold">desarrolladora</span>, creo que las bases de datos y el software no son solo herramientas técnicas, sino lenguajes que nos permiten entender mejor nuestra realidad. Aquí comparto mi camino, mis tropiezos y mis aprendizajes.
+          </p>
+        </div>
+      </section>
 
-          <img
-            src="/img/pajarito-compu-rmv.png"
-            width="150"
-            height="100"
-            alt="Pajarito frente a la computadora"
-            class="rounded-lg"
-          />
+      {/* SECCIÓN TECNOLOGÍAS (BENTO GRID) */}
+      <section>
+        <h2 class="text-2xl font-bold text-[#3a0159] mb-6 px-4 flex items-center gap-2">
+          <span>🛠️</span> Stack Tecnológico
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {techs.map(tech => (
+            <div class={`${tech.color} ${tech.text} p-6 rounded-/[2rem/] border border-white/50 shadow-sm transition-transform hover:scale-[1.02]`}>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-2xl">{tech.icon}</span>
+                <h3 class="font-bold text-lg">{tech.name}</h3>
+              </div>
+              <p class="text-sm opacity-80 leading-snug">{tech.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
+      {/* LICENCIA Y FILOSOFÍA */}
+      <section class="bg-[#3a0159] text-white rounded-[3rem] p-8 md:p-12 shadow-xl relative overflow-hidden">
+        {/* Círculo decorativo */}
+        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-400/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative z-10">
+          <h2 class="text-2xl font-bold mb-4">Código con Propósito</h2>
+          <p class="text-purple-100 mb-6 max-w-2xl">
+            Este proyecto es de código abierto bajo la licencia <span class="text-pink-300 font-mono">AGPL-3.0</span>. Creo firmemente en que el conocimiento debe ser libre: puedes estudiar, modificar y redistribuir este sitio siempre que mantengas esa misma libertad para los demás.
+          </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-purple-200">
+            <li class="flex items-center gap-2">✨ Fuente siempre abierta</li>
+            <li class="flex items-center gap-2">🌱 Comunidad y aprendizaje</li>
+            <li class="flex items-center gap-2">🤝 Mejora continua</li>
+            <li class="flex items-center gap-2">🚀 Transparencia total</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* CONTACTO (FOOTER DE LA PÁGINA) */}
+      <section class="bg-white rounded-[2.5rem] p-8 text-center border border-pink-50 shadow-sm">
+        <div class="flex flex-col items-center">
+          <div class="w-24 h-24 bg-pink-50 rounded-full flex items-center justify-center mb-4">
+             <img
+                src="/img/pajarito-compu-rmv.png"
+                alt="Pajarito frente a la computadora"
+                class="w-20 object-contain"
+              />
+          </div>
+          <h3 class="text-2xl font-bold text-[#3a0159] mb-2">¿Platicamos?</h3>
+          <p class="text-gray-500 mb-6 max-w-md mx-auto">
+            Si tienes dudas sobre SQL, quieres colaborar en un proyecto o simplemente decir hola, mi bandeja de entrada siempre está abierta.
+          </p>
           <a
             href="mailto:contacto@pajaritotriste.org"
-            class="mt-1 text-blue-500 font-medium hover:text-blue-400 transition"
+            class="px-8 py-3 bg-[#E0F5E9] text-[#2D5A43] font-bold rounded-full hover:bg-[#2D5A43] hover:text-white transition-all duration-300"
           >
             contacto@pajaritotriste.org
           </a>
-        </footer>
+        </div>
       </section>
-    </main>
+    </div>
   );
 }

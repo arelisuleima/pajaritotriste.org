@@ -1,20 +1,27 @@
-// components/navbar.jsx
 export default function Navbar({ currentUrl }) {
+  // Base del botón: ahora más redondeado (full) y con padding lateral extra
   const linkBase =
-    "px-4 py-2  rounded-xl font-medium transition-colors duration-200";
+    "px-6 py-2 rounded-full font-bold transition-all duration-300 text-sm tracking-wide shadow-sm hover:shadow-md hover:-translate-y-0.5";
 
-  const inactive =
-    "bg-amber-100 text-purple-900 hover:bg-purple-900 hover:text-white";
+  // Estilos inactivos: fondos pastel muy suaves que contrastan con el fondo rosa del body
+  //const inactive = "bg-white/60 text-[#3a0159] hover:bg-white";
 
-  const active = "bg-purple-900 text-white ";
+  // Estilo activo: El morado del pajarito
+  const active = "bg-[#3a0159] text-white shadow-purple-200";
+
+  // Función para determinar si el link está activo
+  const isActive = (path) => {
+    if (path === "/") return currentUrl === "/";
+    return currentUrl.startsWith(path);
+  };
 
   return (
-    <nav class=" items-center justify-center px-6 py-4">
-      <ul class="flex gap-3">
+    <nav class="flex items-center justify-center">
+      <ul class="flex flex-wrap justify-center gap-3">
         <li>
           <a
             href="/"
-            class={`${linkBase} ${currentUrl === "/" ? active : inactive}`}
+            class={`${linkBase} ${isActive("/") ? active : "hover:text-purple-600 bg-purple-50"}`}
           >
             Inicio
           </a>
@@ -23,9 +30,7 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/about"
-            class={`${linkBase} ${
-              currentUrl.startsWith("/about") ? active : inactive
-            }`}
+            class={`${linkBase} ${isActive("/about") ? active : "hover:text-green-700 bg-[#E0F5E9]"}`}
           >
             Acerca de
           </a>
@@ -34,9 +39,7 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/posts"
-            class={`${linkBase} ${
-              currentUrl.startsWith("/posts") ? active : inactive
-            }`}
+            class={`${linkBase} ${isActive("/posts") ? active : "hover:text-pink-700 bg-pink-200"}`}
           >
             Publicaciones
           </a>
@@ -45,9 +48,7 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/cv"
-            class={`${linkBase} ${
-              currentUrl.startsWith("/cv") ? active : inactive
-            }`}
+            class={`${linkBase} ${isActive("/cv") ? active : "hover:text-yellow-700 bg-yellow-50"}`}
           >
             Currículum
           </a>
