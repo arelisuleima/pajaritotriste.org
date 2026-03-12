@@ -2,7 +2,8 @@ import Navbar from "../components/navbar.jsx";
 import { BlogTags } from "../components/blogTags.jsx";
 
 export default (data, _helpers) => {
-  const { title, children, lang, site, date, tags, url, image, readingInfo } = data;
+  const { title, children, lang, site, date, tags, url, image, readingInfo } =
+    data;
 
   return (
     <>
@@ -10,13 +11,20 @@ export default (data, _helpers) => {
       <html lang={lang || "es"}>
         <head>
           <meta charset="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
           <title>{title} | {site?.title || "Pajarito Triste"}</title>
           <link rel="stylesheet" href="/styles.css" />
         </head>
 
         <body className="bg-[#fff5f7] text-gray-900 min-h-screen flex flex-col font-sans">
-          <div id="progress-bar" class="fixed top-0 left-0 h-1.5 bg-pink-300 z-100 transition-all duration-150 w-0"></div>
+          <div
+            id="progress-bar"
+            class="fixed top-0 left-0 h-1.5 bg-pink-300 z-100 transition-all duration-150 w-0"
+          >
+          </div>
 
           <div className="w-full flex justify-center mt-6 mb-10">
             <Navbar currentUrl={url} />
@@ -26,7 +34,6 @@ export default (data, _helpers) => {
             <article>
               {/* === NUEVA CABECERA EN DOS COLUMNAS === */}
               <header className="flex flex-col md:flex-row items-center gap-10 mb-16">
-                
                 {/* RECUADRO 1: Información (Texto) */}
                 <div className="w-full md:w-1/2 text-left">
                   <div className="inline-block px-4 py-1 bg-white text-[#3a0159] rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 border border-pink-100 shadow-sm">
@@ -39,7 +46,11 @@ export default (data, _helpers) => {
 
                   {date && (
                     <p className="text-gray-400 font-medium mb-6 uppercase text-[11px] tracking-[0.2em]">
-                      Publicado el {new Date(date).toLocaleDateString("es-MX", { day: 'numeric', month: 'long', year: 'numeric' })}
+                      Publicado el {new Date(date).toLocaleDateString("es-MX", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
                     </p>
                   )}
 
@@ -52,10 +63,10 @@ export default (data, _helpers) => {
                 <div className="w-full md:w-1/2">
                   {image && (
                     <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-10 border-white transform rotate-2 hover:rotate-0 transition-all duration-500">
-                      <img 
-                        src={image} 
-                        alt={title} 
-                        className="w-full h-auto object-cover aspect-video md:aspect-square" 
+                      <img
+                        src={image}
+                        alt={title}
+                        className="w-full h-auto object-cover aspect-video md:aspect-square"
                       />
                     </div>
                   )}
@@ -76,14 +87,18 @@ export default (data, _helpers) => {
             </article>
           </main>
 
-          <script dangerouslySetInnerHTML={{ __html: `
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
             window.onscroll = function() {
               const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
               const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
               const scrolled = (winScroll / height) * 100;
               document.getElementById("progress-bar").style.width = scrolled + "%";
             };
-          `}} />
+          `,
+            }}
+          />
         </body>
       </html>
     </>

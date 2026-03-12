@@ -8,21 +8,29 @@ export default function Cv() {
       {/* === TARJETA PRINCIPAL: PERFIL === */}
       <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-pink-50 shadow-sm">
         {/* Decoración sutil */}
-        <div class="absolute top-0 right-0 w-32 h-32 bg-[#E0F5E9] rounded-bl-[5rem] z-0 opacity-50"></div>
-        
+        <div class="absolute top-0 right-0 w-32 h-32 bg-[#E0F5E9] rounded-bl-[5rem] z-0 opacity-50">
+        </div>
+
         <div class="relative z-10">
           <div class="flex flex-col md:flex-row gap-8 items-start">
             <div class="flex-1">
               <h1 class="text-4xl font-extrabold text-[#3a0159] mb-6 tracking-tight">
                 {title}
               </h1>
-              
+
               <p class="text-xl text-gray-700 mb-6 leading-relaxed">
-                ¡Hola! Soy <span class="text-[#3a0159] font-bold underline decoration-pink-300">Areli Suleima</span>.
+                ¡Hola! Soy{" "}
+                <span class="text-[#3a0159] font-bold underline decoration-pink-300">
+                  Areli Suleima
+                </span>.
               </p>
 
               <p class="text-gray-600 mb-6">
-                Desarrolladora  especializada en <strong>Sistemas Oracle, SQL y automatización de datos</strong>. Mi enfoque principal es la optimización de procesos complejos y la creación de soluciones que conviertan los datos en herramientas funcionales.
+                Desarrolladora especializada en{" "}
+                <strong>Sistemas Oracle, SQL y automatización de datos</strong>.
+                Mi enfoque principal es la optimización de procesos complejos y
+                la creación de soluciones que conviertan los datos en
+                herramientas funcionales.
               </p>
             </div>
 
@@ -50,14 +58,18 @@ export default function Cv() {
               <span class="text-xl">🐦</span>
               <div>
                 <strong class="text-[#3a0159] block">Pajarito Triste</strong>
-                <span class="text-sm text-[#2D5A43]/80">Divulgación técnica sobre SQL y bases de datos.</span>
+                <span class="text-sm text-[#2D5A43]/80">
+                  Divulgación técnica sobre SQL y bases de datos.
+                </span>
               </div>
             </li>
             <li class="flex gap-3">
               <span class="text-xl">📝</span>
               <div>
                 <strong class="text-[#3a0159] block">Pensadero</strong>
-                <span class="text-sm text-[#2D5A43]/80">Productividad en Linux con Python + EWW.</span>
+                <span class="text-sm text-[#2D5A43]/80">
+                  Productividad en Linux con Python + EWW.
+                </span>
               </div>
             </li>
           </ul>
@@ -69,14 +81,16 @@ export default function Cv() {
             <span>⚡</span> Expertise
           </h3>
           <div class="flex flex-wrap gap-2">
-            {["Oracle DB", "PL/SQL", "Ellucian Banner", "PeopleSoft", "Java"].map(skill => (
-              <span class="px-4 py-1.5 bg-white text-purple-600 rounded-full text-xs font-bold border border-purple-100 shadow-sm">
-                {skill}
-              </span>
-            ))}
+            {["Oracle DB", "PL/SQL", "Ellucian Banner", "PeopleSoft", "Java"]
+              .map((skill) => (
+                <span class="px-4 py-1.5 bg-white text-purple-600 rounded-full text-xs font-bold border border-purple-100 shadow-sm">
+                  {skill}
+                </span>
+              ))}
           </div>
           <p class="mt-6 text-sm text-purple-800/70 italic">
-            "Siempre aprendiendo, experimentando y construyendo software escalable."
+            "Siempre aprendiendo, experimentando y construyendo software
+            escalable."
           </p>
         </div>
       </div>
@@ -84,12 +98,16 @@ export default function Cv() {
       {/* === SECCIÓN DOWNLOAD PDF === */}
       <section class="bg-white rounded-[3rem] p-8 md:p-12 text-center border border-pink-50 shadow-sm relative overflow-hidden">
         {/* Círculo decorativo de fondo */}
-        <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-pink-50 rounded-full z-0"></div>
-        
+        <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-pink-50 rounded-full z-0">
+        </div>
+
         <div class="relative z-10">
-          <h2 class="text-2xl font-bold text-[#3a0159] mb-2">¿Necesitas el CV completo?</h2>
+          <h2 class="text-2xl font-bold text-[#3a0159] mb-2">
+            ¿Necesitas el CV completo?
+          </h2>
           <p class="text-gray-500 mb-8 max-w-md mx-auto">
-            Para detalles sobre mi trayectoria profesional y proyectos corporativos, puedes descargar mi CV en formato PDF.
+            Para detalles sobre mi trayectoria profesional y proyectos
+            corporativos, puedes descargar mi CV en formato PDF.
           </p>
 
           <a

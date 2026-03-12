@@ -13,18 +13,21 @@ export default (data, _helpers) => {
           <title>{title || site?.title || "Pajarito Triste"}</title>
           <meta charset="UTF-8" />
           <link rel="stylesheet" href="/styles.css" />
-          <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
-          <style>{`
+          <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+            rel="stylesheet"
+          />
+          <style>
+            {`
             body { font-family: 'Quicksand', sans-serif; scroll-behavior: smooth; }
-          `}</style>
+          `}
+          </style>
         </head>
 
         <body className="theme-blog flex flex-col min-h-screen bg-[#FFF0F5]">
-          
           {/* === CONTENEDOR MAESTRO DE 3 COLUMNAS === */}
           {/* Usamos items-start para que todas las columnas cuelguen desde el mismo punto arriba */}
           <div class="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-[320px_1fr_300px] gap-8 p-4 lg:p-10 items-start">
-            
             {/* 1. COLUMNA IZQUIERDA (Sidebar Pajarito) */}
             <aside class="
               hidden lg:flex
@@ -38,10 +41,12 @@ export default (data, _helpers) => {
               border border-pink-50
             ">
               <a href="/" class="transition-transform hover:scale-105">
-                <img src="/img/banner-inicio-rmv.png" class="w-32 lg:w-40" alt="Pajarito Triste" />
+                <img
+                  src="/img/banner-inicio-rmv.png"
+                  class="w-32 lg:w-40"
+                  alt="Pajarito Triste"
+                />
               </a>
-
-             
 
               <div class="mt-8">
                 <IconsMedia />
@@ -68,61 +73,85 @@ export default (data, _helpers) => {
             </div>
 
             {/* 3. COLUMNA DERECHA (El espacio que marcaste en rojo) */}
-            {/* Aquí es donde Lume inyectará el historial si lo pones en el index, 
-                o puedes poner un componente global aquí mismo */}
-     <aside id="right-column" class="hidden lg:flex flex-col sticky top-10 h-fit gap-6">
-  
-  {/* CARD: RECURSOS RECOMENDADOS (Libros/Videos) */}
-  <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-white">
-    <h3 class="font-bold text-[#3a0159] mb-6 flex items-center gap-2 text-lg">
-      <span class="text-xl">📚</span> 
-      Caja de Herramientas
-    </h3>
-    
-    <div class="flex flex-col gap-5">
-      {/* Item 1: Video/Curso */}
-      <a href="https://www.youtube.com/@Computerphile" target="_blank" class="group flex items-center gap-4 transition-all">
-        <div class="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center group-hover:bg-red-100 transition-colors">
-          <span class="text-xl">📺</span>
-        </div>
-        <div>
-          <h4 class="text-xs font-bold text-gray-800 group-hover:text-pink-500 transition-colors">Computerphile</h4>
-          <p class="text-[10px] text-gray-400">Conceptos de computación</p>
-        </div>
-      </a>
+            {
+              /* Aquí es donde Lume inyectará el historial si lo pones en el index,
+                o puedes poner un componente global aquí mismo */
+            }
+            <aside
+              id="right-column"
+              class="hidden lg:flex flex-col sticky top-10 h-fit gap-6"
+            >
+              {/* CARD: RECURSOS RECOMENDADOS */}
+              <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-white">
+                <h3 class="font-bold text-[#3a0159] mb-6 flex items-center gap-2 text-lg">
+                  <span class="text-xl"></span>
+                  Recomendaciones de la semana
+                </h3>
 
-      {/* Item 2: Libro */}
-      <a href="#" class="group flex items-center gap-4 transition-all">
-        <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-          <span class="text-xl">📖</span>
-        </div>
-        <div>
-          <h4 class="text-xs font-bold text-gray-800 group-hover:text-pink-500 transition-colors">SQL Performance</h4>
-          <p class="text-[10px] text-gray-400">Aprende a tunear queries</p>
-        </div>
-      </a>
+                <div class="flex flex-col gap-5">
+                  {/* Item 1: Visualización de SQL (Súper útil para aprender) */}
+                  <a
+                    href="https://sqlime.org/"
+                    target="_blank"
+                    class="group flex items-center gap-4 transition-all"
+                  >
+                    <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                      <span class="text-xl">💻</span>
+                    </div>
+                    <div>
+                      <h4 class="text-xs font-bold text-gray-800 group-hover:text-pink-500 transition-colors">
+                        SQLime
+                      </h4>
+                      <p class="text-[10px] text-gray-400">
+                        Playground de SQLite online
+                      </p>
+                    </div>
+                  </a>
 
-      {/* Item 3: Blog/Artículos */}
-      <a href="https://db-engines.com" target="_blank" class="group flex items-center gap-4 transition-all">
-        <div class="w-12 h-12 bg-green-50 rounded-2xl flex items-center justify-center group-hover:bg-green-100 transition-colors">
-          <span class="text-xl">🌐</span>
-        </div>
-        <div>
-          <h4 class="text-xs font-bold text-gray-800 group-hover:text-pink-500 transition-colors">DB-Engines</h4>
-          <p class="text-[10px] text-gray-400">Ranking de DBs</p>
-        </div>
-      </a>
-    </div>
-  </div>
+                  {/* Item 2: Blog Técnico de Oracle (Esencial para tu carrera) */}
+                  <a
+                    href="https://blogs.oracle.com/database/"
+                    target="_blank"
+                    class="group flex items-center gap-4 transition-all"
+                  >
+                    <div class="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center group-hover:bg-red-100 transition-colors">
+                      <span class="text-xl">🏗️</span>
+                    </div>
+                    <div>
+                      <h4 class="text-xs font-bold text-gray-800 group-hover:text-pink-500 transition-colors">
+                        Oracle DB Blog
+                      </h4>
+                      <p class="text-[10px] text-gray-400">
+                        Novedades y performance
+                      </p>
+                    </div>
+                  </a>
 
-
-   <div class="mt-8 w-full">
-                <CuriousBox />
+                  {/* Item 3: IA y Datos (Recurso muy actualizado) */}
+                  <a
+                    href="https://www.thendw.com/"
+                    target="_blank"
+                    class="group flex items-center gap-4 transition-all"
+                  >
+                    <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                      <span class="text-xl">🤖</span>
+                    </div>
+                    <div>
+                      <h4 class="text-xs font-bold text-gray-800 group-hover:text-pink-500 transition-colors">
+                        The Neuron
+                      </h4>
+                      <p class="text-[10px] text-gray-400">
+                        Newsletter diario de IA
+                      </p>
+                    </div>
+                  </a>
+                </div>
               </div>
 
- 
-</aside>
-
+              <div class="mt-8 w-full">
+                <CuriousBox />
+              </div>
+            </aside>
           </div>
 
           {/* === FOOTER === */}
@@ -132,7 +161,10 @@ export default (data, _helpers) => {
             </p>
             <div class="flex items-center gap-2 mt-2">
               <span class="text-xs text-gray-300">Hecho con Lume 🩵</span>
-              <img src="/img/logo-pajarito-rmv.png" class="w-6 h-6 grayscale opacity-50" />
+              <img
+                src="/img/logo-pajarito-rmv.png"
+                class="w-6 h-6 grayscale opacity-50"
+              />
             </div>
           </footer>
         </body>

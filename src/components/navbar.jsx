@@ -21,7 +21,9 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/"
-            class={`${linkBase} ${isActive("/") ? active : "hover:text-purple-600 bg-purple-50"}`}
+            class={`${linkBase} ${
+              isActive("/") ? active : "hover:text-purple-600 bg-purple-50"
+            }`}
           >
             Inicio
           </a>
@@ -30,7 +32,9 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/about"
-            class={`${linkBase} ${isActive("/about") ? active : "hover:text-green-700 bg-[#E0F5E9]"}`}
+            class={`${linkBase} ${
+              isActive("/about") ? active : "hover:text-green-700 bg-[#E0F5E9]"
+            }`}
           >
             Acerca de
           </a>
@@ -39,7 +43,9 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/posts"
-            class={`${linkBase} ${isActive("/posts") ? active : "hover:text-pink-700 bg-pink-200"}`}
+            class={`${linkBase} ${
+              isActive("/posts") ? active : "hover:text-pink-700 bg-pink-200"
+            }`}
           >
             Publicaciones
           </a>
@@ -48,7 +54,9 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/cv"
-            class={`${linkBase} ${isActive("/cv") ? active : "hover:text-yellow-700 bg-yellow-50"}`}
+            class={`${linkBase} ${
+              isActive("/cv") ? active : "hover:text-yellow-700 bg-yellow-50"
+            }`}
           >
             Currículum
           </a>
