@@ -129,7 +129,7 @@ export default (data, _helpers) => {
 
                   {/* Item 3: IA y Datos (Recurso muy actualizado) */}
                   <a
-                    href="https://www.thendw.com/"
+                    href="https://www.theneurondaily.com/"
                     target="_blank"
                     class="group flex items-center gap-4 transition-all"
                   >
