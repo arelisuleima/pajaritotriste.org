@@ -23,6 +23,8 @@ export default (data, _helpers) => {
               Hola
             </h1>
             <p class="text-lg md:text-xl text-[#2D5A43] mb-8 leading-relaxed font-medium">
+              Bienvenido a{" "}
+              <span class="text-pink-500 italic">Pajarito Triste</span>.
               Transformando la manera en que aprendemos y comprendemos el mundo
               de los datos.
               <span class="block mt-2 text-[#3a0159]/70">
