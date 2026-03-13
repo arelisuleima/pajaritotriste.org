@@ -39,18 +39,28 @@ export default function* ({ search }) {
           </header>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            ${blogWithTag.map((post) => `
+            ${
+        blogWithTag.map((post) => `
               <article class="group bg-white rounded-[2.5rem] p-6 border border-white shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
-                ${post.image ? `
+                ${
+          post.image
+            ? `
                   <div class="rounded-[1.8rem] overflow-hidden mb-5 aspect-video border-4 border-pink-50/30">
                     <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
-                ` : ''}
+                `
+            : ""
+        }
                 
                 <div class="px-2">
                   <div class="flex items-center gap-3 mb-3">
                     <span class="text-[10px] font-bold text-pink-400 uppercase tracking-widest italic">
-                      ${new Date(post.date).toLocaleDateString('es-MX', { month: 'short', year: 'numeric' })}
+                      ${
+          new Date(post.date).toLocaleDateString("es-MX", {
+            month: "short",
+            year: "numeric",
+          })
+        }
                     </span>
                     <span class="w-1.5 h-1.5 rounded-full bg-pink-100"></span>
                     <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
@@ -67,7 +77,8 @@ export default function* ({ search }) {
                   </a>
                 </div>
               </article>
-            `).join("")}
+            `).join("")
+      }
           </div>
 
           <div class="mt-20 text-center">
