@@ -40,13 +40,13 @@ export default function About() {
       {/* SECCIÓN INTRODUCCIÓN */}
       <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-pink-50 shadow-sm">
         {/* Círculo decorativo de fondo */}
-        <div class="absolute -bottom-12 -right-12 w-38 h-48 bg-green-50 rounded-full z-0">
+        <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-purple-50 rounded-full z-1">
         </div>
         <h1 class="text-4xl md:text-5xl font-extrabold text-[#3a0159] mb-8 tracking-tight">
           Acerca de
         </h1>
 
-        <div class="space-y-6 text-gray-600 leading-relaxed text-lg">
+        <div class="space-y-6 text-gray-600 leading-relaxed text-lg relative z-10">
           <p>
             <span class="font-bold text-[#3a0159]">Pajarito Triste</span>{" "}
             es un rincón digital diseñado para humanizar el mundo de los datos.
