@@ -57,7 +57,7 @@ Para identificar qué hay dentro de nuestra base de datos, solemos utilizar
 representaciones visuales. El estándar es el **Diagrama Entidad-Relación
 (ERD)**, que nos muestra de manera clara cómo se conectan los objetos entre sí.
 
-<div class="md:float-right  md:ml-4 text-center">
+<div class="md:float-right md:ml-4 text-center">
   <img src="/img/database-schemas.png" alt="Tipos de esquemas" class=" w-150 shadow-md">
 
 </div>
