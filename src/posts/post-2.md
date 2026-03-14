@@ -17,14 +17,14 @@ datos, sin embargo lo que pretendo con mis siguientes entradas es enseñarte com
 funcionan las bases de datos. Para esto lo principal es saber como comunicarse
 con ellas.
 
-Comencemos por conocer como nos comunicaremois con las bases de datos. **SQL
-(Structured Query Language)** es un lenguaje de consulta estructurado utilizado
-para interactuar con bases de datos relacionales. Aunque principalmente se
-utiliza para interactuar con datos, se clasifica como un lenguaje declarativo de
-dominio especifico(DSL), no es como tal un lenguaje de programación porque por
-ejemplo a comparacion de Python o Java, no se utiliza para crear aplicaciones
-completas por si solo, si no que se utiliza especificamente para interacfturar
-con los datos de una base de datos.
+### SQL(Structured Query Language)
+
+Es un lenguaje de consulta estructurado utilizado para interactuar con bases de
+datos relacionales. Aunque principalmente se utiliza para interactuar con datos,
+se clasifica como un lenguaje declarativo de dominio especifico(DSL), no es como
+tal un lenguaje de programación porque por ejemplo a comparacion de Python o
+Java, no se utiliza para crear aplicaciones completas por si solo, si no que se
+utiliza especificamente para interacfturar con los datos de una base de datos.
 
 Sus fundamentos incluyen:
 

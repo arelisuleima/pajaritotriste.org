@@ -52,7 +52,7 @@ export default (data, _helpers) => {
           {/* Grid responsivo: 1 columna en móvil, 2 en tablets/desktop */}
           <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-8">
             {featuredPosts.map((post) => (
-              <article class="group bg-white rounded-[2.5rem] border border-pink-50 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
+              <article class="group bg-white rounded-[2.5rem] border border-pink-50 overflow-hidden shadow-sm transition-all duration-500 flex flex-col">
                 {post.image && (
                   <a
                     href={post.url}
