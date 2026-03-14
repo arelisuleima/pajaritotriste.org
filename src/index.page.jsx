@@ -89,7 +89,7 @@ export default (data, _helpers) => {
                     <BlogTags tags={post.tags?.slice(0, 2)} />
                     <a
                       href={post.url}
-                      class="w-12 h-12 flex items-center justify-center bg-purple-50 text-purple-600 rounded-2xl group-hover:bg-[#3a0159] group-hover:text-white transition-all transform group-hover:rotate-45"
+                      class="w-12 h-12 flex items-center justify-center bg-purple-50 text-purple-600 rounded-2xl group-hover:bg-[#3a0159] group-hover:text-white transition-all transform "
                     >
                       <span class="text-2xl font-bold">→</span>
                     </a>

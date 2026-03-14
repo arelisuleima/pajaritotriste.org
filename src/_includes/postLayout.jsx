@@ -50,6 +50,7 @@ export default (data, _helpers) => {
                         day: "numeric",
                         month: "long",
                         year: "numeric",
+                        timeZone: "UTC", // Esto asegura que use la fecha exacta del Markdown sin restarle horas
                       })}
                     </p>
                   )}
@@ -83,7 +84,28 @@ export default (data, _helpers) => {
                 {children}
               </div>
 
-              {/* ... resto del footer igual ... */}
+              <div class="mt-10 text-center my-15">
+                <a
+                  href="/"
+                  class="px-8 py-4 bg-[#3a0159] border border-pink-100 text-pink-400 font-bold rounded-full hover:bg-purple-200 transition-all shadow-sm"
+                >
+                  Volver al inicio
+                </a>
+              </div>
+
+              {/* === FOOTER === */}
+              <footer class="mt-auto mb-10 mx-auto w-[92%] max-w-[1200px] bg-white/30 backdrop-blur-sm rounded-[2.5rem] p-10 text-center flex flex-col items-center border border-white/50">
+                <p class="text-base text-gray-400 font-medium">
+                  © {new Date().getFullYear()} Pajarito Triste
+                </p>
+                <div class="flex items-center gap-2 mt-4">
+                  <span class="text-sm text-gray-300">Hecho con Lume 🩵</span>
+                  <img
+                    src="/img/logo-pajarito-rmv.png"
+                    class="w-8 h-8 grayscale opacity-50"
+                  />
+                </div>
+              </footer>
             </article>
           </main>
 
