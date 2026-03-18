@@ -22,9 +22,9 @@ No es para menos: tan solo a inicios de 2025, un estudio reveló que las persona
 revisan su celular en promedio unas **205 veces al día**, es decir, casi cada
 cinco minutos mientras están despiertos.
 
-<div class="md:float-left md:w-1/2 md:mr-6 my-6 ">
+<div class="md:float-left md:w-1/2 md:mr-6 my-6 text-center">
   <img src="/img/chuck.png" alt="Chuck McGill" class="rounded-4xl w-85 shadow-md">
-
+  <p class="text-xs text-purple-500 mt-2 italic">Chuck McGill, mostrando su hipersensibilidad electromagnética. (Better Call Saul, 2015)</p>
 </div>
 O sea que sí, probablemente la mitad del día te la pasas pegado al celular y, peor aún, regalando datos. Las apps no te van a decir *"Hola, hoy te vamos a espiar"*, pero recopilan todo lo que pueden... y lo peor es que lo permites.
 

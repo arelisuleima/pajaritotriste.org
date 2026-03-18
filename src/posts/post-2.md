@@ -1,5 +1,5 @@
 ---
-title: "1. Introducción a SQL: Del diseño a la consulta"
+title: "Introducción a SQL: 1. Del diseño a la consulta"
 type: "post"
 draft: false
 layout: "postLayout.jsx"
@@ -7,7 +7,7 @@ tags:
   - SQL
   - introduccion-sql
 
-description: "Introducción a SQL"
+description: "Entendiendo los esquemas y relaciones entre las tablas"
 image: "/img/zero-to-hero.png"
 date: 2026-03-13
 ---
