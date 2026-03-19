@@ -13,57 +13,92 @@ export default (data, _helpers) => {
           <meta charset="UTF-8" />
           <meta
             name="viewport"
-            content="width=device-width, initial-scale=1.0"
+            content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
           />
           <title>{title} | {site?.title || "Pajarito Triste"}</title>
           <link rel="stylesheet" href="/styles.css" />
+          
+          {/* Estilo especial para forzar calidad, márgenes y limpiar el PDF */}
+          <style dangerouslySetInnerHTML={{ __html: `
+            @media print {
+              @page { margin: 2cm; }
+              body { background-color: white !important; -webkit-print-color-adjust: exact; }
+              .prose { max-width: none !important; }
+              a[href]:after { content: none !important; } /* Evita que salgan las URLs escritas al lado de los links */
+              
+              /* Hack visual: forzamos que el fondo de los bloques de código sea blanco en el PDF 
+                 y el texto negro para máxima legibilidad y ahorro de tinta */
+              pre {
+                background-color: white !important;
+                border: 1px solid #e5e7eb;
+              }
+              pre code {
+                color: black !important;
+                text-shadow: none !important;
+              }
+            }
+          `}} />
         </head>
 
-        <body className="bg-[#fff5f7] text-gray-900 min-h-screen flex flex-col font-sans">
+        <body className="bg-[#fff5f7] text-gray-900 min-h-screen flex flex-col font-sans antialiased overflow-x-hidden">
+          {/* Barra de progreso - OCULTA EN PDF */}
           <div
             id="progress-bar"
-            class="fixed top-0 left-0 h-1.5 bg-pink-300 z-100 transition-all duration-150 w-0"
+            class="fixed top-0 left-0 h-1.5 bg-pink-300 z-100 transition-all duration-150 w-0 print:hidden"
           >
           </div>
 
-          <div className="w-full flex justify-center mt-6 mb-10">
+          {/* Navbar - OCULTA EN PDF */}
+          <div className="w-full flex justify-center mt-6 mb-10 px-4 print:hidden">
             <Navbar currentUrl={url} />
           </div>
 
-          <main className="flex-1 max-w-5xl mx-auto px-6 pb-20">
+          <main className="flex-1 max-w-5xl mx-auto px-4 md:px-6 pb-20 w-full">
             <article>
-              {/* === NUEVA CABECERA EN DOS COLUMNAS === */}
-              <header className="flex flex-col md:flex-row items-center gap-10 mb-16">
-                {/* RECUADRO 1: Información (Texto) */}
+              
+              {/* === ENCABEZADO EXCLUSIVO PARA PDF (Oculto en web) === */}
+              <div className="hidden print:flex flex-col items-center mb-10 border-b-2 border-pink-100 pb-6 w-full text-center">
+                <img src="/img/banner-inicio-rmv.png" className="w-28" alt="Pajarito Triste" />
+                <p className="text-[10px] text-pink-400 font-bold mt-2 uppercase tracking-[0.3em]">
+                  Documentación 
+                </p>
+              </div>
+
+              {/* === CABECERA DEL POST === */}
+              <header className="flex flex-col md:flex-row items-center gap-8 md:gap-10 mb-12 md:mb-16">
+                
                 <div className="w-full md:w-1/2 text-left">
-                  <div className="inline-block px-4 py-1 bg-white text-[#3a0159] rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 border border-pink-100 shadow-sm">
+                  
+                  {/* === Ocultamos el tiempo de lectura en PDF === */}
+                  <div className="inline-block px-4 py-1 bg-white text-[#3a0159] rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 border border-pink-100 shadow-sm print:hidden">
                     <span>🕒</span> {readingInfo?.minutes || 5} min de lectura
                   </div>
 
-                  <h1 className="text-4xl md:text-5xl font-extrabold text-[#3a0159] leading-tight mb-4">
+                  <h1 className="text-3xl md:text-5xl font-extrabold text-[#3a0159] leading-tight mb-4 wrap-break-word">
                     {title}
                   </h1>
 
+                  {/* === Ocultamos la fecha de publicación en PDF === */}
                   {date && (
-                    <p className="text-gray-400 font-medium mb-6 uppercase text-[11px] tracking-[0.2em]">
+                    <p className="text-gray-400 font-medium mb-6 uppercase text-[11px] tracking-[0.2em] print:hidden">
                       Publicado el {new Date(date).toLocaleDateString("es-MX", {
                         day: "numeric",
                         month: "long",
                         year: "numeric",
-                        timeZone: "UTC", // Esto asegura que use la fecha exacta del Markdown sin restarle horas
+                        timeZone: "UTC", 
                       })}
                     </p>
                   )}
 
-                  <div className="flex flex-wrap gap-2">
+                  {/* === Ocultamos las etiquetas (Tags) en PDF === */}
+                  <div className="flex flex-wrap gap-2 print:hidden">
                     <BlogTags tags={tags} />
                   </div>
                 </div>
 
-                {/* RECUADRO 2: Imagen Portada */}
                 <div className="w-full md:w-1/2">
                   {image && (
-                    <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-10 border-white transform rotate-2 hover:rotate-0 transition-all duration-500">
+                    <div className="rounded-4xl md:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 md:border-10 border-white transform rotate-0 md:rotate-2 print:rotate-0 print:shadow-none print:border-2 transition-all duration-500">
                       <img
                         src={image}
                         alt={title}
@@ -75,34 +110,44 @@ export default (data, _helpers) => {
               </header>
 
               {/* CUERPO DEL POST */}
-              <div className="prose prose-lg max-w-none 
+              <div className="prose prose-pink max-w-none 
                 prose-headings:text-[#3a0159] prose-headings:font-extrabold
-                prose-p:text-gray-700 prose-p:leading-relaxed prose-p:text-[1.1rem]
-                prose-img:rounded-4xl prose-img:shadow-lg
-                prose-blockquote:border-l-4 prose-blockquote:border-pink-300 prose-blockquote:bg-pink-50/50 prose-blockquote:rounded-r-4xl
-                prose-a:text-pink-400 prose-a:font-bold hover:prose-a:text-[#3a0159]">
+                prose-p:text-gray-700 prose-p:leading-relaxed prose-p:text-[1rem] md:prose-p:text-[1.1rem]
+                prose-img:rounded-3xl md:prose-img:rounded-4xl prose-img:shadow-lg
+                prose-blockquote:border-l-4 prose-blockquote:border-pink-300 prose-blockquote:bg-pink-50/50 prose-blockquote:rounded-r-3xl
+                prose-a:text-pink-400 prose-a:font-bold hover:prose-a:text-[#3a0159]
+                overflow-x-hidden print:prose-p:text-black">
                 {children}
               </div>
 
-              <div class="mt-10 text-center my-15">
+              {/* BOTONES DE ACCIÓN - OCULTOS EN PDF */}
+              <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-4 mb-20 print:hidden">
+                <button 
+                  type="button"
+                  onClick="window.print()" 
+                  className="px-8 py-4 bg-white border-2 border-pink-200 text-[#3a0159] font-bold rounded-full hover:bg-pink-200 transition-all shadow-md active:scale-95 flex items-center gap-2"
+                >
+                  <span>📥</span> Descargar PDF
+                </button>
+
                 <a
                   href="/"
-                  class="px-8 py-4 bg-[#3a0159] border border-pink-100 text-pink-400 font-bold rounded-full hover:bg-purple-200 transition-all shadow-sm"
+                  class="px-10 py-4 bg-[#3a0159] border border-pink-100 text-pink-200 font-bold rounded-full hover:bg-purple-800 transition-all shadow-md active:scale-95"
                 >
                   Volver al inicio
                 </a>
               </div>
 
-              {/* === FOOTER === */}
-              <footer class="mt-auto mb-10 mx-auto w-[92%] max-w-[1200px] bg-white/30 backdrop-blur-sm rounded-[2.5rem] p-10 text-center flex flex-col items-center border border-white/50">
-                <p class="text-base text-gray-400 font-medium">
+              {/* === FOOTER - OCULTO EN PDF === */}
+              <footer class="mx-auto w-full md:w-[92%] bg-white/30 backdrop-blur-sm rounded-4xl p-8 md:p-10 text-center flex flex-col items-center border border-white/50 print:hidden">
+                <p class="text-sm md:text-base text-gray-400 font-medium">
                   © {new Date().getFullYear()} Pajarito Triste
                 </p>
                 <div class="flex items-center gap-2 mt-4">
-                  <span class="text-sm text-gray-300">Hecho con Lume 🩵</span>
+                  <span class="text-xs md:text-sm text-gray-300">Hecho con Lume 🩵</span>
                   <img
                     src="/img/logo-pajarito-rmv.png"
-                    class="w-8 h-8 grayscale opacity-50"
+                    class="w-6 h-6 md:w-8 md:h-8 grayscale opacity-50"
                   />
                 </div>
               </footer>
@@ -116,7 +161,8 @@ export default (data, _helpers) => {
               const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
               const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
               const scrolled = (winScroll / height) * 100;
-              document.getElementById("progress-bar").style.width = scrolled + "%";
+              const bar = document.getElementById("progress-bar");
+              if (bar) bar.style.width = scrolled + "%";
             };
           `,
             }}
