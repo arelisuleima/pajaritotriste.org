@@ -28,6 +28,16 @@ export default function Navbar({ currentUrl }) {
             Inicio
           </a>
         </li>
+          <li>
+          <a
+            href="/posts"
+            class={`${linkBase} ${
+              isActive("/posts") ? active : "hover:text-pink-700 bg-pink-200"
+            }`}
+          >
+            Publicaciones
+          </a>
+        </li>
 
         <li>
           <a
@@ -40,16 +50,6 @@ export default function Navbar({ currentUrl }) {
           </a>
         </li>
 
-        <li>
-          <a
-            href="/posts"
-            class={`${linkBase} ${
-              isActive("/posts") ? active : "hover:text-pink-700 bg-pink-200"
-            }`}
-          >
-            Publicaciones
-          </a>
-        </li>
 
         <li>
           <a
