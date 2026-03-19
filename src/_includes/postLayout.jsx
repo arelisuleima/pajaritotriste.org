@@ -69,7 +69,7 @@ export default (data, _helpers) => {
                 
                 <div className="w-full md:w-1/2 text-left">
                   
-                  {/* === Ocultamos el tiempo de lectura en PDF === */}
+                  {/* === Oculta el tiempo de lectura en PDF === */}
                   <div className="inline-block px-4 py-1 bg-white text-[#3a0159] rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 border border-pink-100 shadow-sm print:hidden">
                     <span>🕒</span> {readingInfo?.minutes || 5} min de lectura
                   </div>
@@ -78,7 +78,7 @@ export default (data, _helpers) => {
                     {title}
                   </h1>
 
-                  {/* === Ocultamos la fecha de publicación en PDF === */}
+                  {/* === Oculta la fecha de publicación en PDF === */}
                   {date && (
                     <p className="text-gray-400 font-medium mb-6 uppercase text-[11px] tracking-[0.2em] print:hidden">
                       Publicado el {new Date(date).toLocaleDateString("es-MX", {
@@ -90,7 +90,7 @@ export default (data, _helpers) => {
                     </p>
                   )}
 
-                  {/* === Ocultamos las etiquetas (Tags) en PDF === */}
+                  {/* === Oculta las etiquetas (Tags) en PDF === */}
                   <div className="flex flex-wrap gap-2 print:hidden">
                     <BlogTags tags={tags} />
                   </div>
@@ -144,10 +144,10 @@ export default (data, _helpers) => {
                   © {new Date().getFullYear()} Pajarito Triste
                 </p>
                 <div class="flex items-center gap-2 mt-4">
-                  <span class="text-xs md:text-sm text-gray-300">Hecho con Lume 🩵</span>
+                  <span class="text-xs md:text-sm text-gray-400">Hecho con Lume 🩵</span>
                   <img
                     src="/img/logo-pajarito-rmv.png"
-                    class="w-6 h-6 md:w-8 md:h-8 grayscale opacity-50"
+                    class="w-6 h-6 md:w-8 md:h-8 grayscale opacity-60"
                   />
                 </div>
               </footer>
