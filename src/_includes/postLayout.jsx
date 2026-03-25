@@ -2,8 +2,14 @@ import Navbar from "../components/navbar.jsx";
 import { BlogTags } from "../components/blogTags.jsx";
 
 export default (data, _helpers) => {
-  const { title, children, lang, site, date, tags, url, image, readingInfo } =
+  // === CORRECCIÓN: Extraemos site_url de data para que sea reconocida ===
+  const { title, children, lang, site, date, tags, url, image, readingInfo, site_url } =
     data;
+
+  // Lógica para asegurar una URL completa en la imagen de previsualización
+  const absoluteImageUrl = image && !image.startsWith("http")
+    ? `${site_url}${image}`
+    : image;
 
   return (
     <>
@@ -18,7 +24,7 @@ export default (data, _helpers) => {
           <title>{title} | {site?.title || "Pajarito Triste"}</title>
           <link rel="stylesheet" href="/styles.css" />
 
-          {/* === METADATOS PARA PREVISUALIZACIÓN === */}
+          {/* === METADATOS PARA PREVISUALIZACIÓN (WhatsApp, LinkedIn, etc) === */}
           <meta property="og:type" content="article" />
           <meta
             property="og:site_name"
@@ -30,14 +36,13 @@ export default (data, _helpers) => {
             content={data.description || site?.description ||
               "Aprende SQL con Pajarito Triste."}
           />
-          {/* Nota cómo usamos site_url + url (la ruta del post) */}
+          
+          {/* Usamos site_url (de _data.yml) + url (la ruta del post) */}
           <meta property="og:url" content={`${site_url}${url}`} />
 
-          {image && (
-            <meta
-              property="og:image"
-              content={image.startsWith("http") ? image : `${site_url}${image}`}
-            />
+          {/* Imagen de previsualización con URL absoluta */}
+          {absoluteImageUrl && (
+            <meta property="og:image" content={absoluteImageUrl} />
           )}
 
           <meta property="og:image:width" content="1200" />
@@ -51,10 +56,8 @@ export default (data, _helpers) => {
       @page { margin: 2cm; }
       body { background-color: white !important; -webkit-print-color-adjust: exact; }
       .prose { max-width: none !important; }
-      a[href]:after { content: none !important; } /* Evita que salgan las URLs escritas al lado de los links */
+      a[href]:after { content: none !important; } 
       
-      /* Hack visual: forzamos que el fondo de los bloques de código sea blanco en el PDF 
-         y el texto negro para máxima legibilidad y ahorro de tinta */
       pre {
         background-color: white !important;
         border: 1px solid #e5e7eb;
@@ -70,21 +73,21 @@ export default (data, _helpers) => {
         </head>
 
         <body className="bg-[#fff5f7] text-gray-900 min-h-screen flex flex-col font-sans antialiased overflow-x-hidden">
-          {/* Barra de progreso - OCULTA EN PDF */}
+          {/* Barra de progreso */}
           <div
             id="progress-bar"
             class="fixed top-0 left-0 h-1.5 bg-pink-300 z-100 transition-all duration-150 w-0 print:hidden"
           >
           </div>
 
-          {/* Navbar - OCULTA EN PDF */}
+          {/* Navbar */}
           <div className="w-full flex justify-center mt-6 mb-10 px-4 print:hidden">
             <Navbar currentUrl={url} />
           </div>
 
           <main className="flex-1 max-w-5xl mx-auto px-4 md:px-6 pb-20 w-full">
             <article>
-              {/* === ENCABEZADO EXCLUSIVO PARA PDF (Oculto en web) === */}
+              {/* ENCABEZADO EXCLUSIVO PARA PDF */}
               <div className="hidden print:flex flex-col items-center mb-10 border-b-2 border-pink-100 pb-6 w-full text-center">
                 <img
                   src="/img/banner-inicio-rmv.png"
@@ -96,10 +99,9 @@ export default (data, _helpers) => {
                 </p>
               </div>
 
-              {/* === CABECERA DEL POST === */}
+              {/* CABECERA DEL POST */}
               <header className="flex flex-col md:flex-row items-center gap-8 md:gap-10 mb-12 md:mb-16">
                 <div className="w-full md:w-1/2 text-left">
-                  {/* === Oculta el tiempo de lectura en PDF === */}
                   <div className="inline-block px-4 py-1 bg-white text-[#3a0159] rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 border border-pink-100 shadow-sm print:hidden">
                     <span>🕒</span> {readingInfo?.minutes || 5} min de lectura
                   </div>
@@ -108,7 +110,6 @@ export default (data, _helpers) => {
                     {title}
                   </h1>
 
-                  {/* === Oculta la fecha de publicación en PDF === */}
                   {date && (
                     <p className="text-gray-400 font-medium mb-6 uppercase text-[11px] tracking-[0.2em] print:hidden">
                       Publicado el {new Date(date).toLocaleDateString("es-MX", {
@@ -120,7 +121,6 @@ export default (data, _helpers) => {
                     </p>
                   )}
 
-                  {/* === Oculta las etiquetas (Tags) en PDF === */}
                   <div className="flex flex-wrap gap-2 print:hidden">
                     <BlogTags tags={tags} />
                   </div>
@@ -150,7 +150,7 @@ export default (data, _helpers) => {
                 {children}
               </div>
 
-              {/* BOTONES DE ACCIÓN - OCULTOS EN PDF */}
+              {/* BOTONES DE ACCIÓN */}
               <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-4 mb-20 print:hidden">
                 <button
                   type="button"
@@ -168,9 +168,8 @@ export default (data, _helpers) => {
                 </a>
               </div>
 
-              {/* === FOOTER - OCULTO EN PDF === */}
+              {/* FOOTER */}
               <footer class="mx-auto w-full md:w-[92%] bg-white/30 backdrop-blur-sm rounded-4xl p-8 md:p-10 text-center flex flex-col items-center border border-white/50 print:hidden">
-                {/* === BOTÓN RSS  === */}
                 <div class="mb-6">
                   <a
                     href="/posts.rss"
