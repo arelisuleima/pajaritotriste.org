@@ -22,17 +22,43 @@ export default (data, _helpers) => {
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
             rel="stylesheet"
           />
+
+          {/* === OPEN GRAPH PARA EL HOME / GENERAL === */}
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:site_name"
+            content={site?.title || "Pajarito Triste"}
+          />
+          <meta
+            property="og:title"
+            content={title || site?.title || "Pajarito Triste"}
+          />
+          <meta
+            property="og:description"
+            content={site?.description ||
+              "Documentación y guías de SQL de cero a hero."}
+          />
+          <meta property="og:url" content={site?.url || ""} />
+
+          {/* Imagen por defecto para cuando compartan la raíz del blog */}
+          <meta
+            property="og:image"
+            content={`${site?.url || ""}/img/logo-pajarito-rmv.png`}
+          />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+
           <style>
             {`
-            body { font-family: 'Quicksand', sans-serif; scroll-behavior: smooth; font-size: 18px; }
-            @media (max-width: 1024px) {
-              body { font-size: 18px; } /* Aumenta tamaño base de fuente en móvil */
-              h1 { font-size: 2.5rem !important; }
-              p { font-size: 1.1rem !important; }
-            }
-            nav .bg-white\\/70 { max-width: 95vw; overflow-x: auto; scrollbar-width: none; }
-            nav .bg-white\\/70::-webkit-scrollbar { display: none; }
-          `}
+    body { font-family: 'Quicksand', sans-serif; scroll-behavior: smooth; font-size: 18px; }
+    @media (max-width: 1024px) {
+      body { font-size: 18px; } 
+      h1 { font-size: 2.5rem !important; }
+      p { font-size: 1.1rem !important; }
+    }
+    nav .bg-white\\/70 { max-width: 95vw; overflow-x: auto; scrollbar-width: none; }
+    nav .bg-white\\/70::-webkit-scrollbar { display: none; }
+  `}
           </style>
         </head>
 

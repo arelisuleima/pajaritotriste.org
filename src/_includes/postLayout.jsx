@@ -18,28 +18,55 @@ export default (data, _helpers) => {
           <title>{title} | {site?.title || "Pajarito Triste"}</title>
           <link rel="stylesheet" href="/styles.css" />
 
+          {/* === METADATOS PARA PREVISUALIZACIÓN === */}
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:site_name"
+            content={site?.title || "Pajarito Triste"}
+          />
+          <meta property="og:title" content={title} />
+          <meta
+            property="og:description"
+            content={data.description || site?.description ||
+              "Aprende SQL con Pajarito Triste."}
+          />
+          <meta property="og:url" content={`${site?.url}${url}`} />
+
+          {/* Lógica para que la imagen de tus posts se vea en la previsualización */}
+          {image && (
+            <meta
+              property="og:image"
+              content={image.startsWith("http")
+                ? image
+                : `${site?.url}${image}`}
+            />
+          )}
+
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+
           {/* Estilo especial para forzar calidad, márgenes y limpiar el PDF */}
           <style
             dangerouslySetInnerHTML={{
               __html: `
-            @media print {
-              @page { margin: 2cm; }
-              body { background-color: white !important; -webkit-print-color-adjust: exact; }
-              .prose { max-width: none !important; }
-              a[href]:after { content: none !important; } /* Evita que salgan las URLs escritas al lado de los links */
-              
-              /* Hack visual: forzamos que el fondo de los bloques de código sea blanco en el PDF 
-                 y el texto negro para máxima legibilidad y ahorro de tinta */
-              pre {
-                background-color: white !important;
-                border: 1px solid #e5e7eb;
-              }
-              pre code {
-                color: black !important;
-                text-shadow: none !important;
-              }
-            }
-          `,
+    @media print {
+      @page { margin: 2cm; }
+      body { background-color: white !important; -webkit-print-color-adjust: exact; }
+      .prose { max-width: none !important; }
+      a[href]:after { content: none !important; } /* Evita que salgan las URLs escritas al lado de los links */
+      
+      /* Hack visual: forzamos que el fondo de los bloques de código sea blanco en el PDF 
+         y el texto negro para máxima legibilidad y ahorro de tinta */
+      pre {
+        background-color: white !important;
+        border: 1px solid #e5e7eb;
+      }
+      pre code {
+        color: black !important;
+        text-shadow: none !important;
+      }
+    }
+  `,
             }}
           />
         </head>
