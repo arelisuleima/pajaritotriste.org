@@ -145,13 +145,27 @@ export default (data, _helpers) => {
 
               {/* === FOOTER - OCULTO EN PDF === */}
               <footer class="mx-auto w-full md:w-[92%] bg-white/30 backdrop-blur-sm rounded-4xl p-8 md:p-10 text-center flex flex-col items-center border border-white/50 print:hidden">
+                {/* === BOTÓN RSS  === */}
+                <div class="mb-6">
+                  <a
+                    href="/posts.rss"
+                    class="flex items-center gap-2 text-pink-400 font-bold text-sm hover:text-[#3a0159] transition-colors group"
+                    title="Suscribirse al feed RSS"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5 fill-current group-hover:scale-110 transition-transform"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M6 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zM2 6.5v2.8c5.4 0 9.8 4.4 9.8 9.8h2.8c0-7-5.6-12.6-12.6-12.6zm0-4.7v2.8c8.1 0 14.7 6.6 14.7 14.7h2.8c0-9.7-7.8-17.5-17.5-17.5z" />
+                    </svg>
+                    <span>Suscribirse vía RSS</span>
+                  </a>
+                </div>
                 <p class="text-sm md:text-base text-gray-400 font-medium">
                   © {new Date().getFullYear()} Pajarito Triste
                 </p>
                 <div class="flex items-center gap-2 mt-4">
-                  <span class="text-xs md:text-sm text-gray-400">
-                    Hecho con Lume 🩵
-                  </span>
                   <img
                     src="/img/logo-pajarito-rmv.png"
                     class="w-6 h-6 md:w-8 md:h-8 grayscale opacity-60"

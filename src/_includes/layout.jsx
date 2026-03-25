@@ -151,16 +151,13 @@ export default (data, _helpers) => {
               </a>
             </div>
 
-            <p class="text-sm md:text-base text-pink-400 font-medium">
+            <p class="text-sm md:text-base text-gray-400 font-medium">
               © {new Date().getFullYear()} Pajarito Triste
             </p>
             <div class="flex items-center gap-2 mt-4">
-              <span class="text-xs md:text-sm text-pink-400">
-                Hecho con Lume 🩵
-              </span>
               <img
                 src="/img/logo-pajarito-rmv.png"
-                class="w-6 h-6 md:w-8 md:h-8  opacity-60"
+                class="w-6 h-6 md:w-8 md:h-8 grayscale opacity-60"
               />
             </div>
           </footer>
