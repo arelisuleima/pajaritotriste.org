@@ -28,7 +28,7 @@ export default function Navbar({ currentUrl }) {
             Inicio
           </a>
         </li>
-          <li>
+        <li>
           <a
             href="/posts"
             class={`${linkBase} ${
@@ -49,7 +49,6 @@ export default function Navbar({ currentUrl }) {
             Acerca de
           </a>
         </li>
-
 
         <li>
           <a

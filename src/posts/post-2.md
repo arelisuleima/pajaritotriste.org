@@ -232,4 +232,4 @@ de lo que estamos haciendo. En la próxima entrega, por fin escribiremos nuestra
 primer consulta y aprenderemos a "interrogar" a nuestra base de datos con el
 comando SELECT.
 
-***¡Gracias por leer y nos vemos en la próxima consulta!***
+_**¡Gracias por leer y nos vemos en la próxima consulta!**_

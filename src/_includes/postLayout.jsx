@@ -17,9 +17,11 @@ export default (data, _helpers) => {
           />
           <title>{title} | {site?.title || "Pajarito Triste"}</title>
           <link rel="stylesheet" href="/styles.css" />
-          
+
           {/* Estilo especial para forzar calidad, márgenes y limpiar el PDF */}
-          <style dangerouslySetInnerHTML={{ __html: `
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
             @media print {
               @page { margin: 2cm; }
               body { background-color: white !important; -webkit-print-color-adjust: exact; }
@@ -37,7 +39,9 @@ export default (data, _helpers) => {
                 text-shadow: none !important;
               }
             }
-          `}} />
+          `,
+            }}
+          />
         </head>
 
         <body className="bg-[#fff5f7] text-gray-900 min-h-screen flex flex-col font-sans antialiased overflow-x-hidden">
@@ -55,20 +59,21 @@ export default (data, _helpers) => {
 
           <main className="flex-1 max-w-5xl mx-auto px-4 md:px-6 pb-20 w-full">
             <article>
-              
               {/* === ENCABEZADO EXCLUSIVO PARA PDF (Oculto en web) === */}
               <div className="hidden print:flex flex-col items-center mb-10 border-b-2 border-pink-100 pb-6 w-full text-center">
-                <img src="/img/banner-inicio-rmv.png" className="w-28" alt="Pajarito Triste" />
+                <img
+                  src="/img/banner-inicio-rmv.png"
+                  className="w-28"
+                  alt="Pajarito Triste"
+                />
                 <p className="text-[10px] text-pink-400 font-bold mt-2 uppercase tracking-[0.3em]">
-                  Documentación 
+                  Documentación
                 </p>
               </div>
 
               {/* === CABECERA DEL POST === */}
               <header className="flex flex-col md:flex-row items-center gap-8 md:gap-10 mb-12 md:mb-16">
-                
                 <div className="w-full md:w-1/2 text-left">
-                  
                   {/* === Oculta el tiempo de lectura en PDF === */}
                   <div className="inline-block px-4 py-1 bg-white text-[#3a0159] rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 border border-pink-100 shadow-sm print:hidden">
                     <span>🕒</span> {readingInfo?.minutes || 5} min de lectura
@@ -85,7 +90,7 @@ export default (data, _helpers) => {
                         day: "numeric",
                         month: "long",
                         year: "numeric",
-                        timeZone: "UTC", 
+                        timeZone: "UTC",
                       })}
                     </p>
                   )}
@@ -122,9 +127,9 @@ export default (data, _helpers) => {
 
               {/* BOTONES DE ACCIÓN - OCULTOS EN PDF */}
               <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-4 mb-20 print:hidden">
-                <button 
+                <button
                   type="button"
-                  onClick="window.print()" 
+                  onClick="window.print()"
                   className="px-8 py-4 bg-white border-2 border-pink-200 text-[#3a0159] font-bold rounded-full hover:bg-pink-200 transition-all shadow-md active:scale-95 flex items-center gap-2"
                 >
                   <span>📥</span> Descargar PDF
@@ -144,7 +149,9 @@ export default (data, _helpers) => {
                   © {new Date().getFullYear()} Pajarito Triste
                 </p>
                 <div class="flex items-center gap-2 mt-4">
-                  <span class="text-xs md:text-sm text-gray-400">Hecho con Lume 🩵</span>
+                  <span class="text-xs md:text-sm text-gray-400">
+                    Hecho con Lume 🩵
+                  </span>
                   <img
                     src="/img/logo-pajarito-rmv.png"
                     class="w-6 h-6 md:w-8 md:h-8 grayscale opacity-60"

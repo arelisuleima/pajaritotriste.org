@@ -20,6 +20,7 @@ import lang_javascript from "highlight.js/lib/languages/javascript";
 import lang_typescript from "highlight.js/lib/languages/typescript";
 import lang_sql from "highlight.js/lib/languages/sql";
 import lang_python from "highlight.js/lib/languages/python";
+import lang_xml from "highlight.js/lib/languages/xml";
 
 import search from "lume/plugins/search.ts";
 
@@ -46,6 +47,7 @@ site.use(code_highlight({
     typescript: lang_typescript,
     python: lang_python,
     py: lang_python,
+    rss: lang_xml,
   },
   theme: [{
     name: "atom-one-dark",
@@ -104,5 +106,21 @@ site.use(seo());
 site.use(search());
 
 site.use(readingInfo());
+
+/* Generate the site's RSS feed */
+site.use(feed({
+  output: ["/posts.rss", "/posts.json"],
+  query: "type=post",
+  info: {
+    title: "=site.title",
+    description: "=site.description",
+    lang: "es",
+    authorName: "pajaritotriste",
+  },
+  items: {
+    title: "=title",
+    description: "=excerpt",
+  },
+}));
 
 export default site;
