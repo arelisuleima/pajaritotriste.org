@@ -25,6 +25,7 @@ import lang_xml from "highlight.js/lib/languages/xml";
 import search from "lume/plugins/search.ts";
 
 const site: Site = lume({
+  location: new URL("https://pajaritotriste.org/"),
   src: "./src",
   dest: "./output",
   watcher: {
