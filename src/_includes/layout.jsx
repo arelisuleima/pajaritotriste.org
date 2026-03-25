@@ -43,10 +43,9 @@ export default (data, _helpers) => {
           {/* Imagen por defecto para cuando compartan la raíz del blog */}
           <meta
             property="og:image"
-            content={`${
-              data.url || "https://pajaritotriste.org"
-            }/img/logo-pajarito-rmv.png`}
+            content={`${site_url}/img/logo-pajarito-rmv.png`}
           />
+          <meta property="og:url" content={site_url} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
 

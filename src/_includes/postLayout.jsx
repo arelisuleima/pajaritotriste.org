@@ -30,15 +30,13 @@ export default (data, _helpers) => {
             content={data.description || site?.description ||
               "Aprende SQL con Pajarito Triste."}
           />
-          <meta property="og:url" content={`${site?.url}${url}`} />
+          {/* Nota cómo usamos site_url + url (la ruta del post) */}
+          <meta property="og:url" content={`${site_url}${url}`} />
 
-          {/* Lógica para que la imagen de tus posts se vea en la previsualización */}
           {image && (
             <meta
               property="og:image"
-              content={image.startsWith("http")
-                ? image
-                : `${site?.url}${image}`}
+              content={image.startsWith("http") ? image : `${site_url}${image}`}
             />
           )}
 
