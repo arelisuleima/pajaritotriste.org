@@ -38,7 +38,7 @@ export default (data, _helpers) => {
             property="og:description"
             content={site?.description || "Documentación y guías de SQL"}
           />
-          
+
           {/* Usamos la variable site_url de tu _data.yml */}
           <meta property="og:url" content={site_url} />
 
@@ -47,7 +47,7 @@ export default (data, _helpers) => {
             property="og:image"
             content={`${site_url}/img/logo-pajarito-rmv.png`}
           />
-          
+
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
 
@@ -109,7 +109,10 @@ export default (data, _helpers) => {
             </div>
 
             {/* 3. COLUMNA DERECHA */}
-            <aside id="right-column" class="flex flex-col gap-6 lg:sticky lg:top-10 h-fit w-full mt-8 lg:mt-0">
+            <aside
+              id="right-column"
+              class="flex flex-col gap-6 lg:sticky lg:top-10 h-fit w-full mt-8 lg:mt-0"
+            >
               <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-white">
                 <h3 class="font-bold text-[#3a0159] mb-6 flex items-center gap-2 text-xl lg:text-lg">
                   <span class="text-2xl lg:text-xl">📚</span>
@@ -117,13 +120,21 @@ export default (data, _helpers) => {
                 </h3>
 
                 <div class="flex flex-col gap-6 lg:gap-5">
-                  <a href="https://runsql.com/r" target="_blank" class="group flex items-center gap-4">
+                  <a
+                    href="https://runsql.com/r"
+                    target="_blank"
+                    class="group flex items-center gap-4"
+                  >
                     <div class="w-14 h-14 lg:w-12 lg:h-12 bg-purple-50 rounded-2xl flex items-center justify-center">
                       <span class="text-2xl lg:text-xl">💻</span>
                     </div>
                     <div>
-                      <h4 class="text-sm lg:text-xs font-bold text-gray-800">RunSQL</h4>
-                      <p class="text-xs lg:text-[10px] text-gray-400 italic">Playground de SQL</p>
+                      <h4 class="text-sm lg:text-xs font-bold text-gray-800">
+                        RunSQL
+                      </h4>
+                      <p class="text-xs lg:text-[10px] text-gray-400 italic">
+                        Playground de SQL
+                      </p>
                     </div>
                   </a>
                 </div>
@@ -138,8 +149,15 @@ export default (data, _helpers) => {
           {/* === FOOTER === */}
           <footer class="mt-auto mb-10 mx-auto w-[92%] max-w-[1200px] bg-white/30 backdrop-blur-sm rounded-[2.5rem] p-10 text-center flex flex-col items-center border border-white/50 print:hidden">
             <div class="mb-6">
-              <a href="/posts.rss" class="flex items-center gap-2 text-pink-400 font-bold text-sm hover:text-[#3a0159] transition-colors group">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+              <a
+                href="/posts.rss"
+                class="flex items-center gap-2 text-pink-400 font-bold text-sm hover:text-[#3a0159] transition-colors group"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-current group-hover:scale-110 transition-transform"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M6 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zM2 6.5v2.8c5.4 0 9.8 4.4 9.8 9.8h2.8c0-7-5.6-12.6-12.6-12.6zm0-4.7v2.8c8.1 0 14.7 6.6 14.7 14.7h2.8c0-9.7-7.8-17.5-17.5-17.5z" />
                 </svg>
                 <span>Suscribirse vía RSS</span>
@@ -150,7 +168,10 @@ export default (data, _helpers) => {
               © {new Date().getFullYear()} Pajarito Triste
             </p>
             <div class="flex items-center gap-2 mt-4">
-              <img src="/img/logo-pajarito-rmv.png" class="w-6 h-6 md:w-8 md:h-8 grayscale opacity-60" />
+              <img
+                src="/img/logo-pajarito-rmv.png"
+                class="w-6 h-6 md:w-8 md:h-8 grayscale opacity-60"
+              />
             </div>
           </footer>
         </body>

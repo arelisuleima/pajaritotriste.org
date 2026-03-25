@@ -3,8 +3,18 @@ import { BlogTags } from "../components/blogTags.jsx";
 
 export default (data, _helpers) => {
   // === CORRECCIÓN: Extraemos site_url de data para que sea reconocida ===
-  const { title, children, lang, site, date, tags, url, image, readingInfo, site_url } =
-    data;
+  const {
+    title,
+    children,
+    lang,
+    site,
+    date,
+    tags,
+    url,
+    image,
+    readingInfo,
+    site_url,
+  } = data;
 
   // Lógica para asegurar una URL completa en la imagen de previsualización
   const absoluteImageUrl = image && !image.startsWith("http")
@@ -36,7 +46,7 @@ export default (data, _helpers) => {
             content={data.description || site?.description ||
               "Aprende SQL con Pajarito Triste."}
           />
-          
+
           {/* Usamos site_url (de _data.yml) + url (la ruta del post) */}
           <meta property="og:url" content={`${site_url}${url}`} />
 
