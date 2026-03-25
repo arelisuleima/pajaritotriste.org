@@ -36,7 +36,7 @@ export default (data, _helpers) => {
           <meta
             property="og:description"
             content={site?.description ||
-              "Documentación y guías de SQL de cero a hero."}
+              "Documentación y guías de SQL"}
           />
           <meta property="og:url" content={site?.url || ""} />
 
