@@ -8,7 +8,7 @@ tags:
   - introduccion-sql
 
 description: "La sentencia SELECT a profundidad"
-image: "/img/select-portada.png"
+image: "/img/post-3.png"
 date: 2026-03-19
 ---
 

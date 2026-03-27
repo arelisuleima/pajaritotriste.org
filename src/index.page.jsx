@@ -25,8 +25,7 @@ export default (data, _helpers) => {
               <span class="text-pink-500 italic">Pajarito Triste</span>.
               Transformando la manera en que aprendemos el mundo de los datos.
               <span class="block mt-4 text-[#3a0159]/70 text-lg md:text-xl">
-                Recursos visuales diseñados para que cada concepto sea claro y
-                práctico.
+                Recursos que te ayudaran a entender mejor las bases de datos.
               </span>
             </p>
 

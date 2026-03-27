@@ -8,7 +8,7 @@ tags:
   - introduccion-sql
 
 description: "Entendiendo los esquemas y relaciones entre las tablas"
-image: "/img/zero-to-hero.png"
+image: "/img/post-2.png"
 date: 2026-03-13
 ---
 
