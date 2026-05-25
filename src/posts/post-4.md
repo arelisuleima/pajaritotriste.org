@@ -4,7 +4,7 @@ type: "post"
 draft: false
 tags:
   - SQL
-  - sql-zero-to-hero
+  - introduccion-sql
 layout: "postLayout.jsx"
 image: "/img/post-5.png"
 ---
