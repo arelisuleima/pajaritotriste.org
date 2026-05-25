@@ -1,250 +1,314 @@
 ---
-title: "Introducción a SQL: 2. El arte de la selección"
+title: "Introducción a SQL: 2. Lenguaje de Definición de Datos(DDL)"
 type: "post"
 draft: false
 layout: "postLayout.jsx"
 tags:
-  - SQL
   - introduccion-sql
-
-description: "La sentencia SELECT a profundidad"
-image: "/img/post-3.png"
+  - SQL
+description: "Tipos de datos y creación de tablas"
 date: 2026-03-19
+image: "/img/post-4.png"
 ---
 
-Para poder empezar a interacturar con la base de datos lo pimero que debemos
-conocer es la sentencia **SELECT**. Esta sentencia funciona para recuperar datos
-especificos de una o varias tablas. Sin embargo, en la arquitectura de datos
-profesional, el **SELECT** no es solo un comando de "lectura"; es un motor de
-proyección y filtrado que nos permite transformar datos crudos en información
-con valor de negocio.
+Anteriormente explique que exiten diferentes tipos de declaraciones SQL que son
+caracterizadas en distintos tipos o bien sublenguajes que agrupan las
+declaraciones dependiendo del tipo de consulta que se vaya a realizar, en esta
+publicación las explicare a detalle.
 
-#### 1. La anatomía de una consulta
+#### Tipos de datos
 
-Toda consulta **SELECT** sigue una estructura lógica que el motor de la base de
-datos debe interpretar.
+Pero antes de comenzar rapidamente te explicare que son los tipos de datos y es
+que de manera superficial como se vio antes los tipos de datos se asignas a
+columnas al momento de crear una tabla, esto para especificar que los datos
+incorporados a esta columna cumplan con ese tipo de dato y que en caso de que el
+dato no cumpla entonces marcara error. Esto no es solo por orden si no tambien
+para que el motor de base de datos sepa cuanta memoria reservar y qué
+operaciopnes permitir(por ejemplo, no puedes sumar 2 nombres, ni contar los
+caracteres de un numero decimal).
 
-- **SELECT**: Define las columnas(atributos) que queremos ver.
-- **FROM**: Especifica el origen (tabla o esquema) de donde provienen los datos.
+Aunque cada motor de base de datos tiene sus propios tipos de datos que varian
+uno de otro, esta ocasión los agrupare sencillamente en los siguientes:
 
-```sql
--- Recuperamos solo el nombre y el salario de la tabla empleados
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
 
-SELECT nombre, salario 
-FROM empleados;
-```
-
-<div class="rounded-3xl shadow-md bg-amber-100 my-8 p-6 md:p-3 border-l-8 border-amber-300 flex flex-col md:flex-row items-center gap-6">
-
-<div class="shrink-0">
-    <img src="/img/select-meme.png" alt="Select all" class="rounded-3xl w-55 md:w-56 shadow-lg">
+<div class="rounded-4xl shadow-md bg-pink-50/50 p-6 border-t-8 border-pink-300 flex flex-col h-full">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="text-2xl">🔤</span>
+      <h4 class="text-[#3a0159] font-extrabold text-xl m-0">Datos de Texto</h4>
+    </div>
+    <p class="text-sm text-gray-600 mb-4 italic">Para nombres, correos o cualquier combinación de letras y símbolos.</p>
+    <ul class="text-sm text-gray-700 space-y-3 list-none p-0 m-0">
+      <li class="flex gap-2"><strong>CHAR(n):</strong>  “Carácter”, acepta cualquier carácter alfanumérico. La 'n' indica la longitud deseada</li>
+      <li class="flex gap-2"><strong>VARCHAR(n):</strong>  “Carácter variable”, acepta cualquier variable alfanumérica.La ‘n’ indica la longitud máxima y es necesario indicar la longitud. El valor mínimo para ’n’ es 1 y el valor máximo es 4,000 bytes.
+</li>
+      <li class="flex gap-2"><strong>TEXT / CLOB:</strong> "Objetos grandes". Se usa para textos largos de hasta 4GB.</li>
+    </ul>
   </div>
 
-<p class="text-base md:text-lg text-amber-900 leading-relaxed italic">
-    Aunque el uso de <strong>SELECT *</strong> (seleccionar todo) es muy común, en entornos productivos se considera una mala práctica. Es importante siempre especificar los nombres de las columnas para optimizar el ancho de banda y mejorar el rendimiento del sistema.
+<div class="rounded-4xl shadow-md bg-blue-50/50 p-6 border-t-8 border-blue-300 flex flex-col h-full">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="text-2xl">🔢</span>
+      <h4 class="text-[#3a0159] font-extrabold text-xl m-0">Datos Numéricos</h4>
+    </div>
+    <p class="text-sm text-gray-600 mb-4 italic">Para los números.</p>
+    <ul class="text-sm text-gray-700 space-y-3 list-none p-0 m-0">
+      <li class="flex gap-2"><strong>INT / INTEGER:</strong> Números enteros. Ideales para contadores, IDs o cantidades de inventario.</li>
+      <li class="flex gap-2"><strong>NUMBER(m,n):</strong>  Este tipo de dato acepta datos numéricos incluidos el cero, números positivos y negativos. La 'm' representa el número total máximo de dígitos significativos que puede tener el número (incluyendo los que están antes y después del punto decimal). La 'n' representa el número de dígitos a la derecha del punto decimal. Si se omite, por defecto es 0.
+      <li class="flex gap-2"><strong>FLOAT / REAL:</strong> Punto flotante. Se usa para almacenar valores numéricos con decimales.</li>
+    </ul>
+  </div>
+
+<div class="rounded-4xl shadow-md bg-green-50/50 p-6 border-t-8 border-green-300 flex flex-col h-full">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="text-2xl">📅</span>
+      <h4 class="text-[#3a0159] font-extrabold text-xl m-0">Fecha y Hora</h4>
+    </div>
+    <p class="text-sm text-gray-600 mb-4 italic">SQL estandariza los formatos regionales para evitar errores.</p>
+    <ul class="text-sm text-gray-700 space-y-3 list-none p-0 m-0">
+      <li class="flex gap-2"><strong>DATE:</strong> Guarda año, mes y día. En Oracle, incluye la hora automáticamente.</li>
+      <li class="flex gap-2"><strong>TIME:</strong> Almacena solo la hora (HH:MM:SS).</li>
+      <li class="flex gap-2"><strong>TIMESTAMP:</strong> El más completo. Incluye milisegundos y zonas horarias.</li>
+    </ul>
+  </div>
+
+<div class="rounded-4xl shadow-md bg-purple-50/50 p-6 border-t-8 border-purple-300 flex flex-col h-full">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="text-2xl">⚙️</span>
+      <h4 class="text-[#3a0159] font-extrabold text-xl m-0">Especiales</h4>
+    </div>
+    <p class="text-sm text-gray-600 mb-4 italic">Tipos lógicos y almacenamiento de archivos binarios.</p>
+    <ul class="text-sm text-gray-700 space-y-3 list-none p-0 m-0">
+      <li class="flex gap-2"><strong>BOOLEAN:</strong> Verdadero (TRUE) o Falso (FALSE). <span class="text-[10px] text-purple-600 font-bold opacity-70">En Oracle usa CHAR(1)</span>.</li>
+      <li class="flex gap-2"><strong>BLOB / BYTEA:</strong> Objetos binarios. Para guardar imágenes o PDFs directamente.</li>
+    </ul>
+  </div>
+
+</div>
+
+#### Consideraciones en la creación de objetos
+
+Para que tu base de datos sea escalable, te recomiendo seguir estas reglas al
+nombrar tablas, columnas o índices:
+
+- **Unicidad y Espacios de Nombre (Namespace)**: Los nombres de los objetos
+  deben ser únicos dentro de su esquema. No puedes tener una tabla y una vista
+  con el mismo nombre en el mismo lugar.
+
+- **Palabras Reservadas**: Nunca nombres un objeto como una función del lenguaje
+  (ej. no llames a tu tabla SELECT, TABLE o WHERE). Esto generaría errores de
+  sintaxis constantes.
+- **Mayusculas o minusculas**: * Si creas un objeto (ej. CREATE TABLE
+  empleados), el motor lo tratará como insensible a mayúsculas (aunque
+  internamente lo guarde en mayúsculas). Podrás llamarlo como empleados,
+  EMPLEADOS o Empleados sin problemas.
+
+- **Longitud y Caracteres**: La mayoría de los motores (como Oracle o MySQL)
+  tienen un límite de caracteres para los nombres (normalmente 30 o 128
+  caracteres). Además, deben comenzar siempre con una letra y evitar caracteres
+  especiales como espacios o guiones medios (-); en su lugar, usa el guion bajo
+  (_).
+
+<div class="rounded-3xl shadow-md bg-amber-100 my-8 p-6 md:p-10 border-l-8 border-amber-300">
+<div class="md:float-right  md:mr-1  mx-1 ">
+  <img src="/img/post-4-ex1.jpg" alt="Reaction pic asombro" class="rounded-4xl w-50 shadow-md">
+
+</div>
+  <p class="text-base md:text-lg font-bold mb-2">
+    💡 TIP: Evita el uso de comillas en los nombres de los objetos.
+  </p>
+  <p class="text-base md:text-lg leading-relaxed italic">
+Si usas comillas (ej. CREATE TABLE "Empleados"), obligas al motor a que sea sensible (Case-Sensitive). Esto significa que siempre, de por vida, tendrás que escribirlo exactamente igual y con comillas, lo cual complica mucho la programación y el mantenimiento.
+  </p>
+
+<p class="text-sm md:text-base  mt-4 leading-relaxed">
+  Usa siempre minúsculas, mayúsculas o snake_case (ej. detalle_ventas) para mayor compatibilidad.
   </p>
 
 </div>
 
-#### 2.Personalización y filtrado
+### Creación de tablas y campos
 
-Los datos no se consultan de forma masiva sin un propósito. No basta con listar
-a todos los empleados de una compañía; las decisiones de negocio requieren
-**segmentación**. Habrá escenarios donde necesitemos identificar solo a los
-empleados cuyo apellido comience con la letra "A", aquellos con una antigüedad
-superior a tres años o quienes pertenezcan a un departamento específico.
+Ahora si vamos a lo bueno, la creación de nuestro primer objeto en la base de
+datos. La instrucción **CREATE TABLE** define una tabla en la base de datos. La
+definición debe de incluir el nombre de la tabla y los nombres y atributos de
+sus columnas. La estructura básica sigue este patrón:
 
-Para lograr esta precisión, **SELECT** se apoya en cláusulas de filtrado:
-
-- #### Clausula **WHERE**
-
-Es la encargada de evaluar cada fila y decidir si entra o no en nuestro
-conjunto.
-
-```sql
--- Filtramos empleados del departamento de 'IT' 
---Filtramos que tengan salario mayor a 5000
-SELECT nombre, puesto 
-FROM empleados 
-WHERE departamento = 'IT' 
-  AND salario > 5000;
+```SQL
+CREATE TABLE nombre_de_tabla (
+    nombre_columna1 tipo_de_dato restricciones,
+    nombre_columna2 tipo_de_dato restricciones,
+    ...
+    restricciones_de_tabla
+);
 ```
 
-Aqui es donde aplicamos los operadores logicos y de comparación. Estos
-operadores nos permiten combinar múltiples condiciones en una consulta, aunque
-es importante tener en cuenta que SQL cuenta con muchas mas funciones y
-operadores que los que menciono, esto dependera del motor de base de datos que
-utilices, pero al ser los basicos funcionan bien en la mayoria.
+**1. Definición de Columnas** Cada columna es un contenedor para un atributo
+específico de tus datos. Al declararlas, debes seguir este orden:
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+- Identificador: El nombre del campo (ej. email, precio).
+- Tipo de Dato: (Ej. INT, VARCHAR, DATE).
+- Restricciones de Columna: Reglas inmediatas como NOT NULL (No
+  nulo-obligatorio) o UNIQUE (único, no repetido).
 
-<div class="rounded-3xl shadow-md bg-green-50 p-6 border-t-8 border-green-400">
-    <h4 class="text-amber-900 font-bold mb-4 text-center">Comparación</h4>
-    <ul class="text-sm text-amber-900 space-y-2">
-      <li><strong>=</strong> Igual a</li>
-      <li><strong><> / !=</strong> Diferente de</li>
-      <li><strong>> / <</strong> Mayor / Menor que</li>
-      <li><strong>>= / <=</strong> Mayor o igual / Menor o igual</li>
-      <li><strong>BETWEEN</strong> Entre un rango</li>
-      <li><strong>IN</strong> Dentro de una lista</li>
-    </ul>
-  </div>
+**2. Las Restricciones (Constraints)** A diferencia de las restricciones de
+columna, estas se suelen escribir al final de la lista de campos. Son reglas que
+afectan a toda la tabla o relacionan varias columnas. La más importante es la
+Primary Key.
 
-<div class="rounded-3xl shadow-md bg-orange-50 p-6 border-t-8 border-orange-400">
-    <h4 class="text-amber-900 font-bold mb-4 text-center">Lógicos</h4>
-    <ul class="text-sm text-amber-900 space-y-2">
-      <li><strong>AND</strong> Devuelve TRUE si todas las condiciones son verdaderas.</li>
-      <li><strong>OR</strong> Devuelve TRUE si al menos una condición es verdadera.</li>
-      <li><strong>NOT</strong> Invierte el valor lógico de la condición.</li>
-      <li><strong>IS NULL</strong> Verifica si un valor está vacío.</li>
-    </ul>
-  </div>
+#### Ejemplo práctico para Oracle SQL Developer
 
-<div class="rounded-3xl shadow-md bg-purple-50 p-6 border-t-8 border-purple-400">
-    <h4 class="text-amber-900 font-bold mb-4 text-center">Pattern Matching</h4>
-    <ul class="text-sm text-amber-900 space-y-2">
-      <li><strong>LIKE</strong> Busca un patrón específico.</li>
-      <li><strong>%</strong> Comodín que representa cero o más caracteres.</li>
-      <li><strong>_</strong> Comodín que representa un solo carácter.</li>
-      <li><strong>ILIKE</strong> (En algunos motores) LIKE sin distinguir mayúsculas.</li>
-    </ul>
-  </div>
+```sql
+CREATE TABLE empleados (
+  id_empleado NUMBER(10) PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL,
+  apellido VARCHAR(50) NOT NULL,
+  fecha_nacimiento DATE,
+  salario NUMBER(10,2) DEFAULT 0,
+  departamento VARCHAR(50) REFERENCES departamentos(nombre)
+);
+```
+
+#### Diccionario de Datos: Tabla `empleados`
+
+| Campo                | Descripción                         | Tipo de Dato   | Constraint / Atributo              |
+| :------------------- | :---------------------------------- | :------------- | :--------------------------------- |
+| **id_empleado**      | Identificador único del empleado.   | `NUMBER(10)`   | `PRIMARY KEY`                      |
+| **nombre**           | Nombre(s)                           | `VARCHAR(50)`  | `NOT NULL`                         |
+| **apellido**         | Apellido(s)                         | `VARCHAR(50)`  | `NOT NULL`                         |
+| **fecha_nacimiento** | Fecha de nacimiento                 | `DATE`         | _Ninguna_                          |
+| **salario**          | Remuneración económica mensual.     | `NUMBER(10,2)` | `DEFAULT 0`                        |
+| **departamento**     | Nombre del área a la que pertenece. | `VARCHAR(50)`  | `REFERENCES departamentos(nombre)` |
+
+<div class="md:float-left  md:mr-2  mx-2 md: ml-3">
+  <img src="/img/post-4-ex2.jpg" alt="Reaction pic asombro" class="rounded-4xl w-50 shadow-md">
 
 </div>
-
-- #### Clausulas ORDER BY y DISTINCT
-
-- **ORDER BY**: En SQL, los registros no tienen un orden natural. Si necesitas
-  que tu lista aparezca organizada, debes usar ORDER BY. Si aplicamos el ORDER
-  BY por si solo por defecto ordenara los datos de manera ascendente, pero si
-  necesitaramos especificar en que orden los queremos usamos **ASC** para ir de
-  menor a mayor (A-Z, 1-100) y **DESC** para ir de mayor a menor (Z-A, 100-1).
-
-```sql
---Para ver quién tiene el salario más alto primero
-SELECT nombre, salario 
-FROM empleados 
-ORDER BY salario DESC;
-```
-
 <div class="rounded-3xl shadow-md bg-blue-100 my-8 p-6 md:p-10 border-l-8 border-blue-300">
-  <p class="text-base md:text-lg text-amber-900 font-bold mb-2">
-    💡 PRO TIP: Ordenamiento por posición
-  </p>
-  <p class="text-base md:text-lg text-amber-900 leading-relaxed italic">
-    En SQL, puedes referenciar las columnas por su <strong>índice numérico</strong> en lugar de su nombre. En el ejemplo anterior, el número <strong>2</strong>representa la segunda columna definida en nuestro <strong>SELECT</strong>(salario).
-  </p>
 
-<div class="mt-4 bg-black bg-opacity-50 rounded-xl p-4">
-    <code class="text-white">
-      -- El resultado es idéntico al ordenar por 'salario'<br>
-      SELECT nombre, salario <br>
-      FROM empleados <br>
-      ORDER BY 2 DESC;
-    </code>
-  </div>
+<p class="text-base md:text-lg font-bold mb-2">
 
-<p class="text-sm md:text-base text-amber-800 mt-4 leading-relaxed">
-    <strong>Nota extra:</strong> Aunque es muy útil para consultas rápidas, úsalo con precaución en aplicaciones reales. Si en el futuro añades o mueves columnas en tu <strong>SELECT</strong>, el número dejará de apuntar al dato correcto.
+    💡 TIP: Autoincrementables
+
+</p>
+  <p class="text-base md:text-lg leading-relaxed italic">
+Algo muy común es que los ID se generen "solos", para esto te dejo algunas opciones de como lo podrias hacer segun el motor de base de datos que utilices:
   </p>
-</div>
-
-<div class="md:float-right md:w-1/2 md:mr-6  mx-6 text-center">
-  <img src="/img/select-distinct.png" alt="Uso de DISTINCT" class="rounded-4xl w-100 shadow-md">
 
 </div>
-
-- **DISTINCT** : En SQL se utiliza para devolver únicamente valores únicos (sin
-  duplicados) de una columna o conjunto de columnas en una consulta. Elimina
-  filas repetidas de los resultados. Funciona con COUNT para contar elementos
-  únicos.
-
-```SQL
-SELECT DISTINCT departamento 
-FROM empleados;
-```
-
-#### Transformación de datos
-
-Un error común es pensar que el **SELECT** solo muestra lo que ya existe en la
-tabla. Pero en realidad, nos permite crear "columnas calculadas" que no están
-guardadas físicamente, pero que son útiles para reportes.
-
-- **Operadores aritméticos** : Permiten realizar cálculos matemáticos básicos
-  como sumar(**+**),restar (**-**), multiplicar (*) y dividir(**/**)
-  directamente sobre columnas numéricas
 
 ```sql
--- Por ejemplo para calcular el salario anual de un empleado
-SELECT nombre, (salario * 12) AS "Salario Anual"
-FROM empleados;
+-- MySQL: 
+id_empleado INT PRIMARY KEY AUTO_INCREMENT
+--PostgreSQL:
+ id_empleado SERIAL PRIMARY KEY
+--SQL Server: 
+id_empleado INT PRIMARY KEY IDENTITY(1,1)
+---Oracle: 
+id_empleado NUMBER GENERATED BY DEFAULT AS IDENTITY
 ```
 
-_En este caso la columna 'Salario Anual' no existe en la tabla, sin embargo en
-esa columna veremos reflejado el calculo de salario anual por cada empleado_
+### Modificando la estructura: ALTER TABLE
 
-- **Concatenación** : Se usa para combinar dos o más cadenas de texto en una
-  sola. En el estándar SQL y en Oracle, se utilizan las barras dobles **||**,
-  sin embargo en otros motores como MySQL se suele usar **CONCAT()**.
+¿Qué pasa si después de crear nuestra tabla empleados nos damos cuenta de que
+olvidamos el campo del correo electrónico o que el apellido debe ser más largo?
+Para eso usamos ALTER TABLE. Esta instrucción nos permite modificar la
+definición de una tabla existente sin necesidad de borrarla y volverla a crear
+(lo cual borraría todos los datos).
+
+**1. Agregar una nueva columna (ADD)** Si queremos añadir el campo de email,
+usamos **ADD**.
 
 ```SQL
---Para mostrar un Nombre completo separado por un espacio 
-SELECT nombre || ' ' || apellido AS "Nombre Completo"
-FROM empleados;
+-- Se agrega la columna email
+ALTER TABLE empleados 
+ADD email VARCHAR2(100);
 ```
 
-_Las comillas simples ' ' sirven para añadir el espacio entre el nombre y el
-apellido._
+- Nota: No puedes añadir una columna como NOT NULL en una tabla que ya tiene
+  datos, a menos que le des un valor por defecto (DEFAULT), porque SQL no sabría
+  qué poner en las filas que ya existen.
 
-#### Alias de columnas
+<div class="md:float-right  md:mr-1.5  mx-1 ">
+  <img src="/img/post-4-ex3.jpg" alt="Reaction pic asombro" class="rounded-4xl w-50 shadow-md">
 
-Cuando consultamos una tabla, los encabezados de las columnas suelen mostrar los
-nombres técnicos definidos por el administrador de la base de datos. Estos
-nombres suelen estar en mayúsculas, con guiones bajos o abreviaciones difíciles
-de leer para un usuario final (por ejemplo: FECHA_NAC_USU o SAL_MEN).
+</div>
+<div class="rounded-3xl shadow-md bg-red-100 my-8 p-6 md:p-10 border-l-8 border-red-300">
 
-Para solucionar esto, SQL nos permite utilizar Alias a través de **AS**. Un
-alias es un nombre temporal que le asignamos a una columna (o a un cálculo) para
-que el resultado de nuestra consulta sea mucho más claro.
-
-```sql
--- Ejemplo 1: Alias sencillo
-SELECT nombre AS Empleado, salario AS Sueldo
-FROM empleados;
-
--- Ejemplo 2: Alias con espacios (Requiere comillas dobles "")
--- Si tu alias tiene espacios o caracteres especiales, DEBES usar comillas.
-SELECT nombre, (salario * 12) AS "Salario Anual"
-FROM empleados;
-```
-
-<div class="rounded-3xl shadow-md bg-amber-100 my-8 p-6 md:p-3 border-l-8 border-amber-300 flex flex-col md:flex-row items-center gap-6">
-
-<p class="text-base md:text-lg text-amber-900 leading-relaxed italic">
-   <p class="text-base md:text-lg text-amber-900 font-bold ">
-     💡
+<p class="text-base md:text-lg font-bold mb-2">
+    🔴 Dato importante:
   </p>
-   Recuerda que el alias solo cambia el nombre en el resultado de la consulta; no cambia el nombre real de la columna en la tabla. Además, debido al orden de ejecución de SQL (que vimos anteriormente), no puedes usar un alias dentro de la misma cláusula WHERE de esa consulta, ya que el alias se crea después de que el filtro se aplica.
+  <p class="text-base md:text-lg leading-relaxed italic">
+ Al agregar una columna a una tabla que ya tiene registros, SQL por defecto la creará con valores NULL para todos los empleados existentes.
   </p>
 
 </div>
 
-#### Conclusión
+**2. Modificar una columna existente (MODIFY / ALTER)** Si el campo apellido se
+quedó corto y necesitamos que acepte más caracteres, o si queremos cambiar un
+tipo de dato.
 
-Dominar la sentencia **SELECT** es mucho más que aprender una sintaxis; es
-adquirir la capacidad de interrogar a una base de datos. Como hemos visto, el
-**SELECT** es la herramienta que transforma datos crudos en información para la
-toma de decisiones.
+- Nota: En Oracle se usa MODIFY, mientras que en SQL Server o PostgreSQL se usa
+  ALTER COLUMN.
 
-Recuerda que, la eficiencia es la clave. Un desarrollador SQL no solo busca que
-la consulta funcione, sino que sea rápida, legible y segura. Aplicar buenas
-prácticas como evitar el SELECT * y entender el orden de ejecución te ayudará
-cuando escribas consultas mas complejas.
+```SQL
+-- Ejemplo en Oracle
+ALTER TABLE empleados 
+MODIFY apellido VARCHAR2(100);
+```
 
-Ahora que ya sabes cómo extraer y transformar información, el siguiente reto es
-aprender a crear los contenedores donde vive esa información. En nuestra próxima
-entrada, exploraremos el lenguaje **DDL (Data Definition Language)**, donde
-aprenderemos a construir tablas desde cero y definir las reglas que mantienen el
-orden de nuestros datos.
+**3. Eliminar una columna (DROP COLUMN)** Si decidimos que ya no necesitamos un
+dato, podemos eliminar la columna permanentemente. Pero con cuidado ya que esto
+borrará todos los datos contenidos en esa columna para siempre.
 
-_**¡Gracias por leer y nos vemos en la próxima consulta!**_
+```SQL
+--Se elimina la columna fecha_nacimiento
+ALTER TABLE empleados 
+DROP COLUMN fecha_nacimiento;
+```
+
+- Nota: Si intentas borrar una columna que es parte de una Primary Key o que
+  está siendo referenciada por otra tabla (Foreign Key), el sistema te dará un
+  error de integridad.
+
+**4. Cambiar el nombre de una columna (RENAME COLUMN)** A veces el nombre
+original no es lo suficientemente claro. Podemos renombrarlo sin afectar los
+datos.
+
+```SQL
+-- Se renombra la columna salario a sueldo_mensual
+ALTER TABLE empleados 
+RENAME COLUMN salario TO sueldo_mensual;
+```
+
+### Conclusión
+
+Yo se que al principìo puede parecer mucho texto y explicación como se crean las
+tablas y los campos sin embargo con mucha practica despues sera facil reconocer
+los tipos de datos y restricciones que existen. Abajo te dejo una lista de todos
+los **tipos de datos** que existen segun el motor de base de datos que utilices
+ya que dependiendo el caso podria variar:
+
+<div class="rounded-3xl shadow-md bg-green-100 my-8 p-6 md:p-10 border-l-8 border-green-300">
+
+### Documentación Oficial
+
+| Motor de BD         | Enlace a Tipos de Datos y Constraints                                                                    | Nota del Dialecto                          |
+| :------------------ | :------------------------------------------------------------------------------------------------------- | :----------------------------------------- |
+| **Oracle Database** | [Ver documentación](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/Data-Types.html) | Utiliza `NUMBER` y `VARCHAR2`.             |
+| **PostgreSQL**      | [Ver documentación](https://www.postgresql.org/docs/current/datatype.html)                               | Muy apegado al estándar SQL.               |
+| **MySQL**           | [Ver documentación](https://dev.mysql.com/doc/refman/8.0/en/data-types.html)                             | Popular por su manejo de `AUTO_INCREMENT`. |
+| **SQL Server**      | [Ver documentación](https://learn.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql)      | Usa `IDENTITY` para llaves primarias.      |
+| **SQLite**          | [Ver documentación](https://www.sqlite.org/datatype3.html)                                               | Sistema simplificado (ideal para móviles). |
+
+</div>
+
+Recuerda que sin una estructura sólida definida con CREATE y ALTER, la
+información no tendría orden. Al entender cómo construir y modificar estos
+objetos, ya tienes la base.
+
+_**¿Qué sigue?**_ En la próxima entrada entraremos de lleno al DML (Data
+Manipulation Language), donde aprenderás el famoso CRUD: Crear, Leer, Actualizar
+y Borrar los registros dentro de tus tablas.
+
+Nos vemos en la próxima consulta!
