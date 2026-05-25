@@ -134,7 +134,7 @@ FROM empleados
 WHERE salario > 4000;
 ```
 
-Esta consulta devolvería únicamente a Selena Gomez y a Sandy Mejillas, que son
+Esta consulta devolvería únicamente a Eugenio Cangrejo y a Arenita Mejillas, que son
 quienes tienen salario mayor a 4,000.
 
 <div class="rounded-3xl shadow-md bg-amber-100 my-8 p-6 md:p-10 border-l-8 border-amber-300">
