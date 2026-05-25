@@ -1,5 +1,5 @@
 ---
-title: "Introducción a SQL: 4. DML"
+title: "Introducción a SQL: 4. Lenguaje de Manipulación de datos (DML)"
 type: "post"
 draft: false
 tags:
