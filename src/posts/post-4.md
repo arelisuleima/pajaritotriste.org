@@ -7,6 +7,7 @@ tags:
   - introduccion-sql
 layout: "postLayout.jsx"
 image: "/img/post-5.png"
+date: 2026-05-25
 ---
 
 En la entrada anterior hablamos del **DDL (Data Definition Language)**, que es
