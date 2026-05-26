@@ -12,7 +12,13 @@ image: "/img/post-3.png"
 date: 2026-05-26
 ---
 
-En la entrada anterior conocimos el DML y sus cuatro operaciones fundamentales. De todas ellas, el **SELECT** es sin duda la más importante y la que más usarás a lo largo de tu carrera. Esta sentencia es la que nos permite recuperar datos específicos de una o varias tablas, y aunque parece simple al principio, es una herramienta profunda: no solo muestra lo que existe, sino que nos permite transformar datos crudos en información con valor real para la toma de decisiones.
+En la entrada anterior conocimos el DML y sus cuatro operaciones fundamentales.
+De todas ellas, el **SELECT** es sin duda la más importante y la que más usarás
+a lo largo de tu carrera. Esta sentencia es la que nos permite recuperar datos
+específicos de una o varias tablas, y aunque parece simple al principio, es una
+herramienta profunda: no solo muestra lo que existe, sino que nos permite
+transformar datos crudos en información con valor real para la toma de
+decisiones.
 
 Esta entrada le dedica su propio espacio, porque se lo merece.
 
@@ -20,7 +26,8 @@ Esta entrada le dedica su propio espacio, porque se lo merece.
 
 #### 1. La anatomía de una consulta
 
-Toda consulta **SELECT** sigue una estructura lógica que el motor de la base de datos interpreta en orden:
+Toda consulta **SELECT** sigue una estructura lógica que el motor de la base de
+datos interpreta en orden:
 
 - **SELECT**: Define las columnas (atributos) que queremos ver.
 - **FROM**: Especifica la tabla de donde provienen los datos.
@@ -47,9 +54,13 @@ FROM empleados;
 
 #### 2. Filtrado con WHERE
 
-Los datos no se consultan de forma masiva sin un propósito. Las decisiones de negocio requieren **segmentación**: identificar solo a los empleados cuyo apellido comience con "A", aquellos con salario superior a cierto umbral o quienes pertenezcan a un departamento específico.
+Los datos no se consultan de forma masiva sin un propósito. Las decisiones de
+negocio requieren **segmentación**: identificar solo a los empleados cuyo
+apellido comience con "A", aquellos con salario superior a cierto umbral o
+quienes pertenezcan a un departamento específico.
 
-Para lograr esta precisión, **SELECT** se apoya en la cláusula **WHERE**, que evalúa cada fila y decide si entra o no en nuestro resultado.
+Para lograr esta precisión, **SELECT** se apoya en la cláusula **WHERE**, que
+evalúa cada fila y decide si entra o no en nuestro resultado.
 
 ```sql
 -- Filtramos empleados del departamento de 'IT' con salario mayor a 5000
@@ -59,7 +70,9 @@ WHERE departamento = 'IT'
   AND salario > 5000;
 ```
 
-Dentro del `WHERE` aplicamos **operadores lógicos y de comparación**. Los más comunes —y que funcionan en prácticamente todos los motores de base de datos— son los siguientes:
+Dentro del `WHERE` aplicamos **operadores lógicos y de comparación**. Los más
+comunes —y que funcionan en prácticamente todos los motores de base de datos—
+son los siguientes:
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
 
@@ -103,9 +116,11 @@ Dentro del `WHERE` aplicamos **operadores lógicos y de comparación**. Los más
 
 ##### ORDER BY
 
-En SQL, los registros no tienen un orden natural garantizado. Si necesitas que tu resultado aparezca organizado, debes pedírselo explícitamente con `ORDER BY`.
+En SQL, los registros no tienen un orden natural garantizado. Si necesitas que
+tu resultado aparezca organizado, debes pedírselo explícitamente con `ORDER BY`.
 
-Por defecto ordena de forma **ascendente** (ASC), pero puedes especificar **DESC** para invertir el orden:
+Por defecto ordena de forma **ascendente** (ASC), pero puedes especificar
+**DESC** para invertir el orden:
 
 ```sql
 -- Para ver quién tiene el salario más alto primero
@@ -142,7 +157,8 @@ ORDER BY salario DESC;
   <img src="/img/select-distinct.png" alt="Uso de DISTINCT" class="rounded-4xl w-100 shadow-md">
 </div>
 
-`DISTINCT` elimina las filas duplicadas del resultado, devolviendo únicamente valores únicos por columna o combinación de columnas:
+`DISTINCT` elimina las filas duplicadas del resultado, devolviendo únicamente
+valores únicos por columna o combinación de columnas:
 
 ```sql
 -- Devuelve cada departamento una sola vez, sin repeticiones
@@ -150,7 +166,8 @@ SELECT DISTINCT departamento
 FROM empleados;
 ```
 
-También funciona combinado con `COUNT` para contar cuántos valores únicos existen:
+También funciona combinado con `COUNT` para contar cuántos valores únicos
+existen:
 
 ```sql
 -- ¿Cuántos departamentos distintos hay en la empresa?
@@ -160,7 +177,8 @@ FROM empleados;
 
 ##### LIMIT
 
-`LIMIT` restringe cuántas filas devuelve la consulta. Es útil para explorar datos rápidamente o para paginación en aplicaciones:
+`LIMIT` restringe cuántas filas devuelve la consulta. Es útil para explorar
+datos rápidamente o para paginación en aplicaciones:
 
 ```sql
 -- Muestra solo los 5 empleados con mayor salario
@@ -170,15 +188,20 @@ ORDER BY salario DESC
 LIMIT 5;
 ```
 
-> ⚠️ **Nota de compatibilidad:** `LIMIT` funciona en PostgreSQL, MySQL y SQLite. En SQL Server se usa `TOP` y en Oracle `FETCH FIRST n ROWS ONLY`. La lógica es la misma; solo cambia la sintaxis según el motor.
+> ⚠️ **Nota de compatibilidad:** `LIMIT` funciona en PostgreSQL, MySQL y SQLite.
+> En SQL Server se usa `TOP` y en Oracle `FETCH FIRST n ROWS ONLY`. La lógica es
+> la misma; solo cambia la sintaxis según el motor.
 
 ---
 
 #### 4. Transformación de datos con columnas calculadas
 
-Un error común es pensar que el **SELECT** solo muestra lo que ya existe en la tabla. En realidad, nos permite crear "columnas calculadas" que no están guardadas físicamente pero que son útiles para reportes y análisis.
+Un error común es pensar que el **SELECT** solo muestra lo que ya existe en la
+tabla. En realidad, nos permite crear "columnas calculadas" que no están
+guardadas físicamente pero que son útiles para reportes y análisis.
 
-**Operadores aritméticos** — realizan cálculos directamente sobre columnas numéricas:
+**Operadores aritméticos** — realizan cálculos directamente sobre columnas
+numéricas:
 
 ```sql
 -- Calculamos el salario anual de cada empleado
@@ -186,9 +209,12 @@ SELECT nombre, (salario * 12) AS "Salario Anual"
 FROM empleados;
 ```
 
-*La columna `Salario Anual` no existe en la tabla; es calculada al vuelo para cada fila del resultado.*
+_La columna `Salario Anual` no existe en la tabla; es calculada al vuelo para
+cada fila del resultado._
 
-**Concatenación** — combina dos o más cadenas de texto en una sola. En el estándar SQL y en Oracle se usan barras dobles `||`; en MySQL se usa la función `CONCAT()`:
+**Concatenación** — combina dos o más cadenas de texto en una sola. En el
+estándar SQL y en Oracle se usan barras dobles `||`; en MySQL se usa la función
+`CONCAT()`:
 
 ```sql
 -- Mostramos nombre completo en una sola columna
@@ -196,13 +222,16 @@ SELECT nombre || ' ' || apellido AS "Nombre Completo"
 FROM empleados;
 ```
 
-*Las comillas simples `' '` agregan el espacio entre nombre y apellido.*
+_Las comillas simples `' '` agregan el espacio entre nombre y apellido._
 
 ---
 
 #### 5. Alias con AS
 
-Cuando consultamos una tabla, los encabezados de columna suelen mostrar nombres técnicos definidos por el administrador de la base de datos: abreviaciones, guiones bajos, mayúsculas. Para presentar resultados más legibles usamos **alias** a través de `AS`.
+Cuando consultamos una tabla, los encabezados de columna suelen mostrar nombres
+técnicos definidos por el administrador de la base de datos: abreviaciones,
+guiones bajos, mayúsculas. Para presentar resultados más legibles usamos
+**alias** a través de `AS`.
 
 ```sql
 -- Alias sencillo sin espacios
@@ -229,10 +258,19 @@ FROM empleados;
 
 #### Conclusión
 
-Dominar el **SELECT** es mucho más que aprender una sintaxis; es adquirir la capacidad de interrogar una base de datos con precisión. Como vimos, no se limita a mostrar columnas: filtra con `WHERE`, ordena con `ORDER BY`, elimina duplicados con `DISTINCT`, limita resultados con `LIMIT`, y transforma datos con cálculos y concatenaciones en tiempo real.
+Dominar el **SELECT** es mucho más que aprender una sintaxis; es adquirir la
+capacidad de interrogar una base de datos con precisión. Como vimos, no se
+limita a mostrar columnas: filtra con `WHERE`, ordena con `ORDER BY`, elimina
+duplicados con `DISTINCT`, limita resultados con `LIMIT`, y transforma datos con
+cálculos y concatenaciones en tiempo real.
 
-La eficiencia siempre importa. Un buen desarrollador SQL no solo busca que la consulta funcione, sino que sea rápida y legible: evitar el `SELECT *`, nombrar bien los alias y entender en qué orden ejecuta SQL cada cláusula son hábitos que marcan la diferencia cuando las consultas se vuelven complejas.
+La eficiencia siempre importa. Un buen desarrollador SQL no solo busca que la
+consulta funcione, sino que sea rápida y legible: evitar el `SELECT *`, nombrar
+bien los alias y entender en qué orden ejecuta SQL cada cláusula son hábitos que
+marcan la diferencia cuando las consultas se vuelven complejas.
 
-En la próxima entrada daremos el salto a uno de los conceptos más importantes: los **JOINs**. Aprenderemos a combinar información de múltiples tablas en una sola consulta, que es donde el SQL empieza a volverse realmente útil.
+En la próxima entrada daremos el salto a uno de los conceptos más importantes:
+los **JOINs**. Aprenderemos a combinar información de múltiples tablas en una
+sola consulta, que es donde el SQL empieza a volverse realmente útil.
 
 _**¡Gracias por leer y nos vemos en la próxima consulta!**_
