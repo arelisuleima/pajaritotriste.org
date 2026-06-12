@@ -6,6 +6,7 @@ tags:
   - SQL
   - introduccion-sql
 layout: "postLayout.jsx"
+description: "El CRUD: el ciclo de vida de cualquier dato"
 image: "/img/post-5.png"
 date: 2026-05-25
 ---
