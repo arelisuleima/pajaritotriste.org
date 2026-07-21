@@ -2,8 +2,8 @@
   "imports": {
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.19",
     "highlight.js": "npm:highlight.js@^11.11.1",
-    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.2/",
-    "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.13/jsx-runtime.ts"
+    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.2.6/",
+    "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.15/jsx-runtime.ts"
   },
   "permissions": {
     "lume": {
@@ -44,6 +44,10 @@
     "serve": {
       "description": "Run and serve the site for development",
       "command": "deno task lume -s"
+    },
+    "new": {
+      "description": "Create new content or code using artifacts",
+      "command": "deno task lume new"
     }
   },
   "compilerOptions": {
@@ -59,7 +63,7 @@
   ],
   "lint": {
     "plugins": [
-      "https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.2/lint.ts"
+      "https://cdn.jsdelivr.net/gh/lumeland/lume@3.2.6/lint.ts"
     ],
     "rules": {
       "exclude": [
@@ -69,5 +73,11 @@
   },
   "lock": false,
   "vendor": true,
-  "nodeModulesDir": "auto"
+  "nodeModulesDir": "auto",
+  "allowScripts": {
+    "deny": [
+      "npm:sharp",
+      "npm:@parcel/watcher"
+    ]
+  }
 }
