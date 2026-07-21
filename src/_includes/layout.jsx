@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar.jsx";
-import CuriousBox from "../components/curiousBox.jsx";
-import IconsMedia from "../components/iconsMedia.jsx";
+
+
 
 export default (data, _helpers) => {
   // === CORRECCIÓN: Añadimos site_url aquí para que Lume la reconozca ===
@@ -46,6 +46,7 @@ export default (data, _helpers) => {
           <meta
             property="og:image"
             content={`${site_url}/img/logo-pajarito-rmv.png`}
+            
           />
 
           <meta property="og:image:width" content="1200" />
@@ -77,23 +78,15 @@ export default (data, _helpers) => {
             </a>
           </header>
 
-          <div class="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-[320px_1fr_300px] gap-6 lg:gap-8 p-4 lg:p-10 items-start">
-            {/* 1. COLUMNA IZQUIERDA */}
-            <aside class="hidden lg:flex bg-white shadow-[0_10px_40px_rgba(0,0,0,0.04)] rounded-[2.5rem] p-8 flex-col items-center sticky top-10 h-fit border border-pink-50">
-              <a href="/" class="transition-transform hover:scale-105">
-                <img
-                  src="/img/banner-inicio-rmv.png"
-                  class="w-40"
-                  alt="Pajarito Triste"
-                />
-              </a>
-              <div class="mt-8">
-                <IconsMedia />
+          <div class="max-w-[1600px] mx-auto w-full gap-6 lg:gap-8 p-4 lg:p-10 items-start">
+            {/* 1. Encabezado*/}
+           
+                {/* <IconsMedia />
               </div>
               <p class="mt-6 font-bold text-[#3a0159] opacity-60 text-sm">
                 @pajaritotriste
-              </p>
-            </aside>
+              </p>*/}
+          
 
             {/* 2. COLUMNA CENTRAL */}
             <div class="flex flex-col gap-6 lg:gap-8 w-full overflow-hidden">
@@ -107,44 +100,8 @@ export default (data, _helpers) => {
                 {children}
               </main>
             </div>
-
-            {/* 3. COLUMNA DERECHA */}
-            <aside
-              id="right-column"
-              class="flex flex-col gap-6 lg:sticky lg:top-10 h-fit w-full mt-8 lg:mt-0"
-            >
-              <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-white">
-                <h3 class="font-bold text-[#3a0159] mb-6 flex items-center gap-2 text-xl lg:text-lg">
-                  <span class="text-2xl lg:text-xl">📚</span>
-                  Recomendaciones
-                </h3>
-
-                <div class="flex flex-col gap-6 lg:gap-5">
-                  <a
-                    href="https://runsql.com/r"
-                    target="_blank"
-                    class="group flex items-center gap-4"
-                  >
-                    <div class="w-14 h-14 lg:w-12 lg:h-12 bg-purple-50 rounded-2xl flex items-center justify-center">
-                      <span class="text-2xl lg:text-xl">💻</span>
-                    </div>
-                    <div>
-                      <h4 class="text-sm lg:text-xs font-bold text-gray-800">
-                        RunSQL
-                      </h4>
-                      <p class="text-xs lg:text-[10px] text-gray-400 italic">
-                        Playground de SQL
-                      </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <div class="w-full mb-10 lg:mb-0">
-                <CuriousBox />
-              </div>
-            </aside>
-          </div>
+ </div>
+          
 
           {/* === FOOTER === */}
           <footer class="mt-auto mb-10 mx-auto w-[92%] max-w-[1200px] bg-white/30 backdrop-blur-sm rounded-[2.5rem] p-10 text-center flex flex-col items-center border border-white/50 print:hidden">
