@@ -17,7 +17,7 @@ export default (data, _helpers) => {
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
           />
-          <link rel="icon" type="image/png" href="/img/logo-pajarito-rmv.png" />
+          <link rel="icon" type="image/png" href="/img/pt-logo-1.png" />
           <link rel="stylesheet" href="/styles.css" />
           <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
@@ -78,7 +78,7 @@ export default (data, _helpers) => {
             </a>
           </header>
 
-          <div class="max-w-[1600px] mx-auto w-full gap-6 lg:gap-8 p-4 lg:p-10 items-start">
+          <div class="max-w-400 mx-auto w-full gap-6 lg:gap-8 p-4 lg:p-10 items-start">
             {/* 1. Encabezado*/}
            
                 {/* <IconsMedia />
@@ -104,7 +104,7 @@ export default (data, _helpers) => {
           
 
           {/* === FOOTER === */}
-          <footer class="mt-auto mb-10 mx-auto w-[92%] max-w-[1200px] bg-white/30 backdrop-blur-sm rounded-[2.5rem] p-10 text-center flex flex-col items-center border border-white/50 print:hidden">
+          <footer class="mt-auto mb-10 mx-auto w-[92%] max-w-300 bg-white/30 backdrop-blur-sm rounded-[2.5rem] p-10 text-center flex flex-col items-center border border-white/50 print:hidden">
             <div class="mb-6">
               <a
                 href="/posts.rss"

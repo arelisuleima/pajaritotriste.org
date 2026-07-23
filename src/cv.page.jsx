@@ -87,18 +87,7 @@ export default function Cv() {
                 Apasionada por la arquitectura de datos, la optimización de procesos complejos y la creación de software con propósito. Cuento con experiencia sólida en ecosistemas de base de datos empresariales, integraciones ERP y automatización.
               </p>
 
-              {/* Píldoras de Valor Rápido */}
-              <div class="flex flex-wrap gap-2 pt-2">
-                <span class="bg-purple-100/80 text-[#3a0159] text-xs font-extrabold px-3.5 py-1.5 rounded-xl border border-purple-200/60">
-                  📍 México
-                </span>
-                <span class="bg-pink-100/80 text-pink-900 text-xs font-extrabold px-3.5 py-1.5 rounded-xl border border-pink-200/60">
-                  ⚡ PL/SQL & Oracle DB
-                </span>
-                <span class="bg-emerald-100/80 text-emerald-900 text-xs font-extrabold px-3.5 py-1.5 rounded-xl border border-emerald-200/60">
-                  🦕 Deno & Fresh
-                </span>
-              </div>
+             
             </div>
  </div>
            
@@ -167,11 +156,11 @@ export default function Cv() {
             <div class="lg:col-span-5 w-full">
               <div class="bg-white rounded-2xl border border-emerald-200/80 shadow-md overflow-hidden group">
                 {/* Barra de título del SO */}
-                <div class="bg-emerald-100/60 px-4 py-2.5 flex items-center gap-2 border-b border-emerald-200/60">
+                <div class="bg-cyan-950 px-4 py-2.5 flex items-center gap-2 border-b border-emerald-200/60">
                   <div class="w-3 h-3 rounded-full bg-rose-400"></div>
                   <div class="w-3 h-3 rounded-full bg-amber-400"></div>
                   <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-                  <span class="text-[11px] font-mono text-emerald-900/70 ml-2 font-bold truncate">
+                  <span class="text-[11px] font-mono text-white ml-2 font-bold truncate">
                     pantry.app - Dashboard
                   </span>
                 </div>
@@ -262,11 +251,11 @@ export default function Cv() {
             {/* Mockup de Ventana */}
             <div class="lg:col-span-5 w-full order-1 lg:order-2">
               <div class="bg-white rounded-2xl border border-purple-200/80 shadow-md overflow-hidden group">
-                <div class="bg-purple-100/60 px-4 py-2.5 flex items-center gap-2 border-b border-purple-200/60">
+                <div class="bg-fuchsia-950 px-4 py-2.5 flex items-center gap-2 border-b border-purple-200/60">
                   <div class="w-3 h-3 rounded-full bg-rose-400"></div>
                   <div class="w-3 h-3 rounded-full bg-amber-400"></div>
                   <div class="w-3 h-3 rounded-full bg-purple-400"></div>
-                  <span class="text-[11px] font-mono text-purple-900/70 ml-2 font-bold truncate">
+                  <span class="text-[11px] font-mono text-white ml-2 font-bold truncate">
                     pensadero.widget - Linux
                   </span>
                 </div>
