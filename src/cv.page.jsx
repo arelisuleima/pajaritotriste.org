@@ -276,7 +276,7 @@ export default function Cv() {
       {/* ========================================================== */}
       {/* 4. FOOTER CARTA DE PRESENTACIÓN & DESCARGA PDF             */}
       {/* ========================================================== */}
-      <section class="bg-[#3a0159] text-white rounded-[3rem] p-8 md:p-12 shadow-xl shadow-purple-950/20 relative overflow-hidden border border-purple-900/50">
+      <section class="bg-[#5d2e76] text-white rounded-[3rem] p-8 md:p-12 shadow-xl shadow-purple-950/20 relative overflow-hidden border border-purple-900/50">
         
         {/* Curvas orgánicas de fondo */}
         <div class="absolute -right-16 -top-16 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>

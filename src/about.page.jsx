@@ -8,31 +8,31 @@ export default function About() {
   {
     name: "Lume",
     desc: "Generador estático ultrarrápido basado en Deno.",
-    gradient: "from-emerald-50/90 via-white to-emerald-100/60",
+    gradient: "from-emerald-50/90",
     border: "border-emerald-200/70",
     text: "text-emerald-950",
     badge: "bg-emerald-100 text-emerald-800 border-emerald-200/50",
-    glow: "bg-emerald-300/30",
+   
     icon: "⚡",
   },
   {
     name: "Deno",
     desc: "Runtime moderno y seguro con soporte TypeScript.",
-    gradient: "from-purple-50/90 via-white to-purple-100/60",
+    gradient: "from-purple-50/90 ",
     border: "border-purple-200/70",
     text: "text-purple-950",
     badge: "bg-purple-100 text-purple-800 border-purple-200/50",
-    glow: "bg-purple-300/30",
+    
     icon: "🦕",
   },
   {
     name: "Tailwind CSS",
     desc: "Framework para interfaces responsivas y limpias.",
-    gradient: "from-pink-50/90 via-white to-pink-100/60",
-    border: "border-pink-200/70",
-    text: "text-pink-950",
-    badge: "bg-pink-100 text-pink-800 border-pink-200/50",
-    glow: "bg-pink-300/30",
+    gradient: "from-amber-50/90 ",
+    border: "border-amber-200/70",
+    text: "text-amber-950",
+    badge: "bg-amber-100 text-amber-800 border-amber-200/50",
+    
     icon: "🎨",
   },
  
@@ -234,7 +234,7 @@ export default function About() {
           
           {/* Avatar / Imagen dentro de círculo de doble borde */}
           <div class="relative w-28 h-28 bg-white rounded-full flex items-center justify-center mb-5 shadow-sm border-4 border-pink-100 p-2 group hover:scale-105 transition-transform duration-300">
-            <div class="w-full h-full bg-pink-50/80 rounded-full flex items-center justify-center p-2">
+            <div class="w-full h-full  rounded-full flex items-center justify-center p-2">
               <img
                 src="/img/pajarito-compu-rmv.png"
                 alt="Pajarito frente a la computadora"
