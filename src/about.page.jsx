@@ -233,12 +233,12 @@ export default function About() {
         <div class="flex flex-col items-center max-w-lg mx-auto relative z-10 pt-2">
           
           {/* Avatar / Imagen dentro de círculo de doble borde */}
-          <div class="relative w-28 h-28 bg-white rounded-full flex items-center justify-center mb-5 shadow-sm border-4 border-pink-100 p-2 group hover:scale-105 transition-transform duration-300">
+          <div class="relative w-28 h-28 bg-white rounded-full flex items-center justify-center mb-5  p-2 group hover:scale-105 transition-transform duration-300">
             <div class="w-full h-full  rounded-full flex items-center justify-center p-2">
               <img
-                src="/img/pajarito-compu-rmv.png"
+                src="/img/pajarito-msj.png"
                 alt="Pajarito frente a la computadora"
-                class="w-16 h-16 object-contain group-hover:-rotate-6 transition-transform duration-300"
+                class="w-25 h-25 object-contain group-hover:-rotate-6 transition-transform duration-300"
               />
             </div>
           </div>
@@ -249,7 +249,7 @@ export default function About() {
 
           <p class="text-[#3a0159]/75 text-base md:text-lg mb-8 leading-relaxed font-medium">
             Si tienes dudas sobre SQL, quieres colaborar en un proyecto o
-            simplemente decir hola, mi bandeja de entrada siempre está abierta.
+            simplemente decir 'hola', mi bandeja de entrada siempre está abierta.
           </p>
 
           <a
