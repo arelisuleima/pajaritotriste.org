@@ -1,7 +1,7 @@
 export default function Navbar({ currentUrl }) {
-  // Base para todos los botones de la barra
+  // Base para los botones: en móvil se expanden al ancho de su columna y reducen relleno
   const linkBase =
-    "px-4 md:px-5 py-2 rounded-full font-bold text-sm tracking-wide transition-all duration-300 flex items-center justify-center shrink-0";
+    "w-full sm:w-auto px-1 sm:px-4 md:px-5 py-1.5 md:py-2 rounded-full font-bold text-[11px] sm:text-sm tracking-normal sm:tracking-wide transition-all duration-300 flex items-center justify-center whitespace-nowrap text-center";
 
   // Función para determinar si una ruta está activa
   const isActive = (path) => {
@@ -12,17 +12,17 @@ export default function Navbar({ currentUrl }) {
   // Generador de clases para combinar colores activos e inactivos
   const getLinkStyle = (path, hoverBgClass, hoverTextClass, defaultBgClass) => {
     if (isActive(path)) {
-      return "bg-gradient-to-r from-purple-400 to-purple-950 text-white shadow-md shadow-purple-500/25 scale-105";
+      return "bg-gradient-to-r from-purple-400 to-purple-950 text-white shadow-md shadow-purple-500/25 scale-[1.02] sm:scale-105";
     }
     return `${defaultBgClass} text-[#3a0159]/80 ${hoverBgClass} ${hoverTextClass} hover:scale-105 hover:shadow-xs`;
   };
 
   return (
-    <nav class="flex items-center justify-between w-full gap-2 md:gap-6">
-      {/* 1. LOGO E IDENTIDAD (Lado izquierdo) */}
+    <nav class="flex items-center justify-between w-full py-1">
+      {/* 1. LOGO E IDENTIDAD (Oculto en móvil, visible de tablet en adelante) */}
       <a
         href="/"
-        class="flex items-center gap-2.5 group shrink-0 pr-3 border-r border-[#3a0159]/10"
+        class="hidden sm:flex items-center gap-2 group shrink-0 pr-3 border-r border-[#3a0159]/10"
         title="Pajarito Triste - Inicio"
       >
         <img
@@ -30,13 +30,13 @@ export default function Navbar({ currentUrl }) {
           class="w-9 h-9 md:w-10 md:h-10 object-contain group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"
           alt="Logo Pajarito Triste"
         />
-        <span class="hidden sm:inline-block font-black text-[#3a0159] text-base tracking-tight">
-          Pajarito Triste</span>
-        
+        <span class="font-black text-[#3a0159] text-base tracking-tight">
+          Pajarito Triste
+        </span>
       </a>
 
-      {/* 2. MENÚ DE NAVEGACIÓN (Lado derecho) */}
-      <ul class="flex items-center gap-1.5 md:gap-3 overflow-x-auto py-1 no-scrollbar">
+      {/* 2. MENÚ DE NAVEGACIÓN (En móvil usa 4 columnas exactas al 100% de ancho) */}
+      <ul class="grid grid-cols-4 sm:flex items-center gap-1 sm:gap-2 md:gap-3 w-full sm:w-auto">
         <li>
           <a
             href="/"
