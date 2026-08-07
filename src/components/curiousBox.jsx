@@ -9,14 +9,15 @@ export default function CuriousBox() {
   return (
     <div class="relative bg-linear-to-br from-yellow-50/80 via-yellow-50/30 to-white border border-yellow-100/80 rounded-[2.5rem] p-6 shadow-xs hover:shadow-md transition-shadow overflow-hidden">
       {/* Decoración sutil: resplandores de fondo */}
-      <div class="absolute -top-10 -right-10 w-32 h-32 bg-orange-200/30 rounded-full blur-2xl pointer-events-none"></div>
-      <div class="absolute -bottom-10 -left-10 w-28 h-28 bg-orange-200/30 rounded-full blur-xl pointer-events-none"></div>
+      <div class="absolute -top-10 -right-10 w-32 h-32 bg-orange-200/30 rounded-full blur-2xl pointer-events-none">
+      </div>
+      <div class="absolute -bottom-10 -left-10 w-28 h-28 bg-orange-200/30 rounded-full blur-xl pointer-events-none">
+      </div>
 
       <div class="relative z-10 flex flex-col justify-between h-full space-y-4">
         {/* Encabezado con Badge y Botón de Recarga */}
         <div class="flex items-center justify-between">
           <div class="inline-flex items-center gap-2 bg-purple-100/80 border border-purple-200/60 px-3 py-1 rounded-full">
-            
             <span class="text-xs font-black text-[#3a0159] tracking-wider uppercase">
               Sabías que...
             </span>
@@ -24,14 +25,24 @@ export default function CuriousBox() {
 
           {/* Botón interactivo para cambiar dato */}
           <button
-          type="button"
+            type="button"
             id="refresh-fact-btn"
             title="Siguiente dato"
             class="text-[#3a0159]/60 hover:text-[#3a0159] hover:bg-purple-100/60 p-1.5 rounded-full transition-all duration-200 cursor-pointer active:scale-90"
             aria-label="Obtener otro dato curioso"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              />
             </svg>
           </button>
         </div>
@@ -49,7 +60,6 @@ export default function CuriousBox() {
         {/* Pie de la tarjeta con presencia de tu pajarito */}
         <div class="flex justify-end pt-3 border-t border-purple-100/60 text-xs text-gray-400 font-medium">
           <span>Dato rápido sobre datos</span>
-          
         </div>
       </div>
 

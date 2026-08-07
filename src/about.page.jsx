@@ -4,148 +4,154 @@ export const title = "Sobre mí 👩🏻‍💻";
 export const type = "page";
 
 export default function About() {
- const techs = [
-  {
-    name: "Lume",
-    desc: "Generador estático ultrarrápido basado en Deno.",
-    gradient: "from-emerald-50/90",
-    border: "border-emerald-200/70",
-    text: "text-emerald-950",
-    badge: "bg-emerald-100 text-emerald-800 border-emerald-200/50",
-   
-    icon: "⚡",
-  },
-  {
-    name: "Deno",
-    desc: "Runtime moderno y seguro con soporte TypeScript.",
-    gradient: "from-purple-50/90 ",
-    border: "border-purple-200/70",
-    text: "text-purple-950",
-    badge: "bg-purple-100 text-purple-800 border-purple-200/50",
-    
-    icon: "🦕",
-  },
-  {
-    name: "Tailwind CSS",
-    desc: "Framework para interfaces responsivas y limpias.",
-    gradient: "from-amber-50/90 ",
-    border: "border-amber-200/70",
-    text: "text-amber-950",
-    badge: "bg-amber-100 text-amber-800 border-amber-200/50",
-    
-    icon: "🎨",
-  },
- 
-];
+  const techs = [
+    {
+      name: "Lume",
+      desc: "Generador estático ultrarrápido basado en Deno.",
+      gradient: "from-emerald-50/90",
+      border: "border-emerald-200/70",
+      text: "text-emerald-950",
+      badge: "bg-emerald-100 text-emerald-800 border-emerald-200/50",
+
+      icon: "⚡",
+    },
+    {
+      name: "Deno",
+      desc: "Runtime moderno y seguro con soporte TypeScript.",
+      gradient: "from-purple-50/90 ",
+      border: "border-purple-200/70",
+      text: "text-purple-950",
+      badge: "bg-purple-100 text-purple-800 border-purple-200/50",
+
+      icon: "🦕",
+    },
+    {
+      name: "Tailwind CSS",
+      desc: "Framework para interfaces responsivas y limpias.",
+      gradient: "from-amber-50/90 ",
+      border: "border-amber-200/70",
+      text: "text-amber-950",
+      badge: "bg-amber-100 text-amber-800 border-amber-200/50",
+
+      icon: "🎨",
+    },
+  ];
 
   return (
     <div class="space-y-10 md:space-y-14 mb-16">
-      
       {/* SECCIÓN 1: INTRODUCCIÓN */}
-     <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-purple-100/80 shadow-sm">
-  {/* Círculos decorativos de fondo suave */}
-  <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink-50 rounded-full blur-2xl pointer-events-none opacity-70"></div>
+      <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-purple-100/80 shadow-sm">
+        {/* Círculos decorativos de fondo suave */}
+        <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink-50 rounded-full blur-2xl pointer-events-none opacity-70">
+        </div>
 
-  <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-purple-100/60 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-purple-100/60 rounded-full blur-3xl pointer-events-none">
+        </div>
 
-  <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
-    
-    {/* LADO IZQUIERDO: TEXTO */}
-    <div class="flex-1">
-      <span class="inline-block bg-purple-100 text-[#3a0159] text-xs font-bold px-4 py-1.5 rounded-full mb-4 tracking-wider uppercase">
-        Sobre el proyecto
-      </span>
-      
-      {/* Título limpio sin degradados */}
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#3a0159] mb-8 tracking-tight">
-        Acerca de <span class="text-transparent bg-clip-text bg-linear-to-r from-[#e9aadd] via-[#be81dd] to-purple-950">
-              Pajarito Triste.
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+          {/* LADO IZQUIERDO: TEXTO */}
+          <div class="flex-1">
+            <span class="inline-block bg-purple-100 text-[#3a0159] text-xs font-bold px-4 py-1.5 rounded-full mb-4 tracking-wider uppercase">
+              Sobre el proyecto
             </span>
-      </h1>
 
-      <div class="space-y-6 text-[#3a0159]/80 leading-relaxed text-lg md:text-xl font-medium">
-        <p>
-          <strong class="font-black text-[#3a0159]">Pajarito Triste</strong>{" "}
-          es un rincón digital diseñado para humanizar el mundo de los datos.
-          Mi misión es romper la barrera de que la tecnología es "difícil" y
-          transformarla en algo visual, claro y, sobre todo, fácil de aplicar.
-        </p>
-        <p>
-          Como{" "}
-          <span class="bg-[#e9aadd] text-[#944886] px-2 py-0.5 rounded-md font-bold">
-            desarrolladora
-          </span>
-          , creo que las bases de datos no son solo conjuntos de tablas e índices, sino lenguajes que nos permiten estructurar y entender mejor nuestra realidad. Aquí comparto mi camino, guías prácticas y todo lo que voy aprendiendo.
-        </p>
-      </div>
-    </div>
+            {/* Título limpio sin degradados */}
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#3a0159] mb-8 tracking-tight">
+              Acerca de{" "}
+              <span class="text-transparent bg-clip-text bg-linear-to-r from-[#e9aadd] via-[#be81dd] to-purple-950">
+                Pajarito Triste.
+              </span>
+            </h1>
 
-    {/* LADO DERECHO: IMAGEN */}
-    <div class="shrink-0 flex items-center justify-center">
-      <div class="relative md:w-90  p-4 flex items-center justify-center ">
-        <img
-          src="/img/pajarito-compu-rmv.png"
-          alt="Pajarito frente a la computadora"
-          class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-    </div>
-
-  </div>
-</section>
-     {/* SECCIÓN 2: STACK TECNOLÓGICO */}
-<section class="relative">
-  {/* Título de sección en color sólido */}
-  <div class="flex items-center gap-3 mb-8 px-2">
-    <span class="text-2xl">🛠️</span>
-    <h2 class="text-3xl md:text-4xl font-black text-[#3a0159] tracking-tight">
-      Stack Tecnológico
-    </h2>
-  </div>
-
-  {/* Grid de 4 columnas en desktop */}
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-    {techs.map((tech) => (
-      <div
-        class={`group relative overflow-hidden bg-linear-to-br ${tech.gradient} ${tech.border} border p-6 rounded-[2.2rem] shadow-xs hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between`}
-      >
-        {/* FORMAS DE FONDO DECORATIVAS (GLOW BLOBS) */}
-        <div
-          class={`absolute -right-6 -top-6 w-28 h-28 ${tech.glow} rounded-full blur-xl pointer-events-none group-hover:scale-150 transition-transform duration-500`}
-        ></div>
-        <div
-          class={`absolute -left-6 -bottom-6 w-20 h-20 ${tech.glow} rounded-full blur-lg pointer-events-none opacity-60 group-hover:scale-125 transition-transform duration-500`}
-        ></div>
-
-        {/* CONTENIDO DE LA TARJETA */}
-        <div class="relative z-10">
-          {/* Cabecera con ícono y badge */}
-          <div class="flex items-center justify-between mb-5">
-            <div class="w-12 h-12 rounded-2xl bg-white/90 border border-white/80 shadow-xs flex items-center justify-center text-2xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-              {tech.icon}
+            <div class="space-y-6 text-[#3a0159]/80 leading-relaxed text-lg md:text-xl font-medium">
+              <p>
+                <strong class="font-black text-[#3a0159]">
+                  Pajarito Triste
+                </strong>{" "}
+                es un rincón digital diseñado para humanizar el mundo de los
+                datos. Mi misión es romper la barrera de que la tecnología es
+                "difícil" y transformarla en algo visual, claro y, sobre todo,
+                fácil de aplicar.
+              </p>
+              <p>
+                Como{" "}
+                <span class="bg-[#e9aadd] text-[#944886] px-2 py-0.5 rounded-md font-bold">
+                  desarrolladora
+                </span>
+                , creo que las bases de datos no son solo conjuntos de tablas e
+                índices, sino lenguajes que nos permiten estructurar y entender
+                mejor nuestra realidad. Aquí comparto mi camino, guías prácticas
+                y todo lo que voy aprendiendo.
+              </p>
             </div>
-           
-            
           </div>
 
-          {/* Nombre de la tecnología */}
-          <h3 class={`text-xl font-extrabold ${tech.text} mb-2 tracking-tight`}>
-            {tech.name}
-          </h3>
-
-          {/* Descripción */}
-          <p class="text-xs md:text-sm text-[#3a0159]/75 font-medium leading-relaxed">
-            {tech.desc}
-          </p>
+          {/* LADO DERECHO: IMAGEN */}
+          <div class="shrink-0 flex items-center justify-center">
+            <div class="relative md:w-90  p-4 flex items-center justify-center ">
+              <img
+                src="/img/pajarito-compu-rmv.png"
+                alt="Pajarito frente a la computadora"
+                class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-</section>
+      </section>
+      {/* SECCIÓN 2: STACK TECNOLÓGICO */}
+      <section class="relative">
+        {/* Título de sección en color sólido */}
+        <div class="flex items-center gap-3 mb-8 px-2">
+          <span class="text-2xl">🛠️</span>
+          <h2 class="text-3xl md:text-4xl font-black text-[#3a0159] tracking-tight">
+            Stack Tecnológico
+          </h2>
+        </div>
 
-    {/* SECCIÓN 3: FILOSOFÍA Y LICENCIA (Código con Propósito) */}
+        {/* Grid de 4 columnas en desktop */}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {techs.map((tech) => (
+            <div
+              class={`group relative overflow-hidden bg-linear-to-br ${tech.gradient} ${tech.border} border p-6 rounded-[2.2rem] shadow-xs hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between`}
+            >
+              {/* FORMAS DE FONDO DECORATIVAS (GLOW BLOBS) */}
+              <div
+                class={`absolute -right-6 -top-6 w-28 h-28 ${tech.glow} rounded-full blur-xl pointer-events-none group-hover:scale-150 transition-transform duration-500`}
+              >
+              </div>
+              <div
+                class={`absolute -left-6 -bottom-6 w-20 h-20 ${tech.glow} rounded-full blur-lg pointer-events-none opacity-60 group-hover:scale-125 transition-transform duration-500`}
+              >
+              </div>
+
+              {/* CONTENIDO DE LA TARJETA */}
+              <div class="relative z-10">
+                {/* Cabecera con ícono y badge */}
+                <div class="flex items-center justify-between mb-5">
+                  <div class="w-12 h-12 rounded-2xl bg-white/90 border border-white/80 shadow-xs flex items-center justify-center text-2xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                    {tech.icon}
+                  </div>
+                </div>
+
+                {/* Nombre de la tecnología */}
+                <h3
+                  class={`text-xl font-extrabold ${tech.text} mb-2 tracking-tight`}
+                >
+                  {tech.name}
+                </h3>
+
+                {/* Descripción */}
+                <p class="text-xs md:text-sm text-[#3a0159]/75 font-medium leading-relaxed">
+                  {tech.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECCIÓN 3: FILOSOFÍA Y LICENCIA (Código con Propósito) */}
       <section class="bg-[#5d2e76] text-white rounded-[3rem] p-8 md:p-12 shadow-xl shadow-purple-950/15 relative overflow-hidden border border-purple-900/40">
-        
         {/* FORMAS CURVAS ORGANICAS DE FONDO (SVG Blobs) */}
         <svg
           class="absolute -right-12 -bottom-16 w-80 h-80 text-pink-300/10 pointer-events-none"
@@ -184,30 +190,38 @@ export default function About() {
             <span class="text-pink-300 font-mono font-bold bg-white/10 px-2.5 py-1 rounded-lg border border-white/10 inline-block my-1">
               AGPL-3.0
             </span>
-            . Creo firmemente en que el conocimiento debe ser libre: puedes estudiar,
-            modificar y redistribuir este sitio siempre que mantengas esa misma
-            libertad para los demás.
+            . Creo firmemente en que el conocimiento debe ser libre: puedes
+            estudiar, modificar y redistribuir este sitio siempre que mantengas
+            esa misma libertad para los demás.
           </p>
 
           {/* Tarjetas en cuadrícula con transparencias suaves */}
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-sm font-bold text-purple-100">
             <div class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02]">
-              <span class="text-pink-300 text-xl bg-white/10 p-2 rounded-xl">✨</span>
+              <span class="text-pink-300 text-xl bg-white/10 p-2 rounded-xl">
+                ✨
+              </span>
               <span>Fuente siempre abierta</span>
             </div>
 
             <div class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02]">
-              <span class="text-emerald-300 text-xl bg-white/10 p-2 rounded-xl">🌱</span>
+              <span class="text-emerald-300 text-xl bg-white/10 p-2 rounded-xl">
+                🌱
+              </span>
               <span>Comunidad y aprendizaje</span>
             </div>
 
             <div class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02]">
-              <span class="text-amber-300 text-xl bg-white/10 p-2 rounded-xl">🤝</span>
+              <span class="text-amber-300 text-xl bg-white/10 p-2 rounded-xl">
+                🤝
+              </span>
               <span>Mejora continua</span>
             </div>
 
             <div class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02]">
-              <span class="text-sky-300 text-xl bg-white/10 p-2 rounded-xl">🚀</span>
+              <span class="text-sky-300 text-xl bg-white/10 p-2 rounded-xl">
+                🚀
+              </span>
               <span>Transparencia total</span>
             </div>
           </div>
@@ -216,7 +230,6 @@ export default function About() {
 
       {/* SECCIÓN 4: CONTACTO (¿Platicamos?) */}
       <section class="bg-white rounded-[3rem] p-8 md:p-12 text-center border border-purple-100/80 shadow-xs relative overflow-hidden">
-        
         {/* ONDA / CURVA SUPERIOR DECORATIVA EN PASTEL */}
         <div class="absolute top-0 left-0 right-0 h-28 bg-pink-50/60 pointer-events-none">
           <svg
@@ -229,10 +242,10 @@ export default function About() {
         </div>
 
         {/* CURVA DE FONDO ESQUINA INFERIOR */}
-        <div class="absolute -bottom-10 -right-10 w-44 h-44 bg-emerald-50 rounded-full blur-xl pointer-events-none"></div>
+        <div class="absolute -bottom-10 -right-10 w-44 h-44 bg-emerald-50 rounded-full blur-xl pointer-events-none">
+        </div>
 
         <div class="flex flex-col items-center max-w-lg mx-auto relative z-10 pt-2">
-          
           {/* Avatar / Imagen dentro de círculo de doble borde */}
           <div class="relative w-28 h-28 bg-white rounded-full flex items-center justify-center mb-5  p-2 group hover:scale-105 transition-transform duration-300">
             <div class="w-full h-full  rounded-full flex items-center justify-center p-2">
@@ -250,7 +263,8 @@ export default function About() {
 
           <p class="text-[#3a0159]/75 text-base md:text-lg mb-8 leading-relaxed font-medium">
             Si tienes dudas sobre SQL, quieres colaborar en un proyecto o
-            simplemente decir 'hola', mi bandeja de entrada siempre está abierta.
+            simplemente decir 'hola', mi bandeja de entrada siempre está
+            abierta.
           </p>
 
           <a
@@ -262,7 +276,6 @@ export default function About() {
           </a>
         </div>
       </section>
-
     </div>
   );
 }

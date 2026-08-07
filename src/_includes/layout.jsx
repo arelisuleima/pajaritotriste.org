@@ -73,7 +73,6 @@ export default (data, _helpers) => {
           <div class="max-w-400 mx-auto w-full gap-6 lg:gap-8 p-4 lg:p-10 items-start">
             {/* COLUMNA CENTRAL (Se quitó overflow-hidden para liberar position: fixed) */}
             <div class="flex flex-col gap-6 lg:gap-8 w-full">
-              
               {/* NAVBAR DIRECTA (Sin nav ni div envolvente que cree recuadros) */}
               <Navbar currentUrl={url} />
 

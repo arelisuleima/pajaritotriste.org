@@ -40,13 +40,14 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/"
-            class={`${linkBase} ${getLinkStyle(
-              "/",
-              "hover:bg-purple-100",
-              "hover:text-purple-900",
-              "bg-purple-50/80",
-              
-            )} border-purple-300 border `}
+            class={`${linkBase} ${
+              getLinkStyle(
+                "/",
+                "hover:bg-purple-100",
+                "hover:text-purple-900",
+                "bg-purple-50/80",
+              )
+            } border-purple-300 border `}
           >
             Inicio
           </a>
@@ -55,12 +56,14 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/posts"
-            class={`${linkBase} ${getLinkStyle(
-              "/posts",
-              "hover:bg-blue-100",
-              "hover:text-blue-900",
-              "bg-blue-50/80"
-            )} border-blue-300 border `}
+            class={`${linkBase} ${
+              getLinkStyle(
+                "/posts",
+                "hover:bg-blue-100",
+                "hover:text-blue-900",
+                "bg-blue-50/80",
+              )
+            } border-blue-300 border `}
           >
             Posts
           </a>
@@ -69,12 +72,14 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/about"
-            class={`${linkBase} ${getLinkStyle(
-              "/about",
-              "hover:bg-emerald-100",
-              "hover:text-emerald-900",
-              "bg-emerald-50/80"
-            )} border-green-300 border `}
+            class={`${linkBase} ${
+              getLinkStyle(
+                "/about",
+                "hover:bg-emerald-100",
+                "hover:text-emerald-900",
+                "bg-emerald-50/80",
+              )
+            } border-green-300 border `}
           >
             Acerca
           </a>
@@ -83,12 +88,14 @@ export default function Navbar({ currentUrl }) {
         <li>
           <a
             href="/cv"
-            class={`${linkBase} ${getLinkStyle(
-              "/cv",
-              "hover:bg-amber-100",
-              "hover:text-amber-900",
-              "bg-amber-50/80"
-            )} border-amber-300 border `}
+            class={`${linkBase} ${
+              getLinkStyle(
+                "/cv",
+                "hover:bg-amber-100",
+                "hover:text-amber-900",
+                "bg-amber-50/80",
+              )
+            } border-amber-300 border `}
           >
             CV
           </a>

@@ -6,21 +6,24 @@ export default function Cv() {
   const coreCompetencies = [
     {
       title: "Bases de Datos & SQL",
-      desc: "Modelado, PL/SQL, optimización de consultas complejas y arquitectura en Oracle DB.",
+      desc:
+        "Modelado, PL/SQL, optimización de consultas complejas y arquitectura en Oracle DB.",
       icon: "🗄️",
       bg: "bg-purple-50/80 border-purple-200/70 text-purple-950",
       accent: "bg-purple-200/80 text-purple-900",
     },
     {
       title: "Sistemas Enterprise",
-      desc: "Integración, mantenimiento y desarrollo en plataformas Ellucian Banner y PeopleSoft.",
+      desc:
+        "Integración, mantenimiento y desarrollo en plataformas Ellucian Banner y PeopleSoft.",
       icon: "🏛️",
       bg: "bg-amber-50/80 border-amber-200/70 text-amber-950",
       accent: "bg-amber-200/80 text-amber-900",
     },
     {
       title: "Desarrollo Moderno",
-      desc: "Creación de herramientas web y scripts con Deno, Fresh, TypeScript, Python y Linux.",
+      desc:
+        "Creación de herramientas web y scripts con Deno, Fresh, TypeScript, Python y Linux.",
       icon: "⚡",
       bg: "bg-emerald-50/80 border-emerald-200/70 text-emerald-950",
       accent: "bg-emerald-200/80 text-emerald-900",
@@ -52,44 +55,47 @@ export default function Cv() {
       {/* ========================================================== */}
       {/* 1. HERO: CARTA DE PRESENTACIÓN & STATUS EN VIVO           */}
       {/* ========================================================== */}
-     <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-purple-100/80 shadow-xs">
-  {/* Adornos animados de fondo */}
- 
-  <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none animate-float-reverse"></div>
+      <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-purple-100/80 shadow-xs">
+        {/* Adornos animados de fondo */}
 
-  <div class="relative z-10">
-   
+        <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none animate-float-reverse">
+        </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-      {/* Texto de la Carta de Presentación (Ocupa 8 columnas en pantallas grandes) */}
-      <div class="lg:col-span-8 space-y-5">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#3a0159] tracking-tight leading-none">
-          ¡Hola! Soy{" "}
-          <span class="text-transparent bg-clip-text bg-linear-to-r from-[#e9aadd] via-[#be81dd] to-purple-950">
-            Areli Suleima
-          </span>
-        </h1>
+        <div class="relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Texto de la Carta de Presentación (Ocupa 8 columnas en pantallas grandes) */}
+            <div class="lg:col-span-8 space-y-5">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#3a0159] tracking-tight leading-none">
+                ¡Hola! Soy{" "}
+                <span class="text-transparent bg-clip-text bg-linear-to-r from-[#e9aadd] via-[#be81dd] to-purple-950">
+                  Areli Suleima
+                </span>
+              </h1>
 
-        <h2 class="text-xl md:text-2xl font-bold text-[#3a0159]/90">
-          Desarrolladora de Software & Especialista en Sistemas Oracle / SQL 👩🏻‍💻
-        </h2>
+              <h2 class="text-xl md:text-2xl font-bold text-[#3a0159]/90">
+                Desarrolladora de Software & Especialista en Sistemas Oracle /
+                SQL 👩🏻‍💻
+              </h2>
 
-        <p class="text-base md:text-lg text-[#3a0159]/80 leading-relaxed font-medium">
-          Apasionada por la arquitectura de datos, la optimización de procesos complejos y la creación de software con propósito. Cuento con experiencia sólida en ecosistemas de base de datos empresariales, integraciones ERP y automatización.
-        </p>
-      </div>
+              <p class="text-base md:text-lg text-[#3a0159]/80 leading-relaxed font-medium">
+                Apasionada por la arquitectura de datos, la optimización de
+                procesos complejos y la creación de software con propósito.
+                Cuento con experiencia sólida en ecosistemas de base de datos
+                empresariales, integraciones ERP y automatización.
+              </p>
+            </div>
 
-      {/* Imagen / Ilustración del lado derecho (Ocupa 4 columnas en pantallas grandes) */}
-      <div class="lg:col-span-4 flex justify-center items-center">
-        <img 
-          src="/img/cv-pajarito.png" 
-          alt="Ilustración Pajarito" 
-          class="w-full max-w-65 md:max-w-75 h-auto "
-        />
-      </div>
-    </div>
-  </div>
-</section>
+            {/* Imagen / Ilustración del lado derecho (Ocupa 4 columnas en pantallas grandes) */}
+            <div class="lg:col-span-4 flex justify-center items-center">
+              <img
+                src="/img/cv-pajarito.png"
+                alt="Ilustración Pajarito"
+                class="w-full max-w-65 md:max-w-75 h-auto "
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ========================================================== */}
       {/* 2. BENTO GRID: PILARES & EXPERTISE TÉCNICO                */}
@@ -148,7 +154,6 @@ export default function Cv() {
         {/* PROYECTO 1: PANTRY */}
         <div class="bg-linear-to-br from-emerald-50/70 via-white to-emerald-100/50 rounded-[3rem] border border-emerald-200/80 p-6 md:p-10 shadow-xs hover:shadow-md transition-all duration-300">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
             {/* Mockup de Ventana / Navegador */}
             <div class="lg:col-span-5 w-full">
               <div class="bg-white rounded-2xl border border-emerald-200/80 shadow-md overflow-hidden group">
@@ -192,7 +197,9 @@ export default function Cv() {
               </div>
 
               <p class="text-[#3a0159]/80 text-sm md:text-base font-medium leading-relaxed">
-                Sistema de finanzas personales diseñado para transformar el registro de gastos diarios en métricas claras de ahorro y toma de decisiones.
+                Sistema de finanzas personales diseñado para transformar el
+                registro de gastos diarios en métricas claras de ahorro y toma
+                de decisiones.
               </p>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-bold text-[#3a0159]/85 pt-2">
@@ -204,14 +211,12 @@ export default function Cv() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
         {/* PROYECTO 2: PENSADERO */}
         <div class="bg-linear-to-br from-purple-50/70 via-white to-purple-100/50 rounded-[3rem] border border-purple-200/80 p-6 md:p-10 shadow-xs hover:shadow-md transition-all duration-300">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
             {/* Detalles (Lado Izquierdo en Desktop) */}
             <div class="lg:col-span-7 space-y-4 order-2 lg:order-1">
               <div class="flex flex-wrap items-center gap-3">
@@ -232,7 +237,9 @@ export default function Cv() {
               </div>
 
               <p class="text-[#3a0159]/80 text-sm md:text-base font-medium leading-relaxed">
-                Widget ultra ligero de notas rápidas para escritorio. Diseñado para capturar ideas al instante sin interrumpir el flujo de trabajo.
+                Widget ultra ligero de notas rápidas para escritorio. Diseñado
+                para capturar ideas al instante sin interrumpir el flujo de
+                trabajo.
               </p>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-bold text-[#3a0159]/85 pt-2">
@@ -265,7 +272,6 @@ export default function Cv() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -274,9 +280,9 @@ export default function Cv() {
       {/* 4. FOOTER CARTA DE PRESENTACIÓN & DESCARGA PDF             */}
       {/* ========================================================== */}
       <section class="bg-[#5d2e76] text-white rounded-[3rem] p-8 md:p-12 shadow-xl shadow-purple-950/20 relative overflow-hidden border border-purple-900/50">
-        
         {/* Curvas orgánicas de fondo */}
-        <div class="absolute -right-16 -top-16 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl pointer-events-none">
+        </div>
 
         <div class="relative z-10 text-center max-w-2xl mx-auto space-y-6">
           <span class="inline-block bg-white/10 text-pink-200 text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/10">
@@ -288,7 +294,9 @@ export default function Cv() {
           </h2>
 
           <p class="text-purple-100/90 text-base md:text-lg font-normal leading-relaxed">
-            Si buscas una desarrolladora enfocada en optimización de datos, bases de datos Oracle o desarrollo de herramientas a medida, me encantaría conversar.
+            Si buscas una desarrolladora enfocada en optimización de datos,
+            bases de datos Oracle o desarrollo de herramientas a medida, me
+            encantaría conversar.
           </p>
 
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -312,7 +320,6 @@ export default function Cv() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

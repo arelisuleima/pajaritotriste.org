@@ -23,8 +23,9 @@ export default (data, _helpers) => {
       {/* ========================================== */}
       <header class="relative p-6 sm:p-8 md:p-12 bg-white rounded-4xl md:rounded-[3rem] border border-purple-100/80 shadow-xs overflow-hidden">
         {/* Decoraciones sutiles de fondo */}
-       
-        <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-blue-200/60 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-blue-200/60 rounded-full blur-3xl pointer-events-none">
+        </div>
 
         <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div class="max-w-xl">
@@ -35,22 +36,24 @@ export default (data, _helpers) => {
               Publicaciones
             </h1>
             <p class="text-[#3a0159]/70 font-medium text-sm sm:text-base mt-2 leading-relaxed">
-              Explora artículos, guías visuales y reflexiones sobre bases de datos, optimización y desarrollo de software.
+              Explora artículos, guías visuales y reflexiones sobre bases de
+              datos, optimización y desarrollo de software.
             </p>
           </div>
 
           {/* Buscador estético (Lume Search inyectará aquí su input) */}
-          
-          {/* 
+
+          {
+            /*
           <div
             id="search"
             class="w-full md:w-80 bg-white/90 backdrop-blur-md rounded-full px-4 py-2 border border-purple-200/80 shadow-xs text-sm font-medium focus-within:border-pink-400 focus-within:ring-2 focus-within:ring-pink-100 transition-all"
           >
-           
+
           </div>
 
-          */} 
-          
+          */
+          }
         </div>
       </header>
 
@@ -67,24 +70,29 @@ export default (data, _helpers) => {
           </div>
 
           <article class="group relative bg-linear-to-br from-yellow-500/10 via-orange-500/5 to-orange-500/15 bg-white/90 backdrop-blur-md rounded-4xl md:rounded-[3rem] p-6 sm:p-8 md:p-10 border border-yellow-200/80 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col lg:flex-row gap-8 items-center overflow-hidden">
-            
             {/* Miniatura Destacada */}
             <a
               href={featuredPost.url}
               class="w-full lg:w-1/2 h-60 sm:h-72 shrink-0 overflow-hidden rounded-2xl md:rounded-3xl bg-purple-50 border border-white/80 shadow-inner relative group"
             >
-              {featuredPost.image ? (
-                <img
-                  src={featuredPost.image}
-                  alt={featuredPost.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              ) : (
-                <div class="w-full h-full flex flex-col items-center justify-center bg-linear-to-br from-purple-100 to-pink-100 text-purple-900/40">
-                  <span class="text-6xl mb-2 group-hover:scale-110 transition-transform duration-300">🐦</span>
-                  <span class="text-xs font-black uppercase tracking-wider">Pajarito Triste</span>
-                </div>
-              )}
+              {featuredPost.image
+                ? (
+                  <img
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                )
+                : (
+                  <div class="w-full h-full flex flex-col items-center justify-center bg-linear-to-br from-purple-100 to-pink-100 text-purple-900/40">
+                    <span class="text-6xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                      🐦
+                    </span>
+                    <span class="text-xs font-black uppercase tracking-wider">
+                      Pajarito Triste
+                    </span>
+                  </div>
+                )}
             </a>
 
             {/* Contenido Destacado */}
@@ -93,7 +101,8 @@ export default (data, _helpers) => {
                 <div class="flex items-center gap-3 mb-4">
                   {featuredPost.date && (
                     <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#3a0159]/80 border border-purple-100 shadow-2xs">
-                      📅 {new Date(featuredPost.date).toLocaleDateString("es-MX", {
+                      📅{" "}
+                      {new Date(featuredPost.date).toLocaleDateString("es-MX", {
                         day: "numeric",
                         month: "long",
                         year: "numeric",
@@ -128,7 +137,6 @@ export default (data, _helpers) => {
                 </a>
               </div>
             </div>
-
           </article>
         </section>
       )}
@@ -160,17 +168,19 @@ export default (data, _helpers) => {
                       href={post.url}
                       class="block w-full h-40 overflow-hidden rounded-2xl bg-white/90 border border-white/80 mb-4 relative group"
                     >
-                      {post.image ? (
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      ) : (
-                        <div class="w-full h-full flex items-center justify-center bg-purple-50/50 text-3xl text-purple-300">
-                          🐦
-                        </div>
-                      )}
+                      {post.image
+                        ? (
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        )
+                        : (
+                          <div class="w-full h-full flex items-center justify-center bg-purple-50/50 text-3xl text-purple-300">
+                            🐦
+                          </div>
+                        )}
                     </a>
 
                     {/* Meta & Fecha */}
@@ -230,7 +240,8 @@ export default (data, _helpers) => {
             Aún no hay publicaciones
           </h3>
           <p class="text-[#3a0159]/60 text-sm font-medium">
-            Pronto habrá nuevo contenido sobre bases de datos y software por aquí.
+            Pronto habrá nuevo contenido sobre bases de datos y software por
+            aquí.
           </p>
         </div>
       )}
