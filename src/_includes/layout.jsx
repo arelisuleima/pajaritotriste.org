@@ -58,7 +58,7 @@ export default (data, _helpers) => {
           </style>
         </head>
 
-        <body className="theme-blog flex flex-col min-h-screen bg-[#FFF0F5] antialiased">
+        <body className="theme-blog flex flex-col min-h-screen bg-[#f5e2e9] antialiased">
           {/* === CABECERA MÓVIL === */}
           <header class="flex lg:hidden flex-col items-center pt-8 pb-2 px-4">
             <a href="/" class="transition-transform active:scale-95">
