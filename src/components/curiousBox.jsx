@@ -56,11 +56,6 @@ export default function CuriousBox() {
             "{randomFact}"
           </p>
         </div>
-
-        {/* Pie de la tarjeta con presencia de tu pajarito */}
-        <div class="flex justify-end pt-3 border-t border-purple-100/60 text-xs text-gray-400 font-medium">
-          <span>Dato rápido sobre datos</span>
-        </div>
       </div>
 
       {/* Script optimizado con soporte para cambio por clic + temporizador */}

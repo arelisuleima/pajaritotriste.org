@@ -118,11 +118,6 @@ export default function Cv() {
                   <span class="text-3xl group-hover:scale-125 transition-transform duration-300">
                     {comp.icon}
                   </span>
-                  <span
-                    class={`text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider ${comp.accent}`}
-                  >
-                    Especialidad
-                  </span>
                 </div>
 
                 <h3 class="text-xl font-extrabold mb-2 tracking-tight">

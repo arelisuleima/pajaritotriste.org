@@ -18,7 +18,7 @@ export default function Navbar({ currentUrl }) {
   };
 
   return (
-    <nav class="fixed bottom-0 left-0 right-0 z-50 p-2 pb-safe bg-white/90 backdrop-blur-md border-t border-purple-100/80 shadow-lg sm:relative sm:bottom-auto sm:left-auto sm:right-auto sm:z-auto sm:p-0 sm:bg-transparent sm:backdrop-blur-none sm:border-none sm:shadow-none sm:flex sm:items-center sm:justify-between sm:w-full sm:py-1">
+    <nav class="fixed bottom-0 left-0 right-0 z-50 p-2 pb-safe bg-purple-200 backdrop-blur-md border-t border-purple-100/80 shadow-lg sm:relative sm:bottom-auto sm:left-auto sm:right-auto sm:z-auto sm:p-0 sm:bg-transparent sm:backdrop-blur-none sm:border-none sm:shadow-none sm:flex sm:items-center sm:justify-between sm:w-full sm:py-1">
       {/* 1. LOGO E IDENTIDAD (Oculto en móvil, visible en escritorio) */}
       <a
         href="/"

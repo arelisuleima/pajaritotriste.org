@@ -23,13 +23,12 @@ export default (data, _helpers) => {
       {/* ========================================== */}
       <header class="relative p-6 sm:p-8 md:p-12 bg-white rounded-4xl md:rounded-[3rem] border border-purple-100/80 shadow-xs overflow-hidden">
         {/* Decoraciones sutiles de fondo */}
-
-        <div class="absolute -bottom-12 -top-12 w-48 h-48 bg-blue-200/60 rounded-full blur-3xl pointer-events-none">
+        <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none animate-float-reverse">
         </div>
 
         <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div class="max-w-xl">
-            <div class="inline-flex items-center gap-2 bg-purple-200 text-[#3a0159] text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+            <div class="inline-flex items-center gap-2 bg-purple-100 text-[#3a0159] text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-3">
               <span>📚</span> Bitácora & Recursos
             </div>
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#3a0159] tracking-tight">

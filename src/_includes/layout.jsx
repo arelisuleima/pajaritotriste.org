@@ -60,11 +60,11 @@ export default (data, _helpers) => {
 
         <body className="theme-blog flex flex-col min-h-screen bg-[#f5e2e9] antialiased">
           {/* === CABECERA MÓVIL === */}
-          <header class="flex lg:hidden flex-col items-center pt-8 pb-2 px-4">
+          <header class="flex lg:hidden flex-col items-center pt-2  px-2">
             <a href="/" class="transition-transform active:scale-95">
               <img
                 src="/img/logo-pajarito-rmv.png"
-                class="w-32"
+                class="w-15"
                 alt="Pajarito Triste"
               />
             </a>
@@ -83,7 +83,7 @@ export default (data, _helpers) => {
           </div>
 
           {/* === FOOTER === */}
-          <footer class="mt-auto mb-20 sm:mb-10 mx-auto w-[92%] max-w-300 bg-white/30 backdrop-blur-sm rounded-[2.5rem] p-10 text-center flex flex-col items-center border border-white/50 print:hidden">
+          <footer class="mt-auto mb-20 sm:mb-10 mx-auto w-[92%] max-w-300 p-2 text-center flex flex-col items-center  print:hidden">
             <div class="mb-6">
               <a
                 href="/posts.rss"

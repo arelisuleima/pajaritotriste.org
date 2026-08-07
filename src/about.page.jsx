@@ -30,10 +30,7 @@ export default function About() {
       {/* SECCIÓN 1: INTRODUCCIÓN */}
       <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-purple-100/80 shadow-sm">
         {/* Círculos decorativos de fondo suave */}
-        <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink-50 rounded-full blur-2xl pointer-events-none opacity-70">
-        </div>
-
-        <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-purple-100/60 rounded-full blur-3xl pointer-events-none">
+        <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none animate-float-reverse">
         </div>
 
         <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
@@ -52,70 +49,151 @@ export default function About() {
 
             <div class="space-y-6 text-[#3a0159]/80 leading-relaxed text-lg md:text-xl font-medium">
               <p>
-                <strong class="font-black text-[#3a0159]">
+                <strong class="font-black text-[#3a0159] text-xl md:text-2xl">
                   Pajarito Triste
                 </strong>{" "}
-                es un rincón digital diseñado para humanizar el mundo de los
-                datos. Mi misión es romper la barrera de que la tecnología es
-                "difícil" y transformarla en algo visual, claro y, sobre todo,
-                fácil de aplicar.
+                es mi rincón personal en internet. Nació con la idea de
+                humanizar el mundo de los datos y la tecnología, pero sobre
+                todo, de tener un espacio libre donde aprender, compartir y
+                escribir sin tantas complicaciones.
               </p>
+
               <p>
                 Como{" "}
-                <span class="bg-[#e9aadd] text-[#944886] px-2 py-0.5 rounded-md font-bold">
+                <span class="bg-[#e9aadd]/50 text-[#3a0159] px-2 py-0.5 rounded-md font-bold">
                   desarrolladora
                 </span>
-                , creo que las bases de datos no son solo conjuntos de tablas e
-                índices, sino lenguajes que nos permiten estructurar y entender
-                mejor nuestra realidad. Aquí comparto mi camino, guías prácticas
-                y todo lo que voy aprendiendo.
+                , me apasiona traducir temas técnicos (como bases de datos, SQL
+                o código) en guías visuales y sencillas. Sin embargo, siento que
+                el mundo de la tecnología cambia rapidísimo, y no quería
+                encasillarme: asi que aquí comparto mis descubrimientos sobre
+                datos, pero también lo que sea que me dé curiosidad en el camino
+                {" "}
+                <i>
+                  (y sí, cualquier día de estos podrías encontrar un post sobre
+                  música o algún dilema existencial)
+                </i>.
+              </p>
+
+              <p class="pt-2">
+                ¿Y el nombre? Viene de la canción <i>"Pajarito Colibrí"</i>{" "}
+                de Natalia Lafourcade. Ya que la propia artista a compartido que
+                esta canción funciona:{" "}
+                <span class="italic font-semibold text-[#be81dd]">
+                  «como una señal para vivir felices, sin miedo y fuera de la
+                  jaula»
+                </span>. Sentí que encajaba perfecto con esa intención de
+                escribir con libertad, perderle el miedo a aprender cosas nuevas
+                y soltar la presión de tener todo resuelto.
               </p>
             </div>
           </div>
 
           {/* LADO DERECHO: IMAGEN */}
           <div class="shrink-0 flex items-center justify-center">
-            <div class="relative md:w-90 p-4 flex items-center justify-center">
+            <div class="relative md:w-90 p-1 flex items-center justify-center">
               <img
-                src="/img/pajarito-compu-rmv.png"
+                src="/img/pajarito-animated.gif"
                 alt="Pajarito frente a la computadora"
                 class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
               />
             </div>
           </div>
         </div>
+        {/* Tarjeta de la canción / Banda sonora del blog */}
+        <div class="my-8 p-4 sm:p-5 bg-linear-to-r from-[#F3E8FF] via-[#FDF2F8] to-[#f0e0fe] rounded-3xl border border-white/80 shadow-md flex items-center gap-4 max-w-md hover:scale-[1.02] transition-transform duration-300">
+          {/* Foto o Portada de la canción (puedes poner la foto de la portada de Natalia Lafourcade) */}
+          <div class="relative shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shadow-sm border border-white/60">
+            <img
+              src="/img/pajarito-colibri.jpg"
+              alt="Pajarito Colibrí - Natalia Lafourcade"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/10"></div>
+          </div>
+
+          {/* Detalles del Track */}
+          <div class="flex-1 min-w-0">
+            <h4 class="font-extrabold text-[#3a0159] text-sm sm:text-base truncate mt-1">
+              Pajarito Colibrí (2022)
+            </h4>
+            <p class="text-xs text-[#3a0159]/70 truncate">
+              Natalia Lafourcade - De Todas las Flores
+            </p>
+
+            {/* Enlace para escuchar */}
+            <a
+              href="https://open.spotify.com/intl-es/track/3Kyaxx0AhnwJSQOUMBGrlz?si=fd29cb1915674665"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-xs font-bold text-pink-600 hover:text-pink-700 mt-1.5 transition-colors"
+            >
+              Escuchar en Spotify <span class="text-xs">↗</span>
+            </a>
+          </div>
+        </div>
       </section>
 
-      {/* SECCIÓN 2: STACK TECNOLÓGICO */}
-      <section class="px-2">
-        <div class="flex items-center gap-3 mb-8">
-          <span class="text-2xl">🛠️</span>
-          <h2 class="text-3xl md:text-4xl font-black text-[#3a0159] tracking-tight">
-            Stack Tecnológico
-          </h2>
-        </div>
+      {/* ========================================================== */}
+      {/* 2. BENTO GRID: STACK TECNOLÓGICO & ESPECIALIZACIÓN        */}
+      {/* ========================================================== */}
+      {(() => {
+        const colorSchemes = [
+          "bg-purple-50/80 border-purple-200/70 text-purple-950",
+          "bg-amber-50/80 border-amber-200/70 text-amber-950",
+          "bg-emerald-50/80 border-emerald-200/70 text-emerald-950",
+        ];
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {techs.map((tech) => (
-            <div key={tech.name} class="flex items-start gap-4 group">
-              <div
-                class={`w-12 h-12 shrink-0 rounded-2xl ${tech.iconBg} flex items-center justify-center text-2xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
-              >
-                {tech.icon}
-              </div>
-              <div>
-                <h3 class="text-xl font-extrabold text-[#3a0159] mb-1 tracking-tight">
-                  {tech.name}
-                </h3>
-                <p class="text-sm text-[#3a0159]/75 font-medium leading-relaxed">
-                  {tech.desc}
-                </p>
-              </div>
+        return (
+          <section class="w-full">
+            {/* Encabezado suave */}
+            <div class="flex items-center gap-3 mb-6 px-2">
+              <span class="text-2xl sm:text-3xl">🛠️</span>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-[#3a0159] tracking-tight">
+                Stack
+              </h2>
             </div>
-          ))}
-        </div>
-      </section>
 
+            {/* Bento Grid container */}
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+              {techs.map((tech, index) => {
+                const cardStyle = tech.bg ||
+                  colorSchemes[index % colorSchemes.length];
+
+                return (
+                  <div
+                    key={tech.name}
+                    class={`${cardStyle} p-6 sm:p-7 rounded-[2.5rem] border shadow-xs hover:shadow-2xl hover:shadow-purple-900/10 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden backdrop-blur-md`}
+                  >
+                    {/* Glow sutil en la esquina superior al hacer hover */}
+                    <div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-white/50 blur-xl group-hover:scale-150 transition-transform duration-500 pointer-events-none">
+                    </div>
+
+                    <div>
+                      {/* Cabecera de la tarjeta bento */}
+                      <div class="flex items-center justify-between mb-4 relative z-10">
+                        <span class="text-3xl sm:text-4xl group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300 inline-block">
+                          {tech.icon}
+                        </span>
+                      </div>
+
+                      {/* Título */}
+                      <h3 class="text-xl sm:text-2xl font-extrabold mb-2 tracking-tight leading-snug relative z-10">
+                        {tech.name}
+                      </h3>
+
+                      {/* Descripción */}
+                      <p class="text-xs sm:text-sm opacity-85 leading-relaxed font-medium relative z-10">
+                        {tech.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })()}
       {/* SECCIÓN 3: FILOSOFÍA, TRANSPARENCIA Y REPOSITORIOS */}
       <section class="bg-[#5d2e76] text-white rounded-[3rem] p-8 md:p-12 shadow-xl shadow-purple-950/15 relative overflow-hidden border border-purple-900/40">
         {/* FORMAS CURVAS ORGÁNICAS DE FONDO */}
@@ -153,7 +231,7 @@ export default function About() {
             </h2>
 
             <p class="text-purple-100/90 text-base md:text-lg mb-4 leading-relaxed font-normal">
-              Este proyecto es de código abierto bajo la licencia{" "}
+              Este proyecto se encuentra bajo la licencia{" "}
               <span class="text-pink-300 font-mono font-bold bg-white/10 px-2.5 py-1 rounded-lg border border-white/10 inline-block my-1">
                 AGPL-3.0
               </span>
@@ -209,53 +287,12 @@ export default function About() {
                 <span>Repo del Blog</span>
               </a>
             </div>
-
-            {/* Tarjetas de principios */}
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-sm font-bold text-purple-100">
-              <div class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02]">
-                <span class="text-pink-300 text-xl bg-white/10 p-2 rounded-xl">
-                  ✨
-                </span>
-                <span>Fuente siempre abierta</span>
-              </div>
-
-              <div class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02]">
-                <span class="text-emerald-300 text-xl bg-white/10 p-2 rounded-xl">
-                  🌱
-                </span>
-                <span>Comunidad y aprendizaje</span>
-              </div>
-
-              <div class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02]">
-                <span class="text-amber-300 text-xl bg-white/10 p-2 rounded-xl">
-                  🤝
-                </span>
-                <span>Mejora continua</span>
-              </div>
-
-              <div class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02]">
-                <span class="text-sky-300 text-xl bg-white/10 p-2 rounded-xl">
-                  🤖
-                </span>
-                <span>Asistencia e innovación responsable</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* SECCIÓN 4: CONTACTO */}
       <section class="bg-white rounded-[3rem] p-8 md:p-12 text-center border border-purple-100/80 shadow-xs relative overflow-hidden">
-        <div class="absolute top-0 left-0 right-0 h-28 bg-pink-50/60 pointer-events-none">
-          <svg
-            class="absolute bottom-0 w-full h-8 text-white fill-current"
-            viewBox="0 0 1440 48"
-            preserveAspectRatio="none"
-          >
-            <path d="M0,48 C280,0 720,50 1440,10 L1440,48 L0,48 Z"></path>
-          </svg>
-        </div>
-
         <div class="absolute -bottom-10 -right-10 w-44 h-44 bg-emerald-50 rounded-full blur-xl pointer-events-none">
         </div>
 
