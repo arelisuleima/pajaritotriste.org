@@ -52,47 +52,44 @@ export default function Cv() {
       {/* ========================================================== */}
       {/* 1. HERO: CARTA DE PRESENTACIÓN & STATUS EN VIVO           */}
       {/* ========================================================== */}
-      <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-purple-100/80 shadow-xs">
-        {/* Adornos animados de fondo */}
-        <div class="absolute -top-16 -right-16 w-64 h-64 bg-pink-100/60 rounded-full blur-3xl pointer-events-none animate-float-slow"></div>
-        <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none animate-float-reverse"></div>
+     <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-purple-100/80 shadow-xs">
+  {/* Adornos animados de fondo */}
+ 
+  <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none animate-float-reverse"></div>
 
-        <div class="relative z-10">
-          {/* Badge de Disponibilidad Activa */}
-          <div class="inline-flex items-center gap-2.5 bg-emerald-50 border border-emerald-200/80 px-4 py-2 rounded-full mb-6">
-            <span class="relative flex h-3 w-3">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-            </span>
-            <span class="text-xs font-black text-emerald-900 tracking-wide uppercase">
-              Disponible 
-            </span>
-          </div>
+  <div class="relative z-10">
+   
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Texto de la Carta de Presentación */}
-            <div class="lg:col-span-8 space-y-5">
-              <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#3a0159] tracking-tight leading-none">
-                ¡Hola! Soy{" "}
-                <span class="text-transparent bg-clip-text bg-linear-to-r from-[#e9aadd] via-[#be81dd] to-purple-950">
-              Areli Suleima
-            </span>
-              </h1>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      {/* Texto de la Carta de Presentación (Ocupa 8 columnas en pantallas grandes) */}
+      <div class="lg:col-span-8 space-y-5">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#3a0159] tracking-tight leading-none">
+          ¡Hola! Soy{" "}
+          <span class="text-transparent bg-clip-text bg-linear-to-r from-[#e9aadd] via-[#be81dd] to-purple-950">
+            Areli Suleima
+          </span>
+        </h1>
 
-              <h2 class="text-xl md:text-2xl font-bold text-[#3a0159]/90">
-                Desarrolladora de Software & Especialista en Sistemas Oracle / SQL 👩🏻‍💻
-              </h2>
+        <h2 class="text-xl md:text-2xl font-bold text-[#3a0159]/90">
+          Desarrolladora de Software & Especialista en Sistemas Oracle / SQL 👩🏻‍💻
+        </h2>
 
-              <p class="text-base md:text-lg text-[#3a0159]/80 leading-relaxed font-medium">
-                Apasionada por la arquitectura de datos, la optimización de procesos complejos y la creación de software con propósito. Cuento con experiencia sólida en ecosistemas de base de datos empresariales, integraciones ERP y automatización.
-              </p>
+        <p class="text-base md:text-lg text-[#3a0159]/80 leading-relaxed font-medium">
+          Apasionada por la arquitectura de datos, la optimización de procesos complejos y la creación de software con propósito. Cuento con experiencia sólida en ecosistemas de base de datos empresariales, integraciones ERP y automatización.
+        </p>
+      </div>
 
-             
-            </div>
- </div>
-           
-        </div>
-      </section>
+      {/* Imagen / Ilustración del lado derecho (Ocupa 4 columnas en pantallas grandes) */}
+      <div class="lg:col-span-4 flex justify-center items-center">
+        <img 
+          src="/img/cv-pajarito.png" 
+          alt="Ilustración Pajarito" 
+          class="w-full max-w-65 md:max-w-75 h-auto "
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ========================================================== */}
       {/* 2. BENTO GRID: PILARES & EXPERTISE TÉCNICO                */}

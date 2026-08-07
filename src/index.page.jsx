@@ -1,4 +1,5 @@
 import { BlogTags } from "./components/blogTags.jsx";
+import CuriousBox from "./components/curiousBox.jsx";
 
 export const title = "Pajarito Triste";
 export const layout = "layout.jsx";
@@ -141,7 +142,20 @@ export default (data, _helpers) => {
 
           </div>
         </section>
-
+<div class="w-full mb-10 lg:mb-0 flex flex-col sm:flex-row items-center gap-4 md:gap-6">
+  {/* Imagen estática del lado izquierdo */}
+  <div class="shrink-0">
+    <img 
+      src="/img/pajarito-curious.png" 
+      alt="Ilustración Pajarito" 
+      class="w-28 sm:w-36 md:w-44 h-auto mix-blend-multiply object-contain hover:scale-105 transition-transform duration-300"
+    />
+  </div>
+  
+  <div class="flex-1 w-full">
+    <CuriousBox />
+  </div>
+</div>
       </div>
     </>
   );

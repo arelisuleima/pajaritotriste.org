@@ -1,7 +1,7 @@
 export default function Navbar({ currentUrl }) {
-  // Base para los botones: en móvil se expanden al ancho de su columna y reducen relleno
+  // Base para los botones
   const linkBase =
-    "w-full sm:w-auto px-1 sm:px-4 md:px-5 py-1.5 md:py-2 rounded-full font-bold text-[11px] sm:text-sm tracking-normal sm:tracking-wide transition-all duration-300 flex items-center justify-center whitespace-nowrap text-center";
+    "w-full sm:w-auto px-2 sm:px-4 md:px-5 py-2 md:py-2 rounded-2xl sm:rounded-full font-bold text-[11px] sm:text-sm tracking-normal sm:tracking-wide transition-all duration-300 flex items-center justify-center whitespace-nowrap text-center";
 
   // Función para determinar si una ruta está activa
   const isActive = (path) => {
@@ -12,22 +12,22 @@ export default function Navbar({ currentUrl }) {
   // Generador de clases para combinar colores activos e inactivos
   const getLinkStyle = (path, hoverBgClass, hoverTextClass, defaultBgClass) => {
     if (isActive(path)) {
-      return "bg-gradient-to-r from-purple-400 to-purple-950 text-white shadow-md shadow-purple-500/25 scale-[1.02] sm:scale-105";
+      return "bg-gradient-to-r from-purple-500 to-purple-950 text-white shadow-md shadow-purple-500/20 scale-[1.02] sm:scale-105";
     }
     return `${defaultBgClass} text-[#3a0159]/80 ${hoverBgClass} ${hoverTextClass} hover:scale-105 hover:shadow-xs`;
   };
 
   return (
-    <nav class="flex items-center justify-between w-full py-1">
-      {/* 1. LOGO E IDENTIDAD (Oculto en móvil, visible de tablet en adelante) */}
+    <nav class="fixed bottom-0 left-0 right-0 z-50 p-2 pb-safe bg-white/90 backdrop-blur-md border-t border-purple-100/80 shadow-lg sm:relative sm:bottom-auto sm:left-auto sm:right-auto sm:z-auto sm:p-0 sm:bg-transparent sm:backdrop-blur-none sm:border-none sm:shadow-none sm:flex sm:items-center sm:justify-between sm:w-full sm:py-1">
+      {/* 1. LOGO E IDENTIDAD (Oculto en móvil, visible en escritorio) */}
       <a
         href="/"
         class="hidden sm:flex items-center gap-2 group shrink-0 pr-3 border-r border-[#3a0159]/10"
         title="Pajarito Triste - Inicio"
       >
         <img
-          src="/img/pt-logo-1.png"
-          class="w-9 h-9 md:w-10 md:h-10 object-contain group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"
+          src="/img/logo-pajarito-rmv.png"
+          class="w-9 h-9 md:w-15 md:h-15 object-contain group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"
           alt="Logo Pajarito Triste"
         />
         <span class="font-black text-[#3a0159] text-base tracking-tight">
@@ -35,8 +35,8 @@ export default function Navbar({ currentUrl }) {
         </span>
       </a>
 
-      {/* 2. MENÚ DE NAVEGACIÓN (En móvil usa 4 columnas exactas al 100% de ancho) */}
-      <ul class="grid grid-cols-4 sm:flex items-center gap-1 sm:gap-2 md:gap-3 w-full sm:w-auto">
+      {/* 2. MENÚ DE NAVEGACIÓN (En móvil ocupa el ancho completo en la parte inferior) */}
+      <ul class="grid grid-cols-4 gap-1.5 sm:flex sm:items-center sm:gap-2 md:gap-3 w-full sm:w-auto ">
         <li>
           <a
             href="/"
@@ -44,8 +44,9 @@ export default function Navbar({ currentUrl }) {
               "/",
               "hover:bg-purple-100",
               "hover:text-purple-900",
-              "bg-purple-50/80"
-            )}`}
+              "bg-purple-50/80",
+              
+            )} border-purple-300 border `}
           >
             Inicio
           </a>
@@ -56,12 +57,12 @@ export default function Navbar({ currentUrl }) {
             href="/posts"
             class={`${linkBase} ${getLinkStyle(
               "/posts",
-              "hover:bg-pink-100",
-              "hover:text-pink-900",
-              "bg-pink-50/80"
-            )}`}
+              "hover:bg-blue-100",
+              "hover:text-blue-900",
+              "bg-blue-50/80"
+            )} border-blue-300 border `}
           >
-            Publicaciones
+            Posts
           </a>
         </li>
 
@@ -73,9 +74,9 @@ export default function Navbar({ currentUrl }) {
               "hover:bg-emerald-100",
               "hover:text-emerald-900",
               "bg-emerald-50/80"
-            )}`}
+            )} border-green-300 border `}
           >
-            Acerca de
+            Acerca
           </a>
         </li>
 
@@ -87,9 +88,9 @@ export default function Navbar({ currentUrl }) {
               "hover:bg-amber-100",
               "hover:text-amber-900",
               "bg-amber-50/80"
-            )}`}
+            )} border-amber-300 border `}
           >
-            Currículum
+            CV
           </a>
         </li>
       </ul>

@@ -1,9 +1,6 @@
 import Navbar from "../components/navbar.jsx";
 
-
-
 export default (data, _helpers) => {
-  // === CORRECCIÓN: Añadimos site_url aquí para que Lume la reconozca ===
   const { title, children, lang, site, url, site_url } = data;
 
   return (
@@ -39,14 +36,11 @@ export default (data, _helpers) => {
             content={site?.description || "Documentación y guías de SQL"}
           />
 
-          {/* Usamos la variable site_url de tu _data.yml */}
           <meta property="og:url" content={site_url} />
 
-          {/* Imagen por defecto para cuando compartan la raíz del blog */}
           <meta
             property="og:image"
             content={`${site_url}/img/logo-pajarito-rmv.png`}
-            
           />
 
           <meta property="og:image:width" content="1200" />
@@ -60,8 +54,6 @@ export default (data, _helpers) => {
       h1 { font-size: 2.5rem !important; }
       p { font-size: 1.1rem !important; }
     }
-    nav .bg-white\\/70 { max-width: 95vw; overflow-x: auto; scrollbar-width: none; }
-    nav .bg-white\\/70::-webkit-scrollbar { display: none; }
   `}
           </style>
         </head>
@@ -71,7 +63,7 @@ export default (data, _helpers) => {
           <header class="flex lg:hidden flex-col items-center pt-8 pb-2 px-4">
             <a href="/" class="transition-transform active:scale-95">
               <img
-                src="/img/banner-inicio-rmv.png"
+                src="/img/logo-pajarito-rmv.png"
                 class="w-32"
                 alt="Pajarito Triste"
               />
@@ -79,32 +71,20 @@ export default (data, _helpers) => {
           </header>
 
           <div class="max-w-400 mx-auto w-full gap-6 lg:gap-8 p-4 lg:p-10 items-start">
-            {/* 1. Encabezado*/}
-           
-                {/* <IconsMedia />
-              </div>
-              <p class="mt-6 font-bold text-[#3a0159] opacity-60 text-sm">
-                @pajaritotriste
-              </p>*/}
-          
+            {/* COLUMNA CENTRAL (Se quitó overflow-hidden para liberar position: fixed) */}
+            <div class="flex flex-col gap-6 lg:gap-8 w-full">
+              
+              {/* NAVBAR DIRECTA (Sin nav ni div envolvente que cree recuadros) */}
+              <Navbar currentUrl={url} />
 
-            {/* 2. COLUMNA CENTRAL */}
-            <div class="flex flex-col gap-6 lg:gap-8 w-full overflow-hidden">
-              <nav class="flex justify-center sticky z-50 px-2">
-                <div class="bg-white/80 backdrop-blur-lg rounded-full px-4 py-3 lg:py-2 shadow-md border border-white flex items-center">
-                  <Navbar currentUrl={url} />
-                </div>
-              </nav>
-
-              <main class="w-full">
+              <main class="w-full pb-24 sm:pb-0">
                 {children}
               </main>
             </div>
- </div>
-          
+          </div>
 
           {/* === FOOTER === */}
-          <footer class="mt-auto mb-10 mx-auto w-[92%] max-w-300 bg-white/30 backdrop-blur-sm rounded-[2.5rem] p-10 text-center flex flex-col items-center border border-white/50 print:hidden">
+          <footer class="mt-auto mb-20 sm:mb-10 mx-auto w-[92%] max-w-300 bg-white/30 backdrop-blur-sm rounded-[2.5rem] p-10 text-center flex flex-col items-center border border-white/50 print:hidden">
             <div class="mb-6">
               <a
                 href="/posts.rss"

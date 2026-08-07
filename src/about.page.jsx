@@ -45,7 +45,8 @@ export default function About() {
      <section class="relative overflow-hidden p-8 md:p-12 bg-white rounded-[3rem] border border-purple-100/80 shadow-sm">
   {/* Círculos decorativos de fondo suave */}
   <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink-50 rounded-full blur-2xl pointer-events-none opacity-70"></div>
-  <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-emerald-50 rounded-full blur-2xl pointer-events-none opacity-70"></div>
+
+  <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-purple-100/60 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
     

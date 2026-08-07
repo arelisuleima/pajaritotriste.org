@@ -24,11 +24,11 @@ export default (data, _helpers) => {
       <header class="relative p-6 sm:p-8 md:p-12 bg-white rounded-4xl md:rounded-[3rem] border border-purple-100/80 shadow-xs overflow-hidden">
         {/* Decoraciones sutiles de fondo */}
        
-        <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-blue-200/60 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div class="max-w-xl">
-            <div class="inline-flex items-center gap-2 bg-purple-100 text-[#3a0159] text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+            <div class="inline-flex items-center gap-2 bg-blue-200 text-[#3a0159] text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-3">
               <span>📚</span> Bitácora & Recursos
             </div>
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#3a0159] tracking-tight">
@@ -61,12 +61,12 @@ export default (data, _helpers) => {
         <section class="relative">
           <div class="flex items-center gap-2.5 mb-4 px-2">
             <span class="text-xl">⭐</span>
-            <h2 class="text-xs font-black uppercase tracking-widest text-purple-900/60">
+            <h2 class="text-sm font-black uppercase tracking-widest text-purple-900/60 text-shadow-xs">
               Última Publicación
             </h2>
           </div>
 
-          <article class="group relative bg-linear-to-br from-purple-500/10 via-pink-500/5 to-emerald-500/15 bg-white/90 backdrop-blur-md rounded-4xl md:rounded-[3rem] p-6 sm:p-8 md:p-10 border border-purple-200/80 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col lg:flex-row gap-8 items-center overflow-hidden">
+          <article class="group relative bg-linear-to-br from-yellow-500/10 via-orange-500/5 to-orange-500/15 bg-white/90 backdrop-blur-md rounded-4xl md:rounded-[3rem] p-6 sm:p-8 md:p-10 border border-yellow-200/80 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col lg:flex-row gap-8 items-center overflow-hidden">
             
             {/* Miniatura Destacada */}
             <a
@@ -140,7 +140,7 @@ export default (data, _helpers) => {
         <section class="space-y-6">
           <div class="flex items-center gap-2.5 px-2">
             <span class="text-xl">🗂️</span>
-            <h2 class="text-xs font-black uppercase tracking-widest text-purple-900/60">
+            <h2 class="text-sm font-black uppercase tracking-widest text-purple-900/60 text-shadow-xs">
               Todas las Entradas
             </h2>
           </div>
