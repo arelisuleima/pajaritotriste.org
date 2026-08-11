@@ -60,11 +60,12 @@ export default (data, _helpers) => {
 
         <body className="theme-blog flex flex-col min-h-screen bg-[#f5e2e9] antialiased">
           {/* === CABECERA MÓVIL === */}
-          <header class="flex lg:hidden flex-col items-center pt-2  px-2">
-            <a href="/" class="transition-transform active:scale-95">
+          {/* === CABECERA MÓVIL === */}
+          <header className="flex md:hidden flex-col items-center pt-2 px-2">
+            <a href="/" className="transition-transform active:scale-95">
               <img
                 src="/img/logo-pajarito-rmv.png"
-                class="w-15"
+                className="w-15"
                 alt="Pajarito Triste"
               />
             </a>
@@ -76,7 +77,7 @@ export default (data, _helpers) => {
               {/* NAVBAR DIRECTA (Sin nav ni div envolvente que cree recuadros) */}
               <Navbar currentUrl={url} />
 
-              <main class="w-full pb-24 sm:pb-0">
+              <main class="w-full pb-3 sm:pb-0">
                 {children}
               </main>
             </div>
