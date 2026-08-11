@@ -82,7 +82,7 @@ export default (data, _helpers) => {
           />
         </head>
 
-        <body className="bg-[#fff5f7] text-gray-900 min-h-screen flex flex-col font-sans antialiased overflow-x-hidden">
+        <body className="bg-[#f5e2e9]  text-gray-900 min-h-screen flex flex-col font-sans antialiased overflow-x-hidden">
           {/* Barra de progreso */}
           <div
             id="progress-bar"
