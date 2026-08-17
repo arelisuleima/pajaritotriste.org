@@ -33,14 +33,14 @@ export default (data, _helpers) => {
           />
           <meta
             property="og:description"
-            content={site?.description || "Documentación y guías de SQL"}
+            content={site?.description || "Volando entre código y palabras"}
           />
 
           <meta property="og:url" content={site_url} />
 
           <meta
             property="og:image"
-            content={`${site_url}/img/logo-pajarito-rmv.png`}
+            content={`${site_url}/img/opengraph-pajarito.png`}
           />
 
           <meta property="og:image:width" content="1200" />
