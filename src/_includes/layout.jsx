@@ -33,7 +33,7 @@ export default (data, _helpers) => {
           />
           <meta
             property="og:description"
-            content={site?.description || "Volando entre código y palabras"}
+            content={site?.description || "Recursos que te ayudarán a entender mejor las bases de datos de una forma visual, accesible y sin complicaciones."}
           />
 
           <meta property="og:url" content={site_url} />
