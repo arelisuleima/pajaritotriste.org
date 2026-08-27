@@ -71,6 +71,16 @@
       ]
     }
   },
+   "fmt": {
+        "useTabs": false,
+        "lineWidth": 80,
+        "indentWidth": 4,
+        "semiColons": true,
+        "proseWrap": "always",
+        "exclude": [
+            "node_modules"
+        ]
+    },
   "lock": true,
   "allowScripts": {
     "deny": [

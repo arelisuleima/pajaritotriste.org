@@ -15,7 +15,7 @@ export default (data, _helpers) => {
   const cardGradients = [
     "from-emerald-500/10 via-teal-500/5 to-emerald-500/20 text-[#155e75]",
     "from-purple-500/10 via-fuchsia-500/5 to-pink-500/20 text-[#581c87]",
-    "from-pink-500/10 via-rose-500/5 to-orange-500/15 text-[#831843]",
+     "from-pink-500/10 via-rose-500/5 to-orange-500/15 text-[#831843]",
     "from-amber-500/10 via-yellow-500/5 to-lime-500/20 text-[#713f12]",
     "from-sky-500/10 via-blue-500/5 to-indigo-500/20 text-[#1e3a8a]",
   ];
