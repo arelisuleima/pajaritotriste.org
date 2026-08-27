@@ -450,7 +450,7 @@ Fíjate que hasta Luis aparece 😉, aunque no tenga departamento asignado —
 exactamente igual si existe alguna relación lógica entre las tablas o no.
 Simplemente combina todo con todo.
 
-<div class="rounded-3xl shadow-md bg-blue-100 my-8 p-6 md:p-3 border-l-8 border-blue-300 flex flex-col md:flex-row items-center gap-6">
+<div class="rounded-3xl shadow-md bg-red-100 my-8 p-6 md:p-3 border-l-8 border-red-300 flex flex-col md:flex-row items-center gap-6">
 
 <div class="shrink-0">
     <img src="/img/post-6-ex-4.png" alt="JOINs unidos" class="rounded-3xl w-80 md:w-50 shadow-lg">
