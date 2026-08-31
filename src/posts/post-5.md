@@ -4,8 +4,8 @@ type: "post"
 draft: false
 layout: "postLayout.jsx"
 tags:
-  - SQL
-  - introduccion-sql
+    - SQL
+    - introduccion-sql
 
 description: "La sentencia SELECT a profundidad"
 image: "/img/post-3.png"

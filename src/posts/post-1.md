@@ -5,8 +5,8 @@ date: 2026-03-12
 draft: false
 layout: "postLayout.jsx"
 tags:
-  - SQL
-  - Datos
+    - SQL
+    - Datos
 description: "Descubre la verdadera esencia de los datos: cómo una simple huella digital alimenta a gigantes tecnológicos e inteligencias artificiales."
 # Ajustamos la imagen de portada para que no sea excesivamente grande.
 image: "/img/chico-datos.png"

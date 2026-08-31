@@ -1,6 +1,9 @@
 import Navbar from "../components/navbar.jsx";
 
-export default (data, _helpers) => {
+export default (
+    /**@type {Lume.Data} */
+    { data, _helpers },
+) => {
     const { title, children, lang, site, url, site_url } = data;
 
     return (

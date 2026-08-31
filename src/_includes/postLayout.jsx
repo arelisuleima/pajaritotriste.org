@@ -1,7 +1,10 @@
 import Navbar from "../components/navbar.jsx";
 import { BlogTags } from "../components/blogTags.jsx";
 
-export default (data, _helpers) => {
+export default (
+    /**@type {Lume.Data} */
+    { data, _helpers },
+) => {
     // === CORRECCIÓN: Extraemos site_url de data para que sea reconocida ===
     const {
         title,

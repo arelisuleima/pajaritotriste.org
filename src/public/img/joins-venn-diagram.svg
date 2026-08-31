@@ -1,52 +1,83 @@
-<svg viewBox="0 0 900 660" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+<svg viewBox="0 0 900 660" xmlns="http://www.w3.org/2000/svg"
+    font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+    <!-- INNER JOIN -->
+    <g transform="translate(20,10)">
+        <defs>
+            <clipPath id="clipInnerB">
+                <circle cx="255" cy="175" r="75" />
+            </clipPath>
+        </defs>
+        <text x="210" y="32" text-anchor="middle" font-size="22"
+            font-weight="700"
+            fill="#1e293b">INNER JOIN</text>
+        <circle cx="145" cy="175" r="75" fill="none" stroke="#94a3b8"
+            stroke-width="2.5" />
+        <circle cx="255" cy="175" r="75" fill="none" stroke="#94a3b8"
+            stroke-width="2.5" />
+        <circle cx="145" cy="175" r="75" fill="#3b82f6" fill-opacity="0.85"
+            clip-path="url(#clipInnerB)" />
+        <text x="95" y="80" text-anchor="middle" font-size="15"
+            fill="#475569">A · empleados</text>
+        <text x="305" y="80" text-anchor="middle" font-size="15"
+            fill="#475569">B · departamentos</text>
+        <text x="210" y="282" text-anchor="middle" font-size="14"
+            fill="#475569">Solo las filas que coinciden en ambas tablas</text>
+    </g>
 
-  <!-- INNER JOIN -->
-  <g transform="translate(20,10)">
-    <defs>
-      <clipPath id="clipInnerB"><circle cx="255" cy="175" r="75"/></clipPath>
-    </defs>
-    <text x="210" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">INNER JOIN</text>
-    <circle cx="145" cy="175" r="75" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
-    <circle cx="255" cy="175" r="75" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
-    <circle cx="145" cy="175" r="75" fill="#3b82f6" fill-opacity="0.85" clip-path="url(#clipInnerB)"/>
-    <text x="95" y="80" text-anchor="middle" font-size="15" fill="#475569">A · empleados</text>
-    <text x="305" y="80" text-anchor="middle" font-size="15" fill="#475569">B · departamentos</text>
-    <text x="210" y="282" text-anchor="middle" font-size="14" fill="#475569">Solo las filas que coinciden en ambas tablas</text>
-  </g>
+    <!-- LEFT JOIN -->
+    <g transform="translate(460,10)">
+        <text x="210" y="32" text-anchor="middle" font-size="22"
+            font-weight="700"
+            fill="#1e293b">LEFT JOIN</text>
+        <circle cx="145" cy="175" r="75" fill="#3b82f6" fill-opacity="0.85" />
+        <circle cx="255" cy="175" r="75" fill="none" stroke="#94a3b8"
+            stroke-width="2.5" />
+        <text x="95" y="80" text-anchor="middle" font-size="15"
+            fill="#475569">A · empleados</text>
+        <text x="305" y="80" text-anchor="middle" font-size="15"
+            fill="#475569">B · departamentos</text>
+        <text x="210" y="282" text-anchor="middle" font-size="14"
+            fill="#475569">Todas las filas de A, coincidan o no con B</text>
+    </g>
 
-  <!-- LEFT JOIN -->
-  <g transform="translate(460,10)">
-    <text x="210" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">LEFT JOIN</text>
-    <circle cx="145" cy="175" r="75" fill="#3b82f6" fill-opacity="0.85"/>
-    <circle cx="255" cy="175" r="75" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
-    <text x="95" y="80" text-anchor="middle" font-size="15" fill="#475569">A · empleados</text>
-    <text x="305" y="80" text-anchor="middle" font-size="15" fill="#475569">B · departamentos</text>
-    <text x="210" y="282" text-anchor="middle" font-size="14" fill="#475569">Todas las filas de A, coincidan o no con B</text>
-  </g>
+    <!-- RIGHT JOIN -->
+    <g transform="translate(20,320)">
+        <text x="210" y="32" text-anchor="middle" font-size="22"
+            font-weight="700"
+            fill="#1e293b">RIGHT JOIN</text>
+        <circle cx="255" cy="175" r="75" fill="#3b82f6" fill-opacity="0.85" />
+        <circle cx="145" cy="175" r="75" fill="none" stroke="#94a3b8"
+            stroke-width="2.5" />
+        <text x="95" y="80" text-anchor="middle" font-size="15"
+            fill="#475569">A · empleados</text>
+        <text x="305" y="80" text-anchor="middle" font-size="15"
+            fill="#475569">B · departamentos</text>
+        <text x="210" y="282" text-anchor="middle" font-size="14"
+            fill="#475569">Todas las filas de B, coincidan o no con A</text>
+    </g>
 
-  <!-- RIGHT JOIN -->
-  <g transform="translate(20,320)">
-    <text x="210" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">RIGHT JOIN</text>
-    <circle cx="255" cy="175" r="75" fill="#3b82f6" fill-opacity="0.85"/>
-    <circle cx="145" cy="175" r="75" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
-    <text x="95" y="80" text-anchor="middle" font-size="15" fill="#475569">A · empleados</text>
-    <text x="305" y="80" text-anchor="middle" font-size="15" fill="#475569">B · departamentos</text>
-    <text x="210" y="282" text-anchor="middle" font-size="14" fill="#475569">Todas las filas de B, coincidan o no con A</text>
-  </g>
+    <!-- FULL OUTER JOIN -->
+    <g transform="translate(460,320)">
+        <text x="210" y="32" text-anchor="middle" font-size="22"
+            font-weight="700"
+            fill="#1e293b">FULL OUTER JOIN</text>
+        <circle cx="145" cy="175" r="75" fill="#3b82f6" fill-opacity="0.85" />
+        <circle cx="255" cy="175" r="75" fill="#3b82f6" fill-opacity="0.85" />
+        <text x="95" y="80" text-anchor="middle" font-size="15"
+            fill="#475569">A · empleados</text>
+        <text x="305" y="80" text-anchor="middle" font-size="15"
+            fill="#475569">B · departamentos</text>
+        <text x="210" y="282" text-anchor="middle" font-size="14"
+            fill="#475569">Todas las filas de A y de B, coincidan o no</text>
+    </g>
 
-  <!-- FULL OUTER JOIN -->
-  <g transform="translate(460,320)">
-    <text x="210" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">FULL OUTER JOIN</text>
-    <circle cx="145" cy="175" r="75" fill="#3b82f6" fill-opacity="0.85"/>
-    <circle cx="255" cy="175" r="75" fill="#3b82f6" fill-opacity="0.85"/>
-    <text x="95" y="80" text-anchor="middle" font-size="15" fill="#475569">A · empleados</text>
-    <text x="305" y="80" text-anchor="middle" font-size="15" fill="#475569">B · departamentos</text>
-    <text x="210" y="282" text-anchor="middle" font-size="14" fill="#475569">Todas las filas de A y de B, coincidan o no</text>
-  </g>
-
-  <!-- Legend -->
-  <rect x="180" y="620" width="16" height="16" fill="#3b82f6" fill-opacity="0.85"/>
-  <text x="204" y="633" font-size="13" fill="#475569">filas incluidas en el resultado</text>
-  <circle cx="480" cy="628" r="8" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
-  <text x="496" y="633" font-size="13" fill="#475569">tabla completa (contorno) — no incluida</text>
+    <!-- Legend -->
+    <rect x="180" y="620" width="16" height="16" fill="#3b82f6"
+        fill-opacity="0.85" />
+    <text x="204" y="633" font-size="13"
+        fill="#475569">filas incluidas en el resultado</text>
+    <circle cx="480" cy="628" r="8" fill="none" stroke="#94a3b8"
+        stroke-width="2.5" />
+    <text x="496" y="633" font-size="13"
+        fill="#475569">tabla completa (contorno) — no incluida</text>
 </svg>

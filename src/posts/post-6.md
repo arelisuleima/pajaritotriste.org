@@ -4,31 +4,31 @@ type: "post"
 draft: false
 layout: "postLayout.jsx"
 tags:
-  - SQL
-  - introduccion-sql
+    - SQL
+    - introduccion-sql
 
 description: "Domina los JOINs: la herramienta para combinar datos de múltiples tablas"
 image: "/img/post-6.png"
 date: 2026-08-26
 ---
 
-En la entrada anterior explique el **SELECT**: cómo
-recuperar datos de una sola tabla, filtrarlos, ordenarlos y transformarlos. Pero
-aquí viene la realidad: en una base de datos real, los datos nunca viven
-aislados en una sola tabla.
+En la entrada anterior explique el **SELECT**: cómo recuperar datos de una sola
+tabla, filtrarlos, ordenarlos y transformarlos. Pero aquí viene la realidad: en
+una base de datos real, los datos nunca viven aislados en una sola tabla.
 
 Imagina una empresa. Los empleados viven en una tabla, los departamentos en
 otra, los proyectos en una tercera. El verdadero poder de SQL radica en nuestra
-capacidad de **conectar esas tablas** y extraer información que tiene sentido
-en el contexto del negocio: "¿Quién trabaja en IT?" o "¿Qué empleados todavía
-no tienen departamento asignado?"
+capacidad de **conectar esas tablas** y extraer información que tiene sentido en
+el contexto del negocio: "¿Quién trabaja en IT?" o "¿Qué empleados todavía no
+tienen departamento asignado?"
 
-Para eso existen los **JOINs**, y es momento de dominarlos. Se que esta entrada puede ser un poco larga y tediosa, sin embargo la ventaja de este blog es que lo puedes releer una y otra vez, trate de usar un
-mismo grupo de tablas de ejemplo durante todo el post, así que tómate un
-segundo para familiarizarte con ellas ya que las vas a ver una y otra vez.
+Para eso existen los **JOINs**, y es momento de dominarlos. Se que esta entrada
+puede ser un poco larga y tediosa, sin embargo la ventaja de este blog es que lo
+puedes releer una y otra vez, trate de usar un mismo grupo de tablas de ejemplo
+durante todo el post, así que tómate un segundo para familiarizarte con ellas ya
+que las vas a ver una y otra vez.
 
 ![Tablas de ejemplo usadas en este post: empleados, departamentos, proyectos y empleado_proyecto](/img/post-6-tablas-ejemplo.svg)
-
 
 ---
 
@@ -93,20 +93,20 @@ todo el post — fíjate que Luis no tiene departamento asignado (`NULL`):
 **Tabla empleados**
 
 | id_empleado | nombre | id_departamento | salario |
-| :---------: | ------ | :--------------: | :-----: |
-|      1      | Juan   |         1         |  3000   |
-|      2      | María  |         2         |  3500   |
-|      3      | Carlos |         1         |  3000   |
-|      4      | Ana    |         2         |  4000   |
-|      5      | Luis   |       NULL        |  2800   |
+| :---------: | ------ | :-------------: | :-----: |
+|      1      | Juan   |        1        |  3000   |
+|      2      | María  |        2        |  3500   |
+|      3      | Carlos |        1        |  3000   |
+|      4      | Ana    |        2        |  4000   |
+|      5      | Luis   |      NULL       |  2800   |
 
 **Tabla departamentos**
 
 | id_departamento | nombre_departamento |
-| :--------------: | -------------------- |
-|         1         | IT                    |
-|         2         | HR                    |
-|         3         | Finanzas              |
+| :-------------: | ------------------- |
+|        1        | IT                  |
+|        2        | HR                  |
+|        3        | Finanzas            |
 
 Fíjate que Finanzas (id 3) no tiene ningún empleado asignado. Esto es
 intencional: nos va a servir para ver cómo se comporta cada tipo de JOIN.
@@ -114,18 +114,18 @@ intencional: nos va a servir para ver cómo se comporta cada tipo de JOIN.
 **Resultado del JOIN de arriba**
 
 | nombre | nombre_departamento |
-| ------ | -------------------- |
-| Juan   | IT                    |
-| María  | HR                    |
-| Carlos | IT                    |
-| Ana    | HR                    |
+| ------ | ------------------- |
+| Juan   | IT                  |
+| María  | HR                  |
+| Carlos | IT                  |
+| Ana    | HR                  |
 
 > 🔎 **Nota:** ¿Dónde están Luis y Finanzas?🤔, Luis no aparece porque su
-> `id_departamento` es `NULL` — no coincide con nada. Finanzas no aparece
-> porque ningún empleado pertenece a ese departamento. Esto **no es un error**,
-> es el comportamiento por defecto de `JOIN`. En la siguiente sección explicare
->  exactamente por qué pasa esto, y cómo hacer que Luis y Finanzas
-> sí aparezcan si los necesitas.
+> `id_departamento` es `NULL` — no coincide con nada. Finanzas no aparece porque
+> ningún empleado pertenece a ese departamento. Esto **no es un error**, es el
+> comportamiento por defecto de `JOIN`. En la siguiente sección explicare
+> exactamente por qué pasa esto, y cómo hacer que Luis y Finanzas sí aparezcan
+> si los necesitas.
 
 #### 3. Los cuatro tipos de JOIN
 
@@ -156,7 +156,8 @@ SELECT e.nombre FROM empleados e
 
 SELECT e.nombre FROM empleados e INNER JOIN departamentos d ON e.id_departamento
 = d.id_departamento;</code></pre>
-  </div>
+
+</div>
 </div>
 
 **Caso de uso**: Cuando solo te interesa la información "completa". Por ejemplo,
@@ -179,17 +180,17 @@ LEFT JOIN departamentos d ON e.id_departamento = d.id_departamento;
 **Resultado**
 
 | nombre | nombre_departamento |
-| ------ | -------------------- |
-| Juan   | IT                    |
-| María  | HR                    |
-| Carlos | IT                    |
-| Ana    | HR                    |
-| Luis   | NULL                  |
+| ------ | ------------------- |
+| Juan   | IT                  |
+| María  | HR                  |
+| Carlos | IT                  |
+| Ana    | HR                  |
+| Luis   | NULL                |
 
 Ahí está Luis, con `nombre_departamento` en `NULL`. LEFT JOIN garantiza que
-ningún empleado desaparezca, tenga o no departamento. Finanzas, en cambio,
-sigue sin aparecer: LEFT JOIN solo promete "todas las filas de la izquierda",
-no de la derecha.
+ningún empleado desaparezca, tenga o no departamento. Finanzas, en cambio, sigue
+sin aparecer: LEFT JOIN solo promete "todas las filas de la izquierda", no de la
+derecha.
 
 <div class="rounded-3xl shadow-md bg-green-100 my-8 p-6 md:p-10 border-l-8 border-green-300">
   <p class="text-base md:text-lg text-amber-900 font-bold mb-2">💡 PRO TIP: Detectar "huérfanos"</p>
@@ -223,16 +224,16 @@ RIGHT JOIN departamentos d ON e.id_departamento = d.id_departamento;
 **Resultado**
 
 | nombre | nombre_departamento |
-| ------ | -------------------- |
-| Juan   | IT                    |
-| Carlos | IT                    |
-| María  | HR                    |
-| Ana    | HR                    |
-| NULL   | Finanzas              |
+| ------ | ------------------- |
+| Juan   | IT                  |
+| Carlos | IT                  |
+| María  | HR                  |
+| Ana    | HR                  |
+| NULL   | Finanzas            |
 
 Ahora es Finanzas quien aparece (sin empleados, columna `nombre` en `NULL`).
-Pero fíjate que **Luis desaparece** 😨: RIGHT JOIN garantiza las filas de la tabla
-derecha (departamentos), no las de la izquierda, así que un empleado sin
+Pero fíjate que **Luis desaparece** 😨: RIGHT JOIN garantiza las filas de la
+tabla derecha (departamentos), no las de la izquierda, así que un empleado sin
 departamento simplemente no tiene cabida aquí.
 
 <div class="rounded-3xl shadow-md bg-orange-100 my-8 p-6 md:p-10 border-l-8 border-orange-300">
@@ -243,9 +244,10 @@ departamento simplemente no tiene cabida aquí.
 SELECT e.nombre FROM empleados e
   RIGHT JOIN departamentos d ON e.id_departamento = d.id_departamento;
 
-SELECT e.nombre FROM departamentos d
-  LEFT JOIN empleados e ON e.id_departamento = d.id_departamento;</code></pre>
-  </div>
+SELECT e.nombre FROM departamentos d LEFT JOIN empleados e ON e.id_departamento
+= d.id_departamento;</code></pre>
+
+</div>
 </div>
 
 **Caso de uso**: Cuando el "lado derecho" es tu tabla de referencia. Rara vez es
@@ -266,13 +268,13 @@ FULL OUTER JOIN departamentos d ON e.id_departamento = d.id_departamento;
 **Resultado**
 
 | nombre | nombre_departamento |
-| ------ | -------------------- |
-| Juan   | IT                    |
-| María  | HR                    |
-| Carlos | IT                    |
-| Ana    | HR                    |
-| Luis   | NULL                  |
-| NULL   | Finanzas              |
+| ------ | ------------------- |
+| Juan   | IT                  |
+| María  | HR                  |
+| Carlos | IT                  |
+| Ana    | HR                  |
+| Luis   | NULL                |
+| NULL   | Finanzas            |
 
 Aquí no se pierde nadie: ni Luis ni Finanzas.
 
@@ -291,25 +293,25 @@ RIGHT JOIN departamentos d ON e.id_departamento = d.id_departamento;</code></pre
   <p class="text-base md:text-lg text-amber-900 leading-relaxed italic mt-4">¿Por qué funciona esto? <strong>UNION</strong> (a diferencia de <strong>UNION ALL</strong>) elimina automáticamente filas duplicadas. Las filas que sí coinciden (Juan-IT, María-HR...) aparecen idénticas en ambos JOINs, así que UNION las fusiona en una sola. Lo que queda son esas filas compartidas, más Luis (exclusivo del LEFT) y Finanzas (exclusivo del RIGHT).</p>
 </div>
 
-**Caso de uso**: Auditoría. Encontrar tanto empleados sin
-departamento como departamentos vacíos en una sola consulta.
+**Caso de uso**: Auditoría. Encontrar tanto empleados sin departamento como
+departamentos vacíos en una sola consulta.
 
 #### 4. Tabla comparativa: Visualizando los JOINs
 
 Con los cuatro tipos ya vistos en acción, aquí va el resumen:
 
-| Tipo de JOIN     | Filas de A (izquierda)    | Filas de B (derecha)      | Sin coincidencia...                    |
-| ----------------- | -------------------------- | --------------------------- | ---------------------------------------- |
-| INNER JOIN         | Solo las que coinciden     | Solo las que coinciden      | Se excluyen ambas                        |
-| LEFT JOIN          | **Todas**                  | Solo las que coinciden      | El lado B se rellena con `NULL`          |
-| RIGHT JOIN         | Solo las que coinciden     | **Todas**                   | El lado A se rellena con `NULL`          |
-| FULL OUTER JOIN    | **Todas**                  | **Todas**                   | Se rellena con `NULL` el lado que falte  |
-| CROSS JOIN         | Todas × todas, sin condición | Todas × todas, sin condición | No aplica — no hay "coincidencia" que evaluar |
+| Tipo de JOIN    | Filas de A (izquierda)       | Filas de B (derecha)         | Sin coincidencia...                           |
+| --------------- | ---------------------------- | ---------------------------- | --------------------------------------------- |
+| INNER JOIN      | Solo las que coinciden       | Solo las que coinciden       | Se excluyen ambas                             |
+| LEFT JOIN       | **Todas**                    | Solo las que coinciden       | El lado B se rellena con `NULL`               |
+| RIGHT JOIN      | Solo las que coinciden       | **Todas**                    | El lado A se rellena con `NULL`               |
+| FULL OUTER JOIN | **Todas**                    | **Todas**                    | Se rellena con `NULL` el lado que falte       |
+| CROSS JOIN      | Todas × todas, sin condición | Todas × todas, sin condición | No aplica — no hay "coincidencia" que evaluar |
 
-> 🔎 **Nota:** CROSS JOIN no encaja del todo en la metáfora del diagrama de
-> Venn de abajo, porque no se trata de "qué tanto se solapan" dos conjuntos,
-> sino de multiplicar todas las combinaciones posibles. Lo vemos con detalle en
-> la sección 7.
+> 🔎 **Nota:** CROSS JOIN no encaja del todo en la metáfora del diagrama de Venn
+> de abajo, porque no se trata de "qué tanto se solapan" dos conjuntos, sino de
+> multiplicar todas las combinaciones posibles. Lo vemos con detalle en la
+> sección 7.
 
 ![Diagrama de Venn de los 4 tipos de JOIN](/img/joins-venn-diagram.svg)
 
@@ -326,9 +328,9 @@ puede tener varios empleados — una relación "muchos a muchos").
 **Tabla proyectos**
 
 | id_proyecto | nombre_proyecto |
-| :---------: | ---------------- |
-|      1      | Rediseño Web      |
-|      2      | App Móvil         |
+| :---------: | --------------- |
+|      1      | Rediseño Web    |
+|      2      | App Móvil       |
 
 **Tabla empleado_proyecto**
 
@@ -357,11 +359,11 @@ INNER JOIN proyectos p ON ep.id_proyecto = p.id_proyecto;
 **Resultado**
 
 | empleado | nombre_departamento | nombre_proyecto |
-| -------- | -------------------- | ----------------- |
-| Juan     | IT                    | Rediseño Web       |
-| Juan     | IT                    | App Móvil          |
-| María    | HR                    | Rediseño Web       |
-| Carlos   | IT                    | App Móvil          |
+| -------- | ------------------- | --------------- |
+| Juan     | IT                  | Rediseño Web    |
+| Juan     | IT                  | App Móvil       |
+| María    | HR                  | Rediseño Web    |
+| Carlos   | IT                  | App Móvil       |
 
 El flujo es secuencial: primero conecta empleados con departamentos, luego ese
 resultado con empleado_proyecto, y finalmente con proyectos.
@@ -379,11 +381,9 @@ resultado con empleado_proyecto, y finalmente con proyectos.
     <img src="/img/post-6-ex-3.png" alt="JOINs unidos" class="rounded-3xl w-80 md:w-50 shadow-lg">
   </div>
 
-
-  <p class="text-base md:text-lg text-amber-900 leading-relaxed italic">Aunque SQL es flexible con el orden de los JOINs en términos de resultado, <strong>el rendimiento puede variar drásticamente</strong>. Los motores modernos optimizan automáticamente, pero un buen desarrollador entiende que el orden puede afectar cuántos datos intermedios se procesan.</p>
+<p class="text-base md:text-lg text-amber-900 leading-relaxed italic">Aunque SQL es flexible con el orden de los JOINs en términos de resultado, <strong>el rendimiento puede variar drásticamente</strong>. Los motores modernos optimizan automáticamente, pero un buen desarrollador entiende que el orden puede afectar cuántos datos intermedios se procesan.</p>
 
 </div>
-
 
 #### 6. Self-JOIN: Uniendo una tabla consigo misma
 
@@ -409,9 +409,8 @@ INNER JOIN empleados e2 ON e1.salario = e2.salario
 
 En nuestra tabla, Juan y Carlos ganan lo mismo (3000), así que es el único par
 que aparece. Nota la condición `e1.id_empleado < e2.id_empleado`: evita que un
-empleado se empareje consigo mismo y que aparezcan duplicados — sin ella,
-verías tanto "Juan + Carlos" como "Carlos + Juan", lo cual es información
-redundante.
+empleado se empareje consigo mismo y que aparezcan duplicados — sin ella, verías
+tanto "Juan + Carlos" como "Carlos + Juan", lo cual es información redundante.
 
 #### 7. CROSS JOIN: El producto cartesiano
 
@@ -433,17 +432,17 @@ anterior), obtenemos 5 × 2 = 10 filas:
 **Resultado**
 
 | nombre | nombre_proyecto |
-| ------ | ----------------- |
-| Juan   | Rediseño Web       |
-| Juan   | App Móvil          |
-| María  | Rediseño Web       |
-| María  | App Móvil          |
-| Carlos | Rediseño Web       |
-| Carlos | App Móvil          |
-| Ana    | Rediseño Web       |
-| Ana    | App Móvil          |
-| Luis   | Rediseño Web       |
-| Luis   | App Móvil          |
+| ------ | --------------- |
+| Juan   | Rediseño Web    |
+| Juan   | App Móvil       |
+| María  | Rediseño Web    |
+| María  | App Móvil       |
+| Carlos | Rediseño Web    |
+| Carlos | App Móvil       |
+| Ana    | Rediseño Web    |
+| Ana    | App Móvil       |
+| Luis   | Rediseño Web    |
+| Luis   | App Móvil       |
 
 Fíjate que hasta Luis aparece 😉, aunque no tenga departamento asignado —
 `CROSS JOIN` no evalúa ninguna condición de coincidencia, así que le da
@@ -480,12 +479,12 @@ LEFT JOIN departamentos d ON e.id_departamento = d.id_departamento
 **Resultado (Opción 1 — filtro en ON): 5 filas**
 
 | nombre | nombre_departamento |
-| ------ | -------------------- |
-| Juan   | IT                    |
-| María  | NULL                  |
-| Carlos | IT                    |
-| Ana    | NULL                  |
-| Luis   | NULL                  |
+| ------ | ------------------- |
+| Juan   | IT                  |
+| María  | NULL                |
+| Carlos | IT                  |
+| Ana    | NULL                |
+| Luis   | NULL                |
 
 ```sql
 -- Opción 2: Filtro en WHERE
@@ -498,15 +497,15 @@ WHERE d.nombre_departamento = 'IT';
 **Resultado (Opción 2 — filtro en WHERE): 2 filas**
 
 | nombre | nombre_departamento |
-| ------ | -------------------- |
-| Juan   | IT                    |
-| Carlos | IT                    |
+| ------ | ------------------- |
+| Juan   | IT                  |
+| Carlos | IT                  |
 
 **La diferencia es crítica con LEFT/RIGHT/FULL JOINs:**
 
-- **Con ON**: El filtro ocurre antes del JOIN, así que en el LEFT JOIN,
-  seguimos viendo a todos los empleados, pero con `nombre_departamento = NULL`
-  para quienes no están en IT.
+- **Con ON**: El filtro ocurre antes del JOIN, así que en el LEFT JOIN, seguimos
+  viendo a todos los empleados, pero con `nombre_departamento = NULL` para
+  quienes no están en IT.
 - **Con WHERE**: El filtro ocurre después del JOIN, eliminando esas filas con
   `NULL`, transformando efectivamente el `LEFT JOIN` en un `INNER JOIN` — por
   eso pasamos de 5 filas a solo 2.
@@ -517,14 +516,14 @@ filtrar resultados finales.
 
 ## Conclusión
 
-Los JOINs son la espina dorsal(y aveces un dolor de cabeza) de cualquier consulta SQL medianamente compleja.
-Entenderlos profundamente — cuándo usar `INNER`, cuándo `LEFT`, cómo evitar el
-producto cartesiano — es la diferencia entre un desarrollador que "hace
-funcionar las cosas" y uno que entiende realmente cómo los datos fluyen a través
-de la base de datos.
+Los JOINs son la espina dorsal(y aveces un dolor de cabeza) de cualquier
+consulta SQL medianamente compleja. Entenderlos profundamente — cuándo usar
+`INNER`, cuándo `LEFT`, cómo evitar el producto cartesiano — es la diferencia
+entre un desarrollador que "hace funcionar las cosas" y uno que entiende
+realmente cómo los datos fluyen a través de la base de datos.
 
-La normalización divide los datos por eficiencia, los JOINs los reconstruyen
-por claridad.
+La normalización divide los datos por eficiencia, los JOINs los reconstruyen por
+claridad.
 
 En la próxima entrada aprenderemos sobre **agregaciones**: `COUNT`, `SUM`,
 `AVG`, y la cláusula `GROUP BY`. Veremos cómo transformar millones de filas
@@ -532,5 +531,3 @@ individuales en resúmenes significativos: "¿Cuántos empleados por departament
 o "¿Cuál es el salario promedio por región?"
 
 ¡Nos vemos en la próxima consulta! 😉
-
-

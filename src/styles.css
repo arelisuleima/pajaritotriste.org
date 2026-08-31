@@ -3,17 +3,17 @@
 @plugin "@tailwindcss/typography";
 
 @media (prefers-color-scheme: light) {
-  /* light */
+    /* light */
 
-  .hljs {
-    background: unset;
-  }
+    .hljs {
+        background: unset;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
-  /* dark */
+    /* dark */
 
-  .hljs {
-    background: unset;
-  }
+    .hljs {
+        background: unset;
+    }
 }
