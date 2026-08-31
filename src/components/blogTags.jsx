@@ -1,18 +1,25 @@
 import { tagUrl } from "../helpers/url.js";
 
 /**
+ * @typedef {object} ListProps
+ * @property {string[]} tags - An array of strings to display.
+ */
+
+/**
  * Renderiza etiquetas con estilo "Capsule" para el ecosistema Pajarito Triste.
+ * @param {ListProps} props
+ * @returns {JSX.Component | null}
  */
 export const BlogTags = ({ tags }) => {
-  if (!tags || tags.length === 0) return null;
+    if (!tags || tags.length === 0) return null;
 
-  return (
-    <div class="flex flex-wrap gap-2">
-      {tags.map((tag) => (
-        <span class="inline-block" key={tag}>
-          <a
-            href={tagUrl(tag)}
-            class="
+    return (
+        <div class="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+                <span class="inline-block" key={tag}>
+                    <a
+                        href={tagUrl(tag)}
+                        class="
               inline-flex items-center
               bg-pink-50 text-[#3a0159] 
               border border-pink-100 
@@ -24,12 +31,12 @@ export const BlogTags = ({ tags }) => {
               transition-all duration-300
               shadow-sm
             "
-          >
-            <span class="opacity-50 mr-1">#</span>
-            {tag}
-          </a>
-        </span>
-      ))}
-    </div>
-  );
+                    >
+                        <span class="opacity-50 mr-1">#</span>
+                        {tag}
+                    </a>
+                </span>
+            ))}
+        </div>
+    );
 };
