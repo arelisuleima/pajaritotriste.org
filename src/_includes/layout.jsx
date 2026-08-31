@@ -2,7 +2,9 @@ import Navbar from "../components/navbar.jsx";
 
 export default (
     /**@type {Lume.Data} */
-    { data, _helpers },
+    data,
+    /** @type {Lume.Helpers} */
+    _helpers,
 ) => {
     const { title, children, lang, site, url, site_url } = data;
 

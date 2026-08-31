@@ -3,7 +3,9 @@ import { BlogTags } from "../components/blogTags.jsx";
 
 export default (
     /**@type {Lume.Data} */
-    { data, _helpers },
+    data,
+    /** @type {Lume.Helpers} */
+    _helpers,
 ) => {
     // === CORRECCIÓN: Extraemos site_url de data para que sea reconocida ===
     const {

@@ -2,7 +2,7 @@ import { tagUrl } from "../helpers/url.js";
 
 /**
  * @typedef {object} ListProps
- * @property {string[]} tags - An array of strings to display.
+ * @property {string[] | string | undefined} tags - Etiquetas a mostrar.
  */
 
 /**
@@ -11,11 +11,13 @@ import { tagUrl } from "../helpers/url.js";
  * @returns {JSX.Component | null}
  */
 export const BlogTags = ({ tags }) => {
-    if (!tags || tags.length === 0) return null;
+    const list = Array.isArray(tags) ? tags : tags ? [tags] : [];
+
+    if (list.length === 0) return null;
 
     return (
         <div class="flex flex-wrap gap-2">
-            {tags.map((tag) => (
+            {list.map((tag) => (
                 <span class="inline-block" key={tag}>
                     <a
                         href={tagUrl(tag)}
