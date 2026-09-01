@@ -3,28 +3,10 @@ export const layout = "layout.jsx";
 export const title = "Sobre mí 👩🏻‍💻";
 export const type = "page";
 
-export default function About() {
-    const techs = [
-        {
-            name: "Lume",
-            desc: "Generador estático ultrarrápido basado en Deno.",
-            icon: "⚡",
-            iconBg: "bg-emerald-100 text-emerald-900",
-        },
-        {
-            name: "Deno",
-            desc: "Runtime moderno y seguro con soporte TypeScript.",
-            icon: "🦕",
-            iconBg: "bg-purple-100 text-purple-900",
-        },
-        {
-            name: "Tailwind CSS",
-            desc: "Framework para interfaces responsivas y limpias.",
-            icon: "🎨",
-            iconBg: "bg-amber-100 text-amber-900",
-        },
-    ];
+/** @typedef {{ name: string, desc: string, icon: string }} Tech */
 
+/** @param {{ techs: Tech[] }} data */
+export default function About({ techs }) {
     return (
         <div class="space-y-10 md:space-y-14 mb-16">
             {/* SECCIÓN 1: INTRODUCCIÓN */}
