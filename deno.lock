@@ -38,12 +38,12 @@
     "jsr:@std/yaml@^1.0.5": "1.2.0",
     "npm:@tailwindcss/node@4.3.3": "4.3.3",
     "npm:@tailwindcss/oxide@4.3.3": "4.3.3",
-    "npm:@tailwindcss/typography@~0.5.19": "0.5.20_tailwindcss@4.3.3",
+    "npm:@tailwindcss/typography@~0.5.20": "0.5.20_tailwindcss@4.3.3",
     "npm:date-fns@4.4.0": "4.4.0",
     "npm:esbuild@0.28.1": "0.28.1",
     "npm:esbuild@0.28.2": "0.28.2",
     "npm:highlight.js@11.11.1": "11.11.1",
-    "npm:highlight.js@^11.11.1": "11.11.1",
+    "npm:highlight.js@^11.12.0": "11.12.0",
     "npm:lightningcss-wasm@1.33.0": "1.33.0",
     "npm:markdown-it-attrs@5.0.0": "5.0.0_markdown-it@15.0.0",
     "npm:markdown-it-attrs@5.0.1": "5.0.1_markdown-it@15.0.0",
@@ -705,6 +705,9 @@
     },
     "highlight.js@11.11.1": {
       "integrity": "sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w=="
+    },
+    "highlight.js@11.12.0": {
+      "integrity": "sha512-nbfWpyRMcMrPMmDwJB+dhX/eiaPKtc2RB+0QZskqJ3WjRA/FDS0e9hZrx8EC/lbEv8gXy98FcDbNa/dspAaJMg=="
     },
     "jiti@2.7.0": {
       "integrity": "sha512-AC/7JofJvZGrrneWNaEnJeOLUx+JlGt7tNa0wZiRPT4MY1wmfKjt2+6O2p2uz2+skll8OZZmJMNqeke7kKbNgQ==",
@@ -1394,8 +1397,8 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:@tailwindcss/typography@~0.5.19",
-      "npm:highlight.js@^11.11.1"
+      "npm:@tailwindcss/typography@~0.5.20",
+      "npm:highlight.js@^11.12.0"
     ]
   }
 }
