@@ -2,6 +2,11 @@
 
 @plugin "@tailwindcss/typography";
 
+.prose :where(code)::before,
+.prose :where(code)::after {
+    content: none;
+}
+
 @media (prefers-color-scheme: light) {
     /* light */
 
