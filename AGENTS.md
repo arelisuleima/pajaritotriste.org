@@ -1,5 +1,7 @@
 # AGENTS.md
 
+Agents file for https://pajaritotriste.org/
+
 Lume static site (Deno) deployed to GitHub Pages. Site content is in Spanish —
 keep all copy, posts, and UI text in Spanish.
 
@@ -36,3 +38,23 @@ pass. Deploy happens automatically on push to `main` from `output/`.
   to update.
 - URLs are slugified with Spanish accents stripped (`slugify_urls` in
   `_config.ts`) — don't hand-write URLs with accents.
+
+## Editing validation
+
+Always run `make ci` after making changes to the codebase.
+
+## Coding style
+
+Most of the site is written in JavaScript. Components and other templates live
+under @src/_includes and @src/components. The JavaScript conventions I follow
+are the following:
+
+- Functions should use `const` instead of `function` whenever possible.
+- All functions must be typed with JSDoc notation unless the type is `any` or
+  `unknown` by inference.
+
+## Documentation
+
+Refer to the lume documentation before implementing anything on this site:
+
+- Shared data: https://lume.land/docs/creating-pages/shared-data/

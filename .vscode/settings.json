@@ -1,4 +1,7 @@
 {
+    "json.schemaDownload.trustedDomains": {
+        "https://opencode.ai/config.json": true
+    },
     "deno.enable": true,
     "editor.defaultFormatter": "denoland.vscode-deno",
     "editor.formatOnSave": true,
