@@ -4,21 +4,21 @@
 
 .prose :where(code)::before,
 .prose :where(code)::after {
-  content: none;
+    content: none;
 }
 
 @media (prefers-color-scheme: light) {
-  /* light */
+    /* light */
 
-  .hljs {
-    background: unset;
-  }
+    .hljs {
+        background: unset;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
-  /* dark */
+    /* dark */
 
-  .hljs {
-    background: unset;
-  }
+    .hljs {
+        background: unset;
+    }
 }

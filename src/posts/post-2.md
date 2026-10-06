@@ -4,8 +4,8 @@ type: "post"
 draft: false
 layout: "postLayout.jsx"
 tags:
-  - SQL
-  - introduccion-sql
+    - SQL
+    - introduccion-sql
 
 description: "Entendiendo los esquemas y relaciones entre las tablas"
 image: "/img/post-2.png"

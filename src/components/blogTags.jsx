@@ -11,17 +11,17 @@ import { tagUrl } from "../helpers/url.js";
  * @returns {JSX.Component | null}
  */
 export const BlogTags = ({ tags }) => {
-  const list = Array.isArray(tags) ? tags : tags ? [tags] : [];
+    const list = Array.isArray(tags) ? tags : tags ? [tags] : [];
 
-  if (list.length === 0) return null;
+    if (list.length === 0) return null;
 
-  return (
-    <div class="flex flex-wrap gap-2">
-      {list.map((tag) => (
-        <span class="inline-block" key={tag}>
-          <a
-            href={tagUrl(tag)}
-            class="
+    return (
+        <div class="flex flex-wrap gap-2">
+            {list.map((tag) => (
+                <span class="inline-block" key={tag}>
+                    <a
+                        href={tagUrl(tag)}
+                        class="
               inline-flex items-center
               bg-pink-50 text-[#3a0159] 
               border border-pink-100 
@@ -33,12 +33,12 @@ export const BlogTags = ({ tags }) => {
               transition-all duration-300
               shadow-sm
             "
-          >
-            <span class="opacity-50 mr-1">#</span>
-            {tag}
-          </a>
-        </span>
-      ))}
-    </div>
-  );
+                    >
+                        <span class="opacity-50 mr-1">#</span>
+                        {tag}
+                    </a>
+                </span>
+            ))}
+        </div>
+    );
 };

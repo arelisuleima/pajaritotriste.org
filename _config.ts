@@ -25,49 +25,49 @@ import lang_xml from "highlight.js/lib/languages/xml";
 import search from "lume/plugins/search.ts";
 
 const site: Site = lume({
-  location: new URL("https://pajaritotriste.org/"),
-  src: "./src",
-  dest: "./output",
-  watcher: {
-    "ignore": [
-      "/.git",
-    ],
-  },
+    location: new URL("https://pajaritotriste.org/"),
+    src: "./src",
+    dest: "./output",
+    watcher: {
+        "ignore": [
+            "/.git",
+        ],
+    },
 });
 
 site.use(code_highlight({
-  languages: {
-    css: lang_css,
-    cts: lang_typescript,
-    javascript: lang_javascript,
-    js: lang_javascript,
-    mts: lang_typescript,
-    sql: lang_sql,
-    ts: lang_typescript,
-    tsx: lang_typescript,
-    typescript: lang_typescript,
-    python: lang_python,
-    py: lang_python,
-    rss: lang_xml,
-  },
-  theme: [{
-    name: "atom-one-dark",
-    cssFile: "/styles.css",
-    placeholder: "/* dark */",
-  }, {
-    name: "atom-one-light",
-    cssFile: "/styles.css",
-    placeholder: "/* light */",
-  }],
+    languages: {
+        css: lang_css,
+        cts: lang_typescript,
+        javascript: lang_javascript,
+        js: lang_javascript,
+        mts: lang_typescript,
+        sql: lang_sql,
+        ts: lang_typescript,
+        tsx: lang_typescript,
+        typescript: lang_typescript,
+        python: lang_python,
+        py: lang_python,
+        rss: lang_xml,
+    },
+    theme: [{
+        name: "atom-one-dark",
+        cssFile: "/styles.css",
+        placeholder: "/* dark */",
+    }, {
+        name: "atom-one-light",
+        cssFile: "/styles.css",
+        placeholder: "/* light */",
+    }],
 }));
 
 site.use(date());
 site.use(jsx());
 
 site.use(pageFind({
-  ui: {
-    resetStyles: false,
-  },
+    ui: {
+        resetStyles: false,
+    },
 }));
 
 site.ignore("README.md");
@@ -75,8 +75,8 @@ site.ignore("README.md");
 site.use(robots());
 site.use(redirects());
 site.use(google_fonts({
-  fonts:
-    "https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap",
+    fonts:
+        "https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap",
 }));
 site.use(tailwindcss());
 
@@ -87,19 +87,19 @@ site.add("public/Areli_Arias_CV.pdf", "Areli_Arias_CV.pdf");
 
 site.use(base_path());
 site.use(slugify_urls({
-  extensions: "*",
-  replace: {
-    "Á": "A",
-    "É": "E",
-    "Í": "I",
-    "Ó": "O",
-    "Ú": "U",
-    "á": "a",
-    "é": "e",
-    "í": "i",
-    "ó": "o",
-    "ú": "u",
-  },
+    extensions: "*",
+    replace: {
+        "Á": "A",
+        "É": "E",
+        "Í": "I",
+        "Ó": "O",
+        "Ú": "U",
+        "á": "a",
+        "é": "e",
+        "í": "i",
+        "ó": "o",
+        "ú": "u",
+    },
 }));
 site.use(feed());
 site.use(sitemap());
@@ -110,18 +110,18 @@ site.use(readingInfo());
 
 /* Generate the site's RSS feed */
 site.use(feed({
-  output: ["/posts.rss", "/posts.json"],
-  query: "type=post",
-  info: {
-    title: "=site.title",
-    description: "=site.description",
-    lang: "es",
-    authorName: "pajaritotriste",
-  },
-  items: {
-    title: "=title",
-    description: "=excerpt",
-  },
+    output: ["/posts.rss", "/posts.json"],
+    query: "type=post",
+    info: {
+        title: "=site.title",
+        description: "=site.description",
+        lang: "es",
+        authorName: "pajaritotriste",
+    },
+    items: {
+        title: "=title",
+        description: "=excerpt",
+    },
 }));
 
 export default site;

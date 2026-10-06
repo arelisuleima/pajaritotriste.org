@@ -1,19 +1,19 @@
 {
-  "techs": [
-    {
-      "name": "Lume",
-      "desc": "Generador estático ultrarrápido basado en Deno.",
-      "icon": "⚡"
-    },
-    {
-      "name": "Deno",
-      "desc": "Runtime moderno y seguro con soporte TypeScript.",
-      "icon": "🦕"
-    },
-    {
-      "name": "Tailwind CSS",
-      "desc": "Framework para interfaces responsivas y limpias.",
-      "icon": "🎨"
-    }
-  ]
+    "techs": [
+        {
+            "name": "Lume",
+            "desc": "Generador estático ultrarrápido basado en Deno.",
+            "icon": "⚡"
+        },
+        {
+            "name": "Deno",
+            "desc": "Runtime moderno y seguro con soporte TypeScript.",
+            "icon": "🦕"
+        },
+        {
+            "name": "Tailwind CSS",
+            "desc": "Framework para interfaces responsivas y limpias.",
+            "icon": "🎨"
+        }
+    ]
 }
