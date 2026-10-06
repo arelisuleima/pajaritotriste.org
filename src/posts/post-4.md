@@ -3,8 +3,8 @@ title: "Introducción a SQL: 3. Lenguaje de Manipulación de Datos (DML)"
 type: "post"
 draft: false
 tags:
-    - SQL
-    - introduccion-sql
+  - SQL
+  - introduccion-sql
 layout: "postLayout.jsx"
 description: "El CRUD: el ciclo de vida de cualquier dato"
 image: "/img/post-5.png"

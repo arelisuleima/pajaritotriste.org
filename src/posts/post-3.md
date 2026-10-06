@@ -4,8 +4,8 @@ type: "post"
 draft: false
 layout: "postLayout.jsx"
 tags:
-    - introduccion-sql
-    - SQL
+  - introduccion-sql
+  - SQL
 description: "Tipos de datos y creación de tablas"
 date: 2026-03-19
 image: "/img/post-4.png"

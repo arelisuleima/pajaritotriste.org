@@ -4,8 +4,8 @@ type: "post"
 draft: false
 layout: "postLayout.jsx"
 tags:
-    - SQL
-    - introduccion-sql
+  - SQL
+  - introduccion-sql
 
 description: "Domina los JOINs: la herramienta para combinar datos de múltiples tablas"
 image: "/img/post-6.png"

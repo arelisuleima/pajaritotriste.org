@@ -3,5 +3,5 @@
  * @returns {string} - La URL del tag que se le pasó al componente
  */
 export const tagUrl = (tag) => {
-    return `/tags/${tag.trim().toLowerCase().replace(/\s+/g, "-")}/`;
+  return `/tags/${tag.trim().toLowerCase().replace(/\s+/g, "-")}/`;
 };
