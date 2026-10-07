@@ -9,7 +9,7 @@ tags:
 
 description: "COUNT, SUM, AVG, MIN, MAX, GROUP BY y HAVING: transforma miles de filas en resúmenes que responden preguntas de negocio"
 image: "/img/post-7.png"
-date: 2026-08-28
+date: 2026-10-06
 ---
 
 En la entrada anterior dominamos los **JOINs**: cómo conectar tablas y extraer
