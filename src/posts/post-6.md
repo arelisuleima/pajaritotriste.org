@@ -54,7 +54,7 @@ tabla.
 <div class="rounded-3xl shadow-md bg-amber-100 my-8 p-6 md:p-3 border-l-8 border-amber-300 flex flex-col md:flex-row items-center gap-6">
 
 <div class="shrink-0">
-    <img src="/img/post6-ex-2.png" alt="JOINs unidos" class="rounded-3xl w-80 md:w-100 shadow-lg">
+    <img src="/img/post-6-ex-2.png" alt="JOINs unidos" class="rounded-3xl w-80 md:w-100 shadow-lg">
   </div>
 
 <p class="text-base md:text-lg text-amber-900 leading-relaxed italic">

@@ -105,7 +105,7 @@ export default (
                             {/* ENCABEZADO EXCLUSIVO PARA PDF */}
                             <div className="hidden print:flex flex-col items-center mb-10 border-b-2 border-pink-100 pb-6 w-full text-center">
                                 <img
-                                    src="/img/banner-inicio-rmv.png"
+                                    src="/img/logo-pajarito-rmv.png"
                                     className="w-28"
                                     alt="Pajarito Triste"
                                 />
