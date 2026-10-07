@@ -30,9 +30,8 @@ que tómate un segundo para recordarlas:
 
 ![Tablas de ejemplo usadas en este post: empleados, departamentos, proyectos y empleado_proyecto](/img/post-7-tablas-ejemplo.svg)
 
-
 Recuerda: Luis no tiene departamento asignado (`NULL`) y Finanzas no tiene
-empleados. 
+empleados.
 
 ---
 
@@ -238,8 +237,6 @@ Puedes usar ambos en la misma consulta: `WHERE` para descartar filas que ni
 siquiera deben entrar al grupo (por ejemplo, salarios menores a 2000) y `HAVING`
 para descartar grupos enteros.
 
-
-
 <div class="rounded-3xl shadow-md bg-red-100 my-8 p-6 md:p-3 border-l-8 border-red-300 flex flex-col md:flex-row items-center gap-6">
 
 <div class="shrink-0">
@@ -249,7 +246,6 @@ para descartar grupos enteros.
  <p class="text-base md:text-lg text-amber-900 leading-relaxed italic"><strong>⚠️ Nota de compatibilidad: COUNT(DISTINCT)</strong> y <strong>HAVING sin GROUP BY</strong> funcionan en PostgreSQL, MySQL, SQL Server y SQLite, así que no tendrás problemas con los ejemplos de esta entrada. Donde sí verás diferencias es en el uso de <strong>alias dentro de GROUP BY o HAVING</strong>: MySQL y PostgreSQL lo permiten, SQL Server no. Si quieres dormir tranquilo, repite la expresión completa (<strong>HAVING AVG(salario) &gt; 3200</strong>) en lugar de usar el alias.</p>
 
 </div>
-
 
 ---
 
@@ -307,9 +303,10 @@ tiene sentido leída así, probablemente está mal escrita.
 
 ## Conclusión
 
-Las agregaciones son la frontera entre **escribir consultas** y a lo que yo llamo 
-**responder preguntas con datos**. Un `SELECT` te trae filas; un `GROUP BY` con `HAVING` te
-trae _respuestas_: cuántos, cuánto, cuál es el promedio, quién es el máximo.
+Las agregaciones son la frontera entre **escribir consultas** y a lo que yo
+llamo **responder preguntas con datos**. Un `SELECT` te trae filas; un
+`GROUP BY` con `HAVING` te trae _respuestas_: cuántos, cuánto, cuál es el
+promedio, quién es el máximo.
 
 La próxima vez que veas una tabla de miles de filas, no pienses en listarlas.
 Piensa en qué pregunta responde, y déjale el trabajo de resumir a SQL.
